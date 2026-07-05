@@ -15,7 +15,7 @@ interface Bar {
   heightPx: number;
 }
 
-/** Real EuroMillions hot/cold numbers from the last 100 draws (top 15 hottest, bottom 10 coldest). */
+/** Real EuroMillions hot/cold numbers from the last 100 draws (top 10 hottest, bottom 10 coldest). */
 function useHotColdBars() {
   return useMemo(() => {
     const config = getLottery("euromillions");
@@ -25,7 +25,7 @@ function useHotColdBars() {
     const freq = computeFrequency(draws, config.main.min, config.main.max);
     const sorted = [...freq].sort((a, b) => b.count - a.count);
 
-    const hotEntries = sorted.slice(0, 15);
+    const hotEntries = sorted.slice(0, 10);
     const coldEntries = [...sorted].reverse().slice(0, 10);
     const max = Math.max(...sorted.map((f) => f.percent), 1);
 
@@ -58,7 +58,7 @@ function BarRow({ bars, color }: { bars: Bar[]; color: string }) {
 }
 
 /**
- * A static hero visual built from real EuroMillions data: the 15 hottest and
+ * A static hero visual built from real EuroMillions data: the 10 hottest and
  * 10 coldest numbers from the last 100 draws, each rendered as a plain bar
  * (gold for hot, mist green for cold) sized to its real frequency — the
  * same numbers and colors used on the Hot & Cold tab elsewhere on the site.
