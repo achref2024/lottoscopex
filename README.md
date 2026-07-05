@@ -41,7 +41,7 @@ Every lottery now carries well over 100 real draws, so the signature "last 100 d
 - **`robots.txt` / `sitemap.xml`** — generated at build time from `app/robots.ts` and `app/sitemap.ts`, listing the homepage plus all 7 lottery pages.
 - **Structured data (JSON-LD)** — `Organization`/`WebSite` schema site-wide (`app/layout.tsx`), plus `Dataset` and `FAQPage` schema per lottery page (`app/lottery/[id]/page.tsx`), grounded in the same real numbers shown on the page (draw count, date range, hot numbers, next-draw jackpot) — nothing fabricated for SEO purposes.
 - **Heading hierarchy** — each lottery page has one `<h1>` (the lottery name), with every tab section now carrying its own `<h2>` (visually hidden via `sr-only` where a heading wasn't already part of the design, e.g. Hot & Cold, Ranges, Probability, Compare, History).
-- **Known gap, deliberately out of scope for now**: French and German translations are client-side only (`localStorage`-based, see `components/LanguageProvider.tsx`), so search engines only ever index the English version — there's no `/fr/` or `/de/` URL structure for hreflang. Fixing this properly means real per-language routes, which is a bigger refactor than the rest of the SEO work above.
+- **Multilingual routing / hreflang** — French and German are real, separate static routes (`/fr`, `/de`, see the [Languages](#languages) section above), each with correct `hreflang` alternates. This used to be a client-side-only gap; it's now fixed.
 
 ## Getting started
 
