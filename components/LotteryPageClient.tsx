@@ -10,6 +10,7 @@ import ProbabilityPanel from "@/components/ProbabilityPanel";
 import HistoryTable from "@/components/HistoryTable";
 import CompareView from "@/components/CompareView";
 import Tabs, { TabSection } from "@/components/Tabs";
+import AdSlot from "@/components/AdSlot";
 import { useLang } from "@/components/LanguageProvider";
 import { formatDate, formatMoney, getNextDrawISO } from "@/lib/format";
 import { flagEmoji } from "@/lib/flags";
@@ -218,7 +219,7 @@ export default function LotteryPageClient({
   return (
     <div>
       <section className="border-b border-felt-800 bg-felt-950 px-5 pb-10 pt-10 sm:px-8 sm:pt-14">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-mist-500">
               <span aria-hidden="true">{flagEmoji(config.flag)}</span>
@@ -230,8 +231,11 @@ export default function LotteryPageClient({
             >
               {config.name}
             </h1>
+            <p className="mt-3 max-w-2xl text-mist-500">{info?.tagline ?? config.tagline}</p>
           </div>
-          <p className="mt-3 max-w-2xl text-mist-500">{info?.tagline ?? config.tagline}</p>
+          <div className="w-full lg:w-[336px] lg:shrink-0">
+            <AdSlot slot="0000000002" minHeight={90} />
+          </div>
         </div>
       </section>
 
