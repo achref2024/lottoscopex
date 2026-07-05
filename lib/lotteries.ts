@@ -15,7 +15,7 @@ export const LOTTERIES: LotteryConfig[] = [
     flag: "EU",
     tagline: "Europe's biggest jackpot lottery",
     gradient: ["#6366F1", "#EC4899"],
-    accent: "#2A4DC2", // EuroMillions' royal blue, darkened slightly for comfort
+    accent: "#5B7FD6", // softer, less saturated blue — easier on the eyes than the deep royal blue
     main: { count: 5, min: 1, max: 50 },
     bonus: { label: "Lucky Stars", count: 2, min: 1, max: 12, shape: "star" },
     drawDays: [2, 5], // Tuesday, Friday
@@ -100,7 +100,7 @@ export const LOTTERIES: LotteryConfig[] = [
     flag: "US",
     tagline: "America's biggest jackpot lottery",
     gradient: ["#E31D1A", "#7A0F0D"],
-    accent: "#A81E3A", // Powerball red, deepened so it reads apart from Germany's LOTTO red
+    accent: "#C1554B", // warm, muted brick red — softer than the deep crimson, less eye strain against the green background
     main: { count: 5, min: 1, max: 69 },
     bonus: { label: "Powerball", count: 1, min: 1, max: 26, shape: "circle" },
     drawDays: [1, 3, 6], // Monday, Wednesday, Saturday
