@@ -1,131 +1,94 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { useLang } from "./LanguageProvider";
 import { getDraws } from "@/lib/data";
 import { computeFrequency } from "@/lib/analytics";
 import { getLottery } from "@/lib/lotteries";
 
-const BAR_COLORS = [
-  "#3460F2", // blue
-  "#D6488F", // pink
-  "#F2811D", // orange
-  "#2FBF6E", // green
-  "#8B5CF6", // purple
-  "#0EA5E9", // cyan
-  "#D4AF37", // gold
-  "#E2001A", // red
-];
+const HOT_COLOR = "#D4AF37"; // gold — matches the Hot & Cold tab's hot icon
+const COLD_COLOR = "#A8E0C4"; // mist green — matches the Hot & Cold tab's cold icon
+const CONTAINER_HEIGHT = 110; // px
 
-const CONTAINER_HEIGHT = 128; // px
-
-/** Counts up from 0 to `target` once, starting after `startDelayMs`. */
-function useCountUp(target: number, durationMs = 1200, startDelayMs = 500) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    let raf = 0;
-    let start: number | null = null;
-
-    const timer = setTimeout(() => {
-      const step = (ts: number) => {
-        if (start === null) start = ts;
-        const progress = Math.min((ts - start) / durationMs, 1);
-        setValue(Math.round(progress * target));
-        if (progress < 1) raf = requestAnimationFrame(step);
-      };
-      raf = requestAnimationFrame(step);
-    }, startDelayMs);
-
-    return () => {
-      clearTimeout(timer);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, [target, durationMs, startDelayMs]);
-
-  return value;
+interface Bar {
+  number: number;
+  heightPx: number;
 }
 
-/** Samples real EuroMillions frequency data (last 100 draws) into ~12 evenly spaced bars. */
-function useFrequencyBars() {
+/** Real EuroMillions hot/cold numbers from the last 100 draws (top 15 hottest, bottom 10 coldest). */
+function useHotColdBars() {
   return useMemo(() => {
     const config = getLottery("euromillions");
-    if (!config) return [];
+    if (!config) return { hot: [] as Bar[], cold: [] as Bar[] };
+
     const draws = getDraws(config.id).slice(0, 100);
     const freq = computeFrequency(draws, config.main.min, config.main.max);
+    const sorted = [...freq].sort((a, b) => b.count - a.count);
 
-    const sampleCount = 12;
-    const step = Math.max(1, Math.floor(freq.length / sampleCount));
-    const sample = Array.from({ length: sampleCount }, (_, i) => freq[i * step] ?? freq[freq.length - 1]);
-    const max = Math.max(...sample.map((f) => f.percent), 1);
+    const hotEntries = sorted.slice(0, 15);
+    const coldEntries = [...sorted].reverse().slice(0, 10);
+    const max = Math.max(...sorted.map((f) => f.percent), 1);
 
-    return sample.map((f, i) => ({
+    const toBar = (f: (typeof sorted)[number]): Bar => ({
       number: f.number,
-      heightPx: Math.round(18 + (f.percent / max) * (CONTAINER_HEIGHT - 18)),
-      color: BAR_COLORS[i % BAR_COLORS.length],
-    }));
+      heightPx: Math.round(14 + (f.percent / max) * (CONTAINER_HEIGHT - 14)),
+    });
+
+    return { hot: hotEntries.map(toBar), cold: coldEntries.map(toBar) };
   }, []);
 }
 
+function BarRow({ bars, color }: { bars: Bar[]; color: string }) {
+  return (
+    <div
+      className="flex flex-wrap items-end justify-center gap-2 sm:gap-2.5"
+      style={{ minHeight: CONTAINER_HEIGHT }}
+    >
+      {bars.map((bar) => (
+        <div key={bar.number} className="flex flex-col items-center gap-1.5">
+          <div
+            className="w-3.5 rounded-t-md sm:w-4"
+            style={{ height: bar.heightPx, background: color }}
+          />
+          <span className="text-[10px] font-medium text-mist-600">{bar.number}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /**
- * A small animated hero visual: real EuroMillions number-frequency data
- * (last 100 draws) rendered as a row of gently pulsing bars, plus a counter
- * beneath ticking up to 100 — the real number of recent draws the
- * Probability Patterns feature analyzes for every lottery. No fabricated
- * stats — bar heights come straight from computeFrequency().
+ * A static hero visual built from real EuroMillions data: the 15 hottest and
+ * 10 coldest numbers from the last 100 draws, each rendered as a plain bar
+ * (gold for hot, mist green for cold) sized to its real frequency — the
+ * same numbers and colors used on the Hot & Cold tab elsewhere on the site.
  */
 export default function HeroBallsAnimation() {
   const { t } = useLang();
-  const count = useCountUp(100);
-  const bars = useFrequencyBars();
+  const { hot, cold } = useHotColdBars();
 
   return (
-    <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-6 sm:mt-14">
-      <div
-        className="flex w-full items-end justify-center gap-2 sm:gap-3"
-        style={{ height: CONTAINER_HEIGHT }}
-      >
-        {bars.map((bar, i) => (
-          <motion.div
-            key={bar.number}
-            className="flex flex-col items-center gap-1.5"
-            initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: 1 }}
-            transition={{ delay: i * 0.05, type: "spring", stiffness: 200, damping: 18 }}
-            style={{ transformOrigin: "bottom" }}
-          >
-            <motion.div
-              className="w-4 rounded-t-md sm:w-5"
-              style={{
-                height: bar.heightPx,
-                background: `linear-gradient(180deg, ${bar.color}, ${bar.color}CC)`,
-                transformOrigin: "bottom",
-              }}
-              animate={{ scaleY: [0.88, 1.05, 0.88] }}
-              transition={{
-                duration: 2.6,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.6 + i * 0.12,
-              }}
-            />
-            <span className="text-[10px] font-medium text-mist-600">{bar.number}</span>
-          </motion.div>
-        ))}
+    <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-8 sm:mt-14">
+      <div className="w-full">
+        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-wide text-mist-600">
+          {t("hotCold.hotTitle")}
+        </p>
+        <BarRow bars={hot} color={HOT_COLOR} />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex items-center gap-3 rounded-full border border-felt-800 bg-felt-900 px-5 py-2.5"
-      >
+      <div className="w-full">
+        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-wide text-mist-600">
+          {t("hotCold.coldTitle")}
+        </p>
+        <BarRow bars={cold} color={COLD_COLOR} />
+      </div>
+
+      <div className="flex items-center gap-3 rounded-full border border-felt-800 bg-felt-900 px-5 py-2.5">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-gold/60 text-base font-bold text-gold">
-          {count}
+          100
         </div>
         <div className="text-left text-xs text-mist-500">{t("hero.drawsAnalyzed")}</div>
-      </motion.div>
+      </div>
     </div>
   );
 }
