@@ -5,6 +5,7 @@ import { Lang } from "@/lib/i18n";
 import { LanguageProvider } from "./LanguageProvider";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BackgroundBalls from "./BackgroundBalls";
 
 /**
  * Wraps a page's content with the language context and shared chrome
@@ -16,6 +17,7 @@ import Footer from "./Footer";
 export default function PageShell({ lang, children }: { lang: Lang; children: ReactNode }) {
   return (
     <LanguageProvider lang={lang}>
+      <BackgroundBalls />
       <Navbar />
       <main>{children}</main>
       <Footer />
