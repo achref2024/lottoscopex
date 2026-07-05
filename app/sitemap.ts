@@ -23,5 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...homePages, ...lotteryPages];
+  const legalPages: MetadataRoute.Sitemap = ["/about", "/privacy", "/terms", "/contact"].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  }));
+
+  return [...homePages, ...lotteryPages, ...legalPages];
 }

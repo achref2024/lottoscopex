@@ -152,6 +152,10 @@ export interface Dictionary {
   footer: {
     disclaimer: string;
     copyright: string; // "© {year} LottoScopeX. Play responsibly."
+    about: string;
+    privacy: string;
+    terms: string;
+    contact: string;
   };
   lotteries: Record<
     string,
@@ -303,6 +307,10 @@ const en: Dictionary = {
     disclaimer:
       "LottoScopeX is an analytics tool for exploring historical lottery data. It does not predict future results — lottery draws are random.",
     copyright: "© {year} LottoScopeX. Play responsibly.",
+    about: "About",
+    privacy: "Privacy Policy",
+    terms: "Terms of Use",
+    contact: "Contact",
   },
   lotteries: {
     euromillions: { country: "Pan-European", tagline: "Europe's biggest jackpot lottery" },
@@ -464,6 +472,10 @@ const fr: Dictionary = {
     disclaimer:
       "LottoScopeX est un outil d'analyse pour explorer l'historique des tirages de loterie. Il ne prédit pas les résultats futurs — les tirages de loterie sont aléatoires.",
     copyright: "© {year} LottoScopeX. Jouez de manière responsable.",
+    about: "À propos",
+    privacy: "Politique de confidentialité",
+    terms: "Conditions d'utilisation",
+    contact: "Contact",
   },
   lotteries: {
     euromillions: { country: "Paneuropéen", tagline: "La plus grande loterie à jackpot d'Europe" },
@@ -625,6 +637,10 @@ const de: Dictionary = {
     disclaimer:
       "LottoScopeX ist ein Analysetool zur Erkundung historischer Lotteriedaten. Es sagt keine zukünftigen Ergebnisse voraus — Lotterieziehungen sind zufällig.",
     copyright: "© {year} LottoScopeX. Bitte verantwortungsvoll spielen.",
+    about: "Über uns",
+    privacy: "Datenschutzerklärung",
+    terms: "Nutzungsbedingungen",
+    contact: "Kontakt",
   },
   lotteries: {
     euromillions: { country: "Paneuropäisch", tagline: "Europas größte Jackpot-Lotterie" },
