@@ -3,7 +3,24 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLang } from "./LanguageProvider";
-import { LANGUAGES, localePath, stripLocalePrefix } from "@/lib/i18n";
+import { LANGUAGES, localePath, stripLocalePrefix, Lang } from "@/lib/i18n";
+
+const EN_ONLY_EXACT = new Set(["/about", "/privacy", "/terms", "/contact"]);
+const RESULTS_PAGE = /^\/lottery\/([a-z0-9-]+)\/results\/\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * Some pages (legal pages, per-draw results pages) only exist in English.
+ * Switching locale from one of these has to land somewhere real instead of
+ * a 404 — the lottery hub page for results pages, the homepage for legal
+ * pages — while pages that do have FR/DE versions switch normally.
+ */
+function targetPath(basePath: string, targetLang: Lang): string {
+  if (targetLang === "en") return basePath;
+  const resultsMatch = basePath.match(RESULTS_PAGE);
+  if (resultsMatch) return `/lottery/${resultsMatch[1]}`;
+  if (EN_ONLY_EXACT.has(basePath)) return "/";
+  return basePath;
+}
 
 export default function LanguageSwitcher() {
   const { lang } = useLang();
@@ -15,7 +32,7 @@ export default function LanguageSwitcher() {
       {LANGUAGES.map((l) => (
         <Link
           key={l.code}
-          href={localePath(l.code, basePath)}
+          href={localePath(l.code, targetPath(basePath, l.code))}
           aria-label={l.label}
           aria-current={lang === l.code ? "true" : undefined}
           className={
