@@ -8,7 +8,7 @@ import { getLottery } from "@/lib/lotteries";
 
 const HOT_COLOR = "#D4AF37"; // gold — matches the Hot & Cold tab's hot icon
 const COLD_COLOR = "#A8E0C4"; // mist green — matches the Hot & Cold tab's cold icon
-const CONTAINER_HEIGHT = 110; // px
+const CONTAINER_HEIGHT = 200; // px
 
 interface Bar {
   number: number;
@@ -31,7 +31,7 @@ function useHotColdBars() {
 
     const toBar = (f: (typeof sorted)[number]): Bar => ({
       number: f.number,
-      heightPx: Math.round(14 + (f.percent / max) * (CONTAINER_HEIGHT - 14)),
+      heightPx: Math.round(24 + (f.percent / max) * (CONTAINER_HEIGHT - 24)),
     });
 
     return { hot: hotEntries.map(toBar), cold: coldEntries.map(toBar) };
@@ -41,16 +41,16 @@ function useHotColdBars() {
 function BarRow({ bars, color }: { bars: Bar[]; color: string }) {
   return (
     <div
-      className="flex flex-wrap items-end justify-center gap-2 sm:gap-2.5"
+      className="flex flex-wrap items-end justify-center gap-3 sm:gap-4"
       style={{ minHeight: CONTAINER_HEIGHT }}
     >
       {bars.map((bar) => (
-        <div key={bar.number} className="flex flex-col items-center gap-1.5">
+        <div key={bar.number} className="flex flex-col items-center gap-2">
           <div
-            className="w-3.5 rounded-t-md sm:w-4"
-            style={{ height: bar.heightPx, background: color }}
+            className="w-6 rounded-t-lg sm:w-8"
+            style={{ height: bar.heightPx, background: color, boxShadow: `0 4px 14px -4px ${color}99` }}
           />
-          <span className="text-[10px] font-medium text-mist-600">{bar.number}</span>
+          <span className="text-sm font-bold text-white sm:text-base">{bar.number}</span>
         </div>
       ))}
     </div>
@@ -68,16 +68,22 @@ export default function HeroBallsAnimation() {
   const { hot, cold } = useHotColdBars();
 
   return (
-    <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-8 sm:mt-14">
+    <div className="mx-auto mt-12 flex max-w-3xl flex-col items-center gap-12 sm:mt-16">
       <div className="w-full">
-        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-wide text-mist-600">
+        <p
+          className="mb-5 text-center text-lg font-bold uppercase tracking-wide sm:text-xl"
+          style={{ color: HOT_COLOR }}
+        >
           {t("hotCold.hotTitle")}
         </p>
         <BarRow bars={hot} color={HOT_COLOR} />
       </div>
 
       <div className="w-full">
-        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-wide text-mist-600">
+        <p
+          className="mb-5 text-center text-lg font-bold uppercase tracking-wide sm:text-xl"
+          style={{ color: COLD_COLOR }}
+        >
           {t("hotCold.coldTitle")}
         </p>
         <BarRow bars={cold} color={COLD_COLOR} />
