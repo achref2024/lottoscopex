@@ -36,7 +36,7 @@ export default function LotteryCard({ config, latest, index }: LotteryCardProps)
             <span aria-hidden="true">{flagEmoji(config.flag)}</span>
             {info?.country ?? config.country}
           </span>
-          <h3 className="mt-3 text-2xl font-bold" style={{ color: config.accent }}>
+          <h3 className="mt-3 font-fun text-2xl font-bold tracking-wide" style={{ color: config.accent }}>
             {config.name}
           </h3>
           <p className="mt-1 text-sm text-mist-500">{info?.tagline ?? config.tagline}</p>
@@ -58,7 +58,16 @@ export default function LotteryCard({ config, latest, index }: LotteryCardProps)
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-3 gap-3 border-t border-felt-800 pt-4">
+        <div className="mt-6 rounded-xl border border-gold/30 bg-gold/10 px-4 py-3 text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-gold-light">
+            {t("card.typicalJackpot")}
+          </p>
+          <p className="mt-0.5 text-3xl font-extrabold tracking-tight text-gold">
+            {formatMoney(config.nextJackpot, config.currency)}
+          </p>
+        </div>
+
+        <div className="mt-4 grid grid-cols-2 gap-3 border-t border-felt-800 pt-4">
           <div>
             <p className="text-[11px] font-medium uppercase tracking-wide text-mist-500">
               {t("card.lastDraw")}
@@ -70,14 +79,6 @@ export default function LotteryCard({ config, latest, index }: LotteryCardProps)
               {t("card.nextDraw")}
             </p>
             <p className="text-sm font-semibold text-white">{formatDate(nextDraw, locale)}</p>
-          </div>
-          <div>
-            <p className="text-[11px] font-medium uppercase tracking-wide text-mist-500">
-              {t("card.typicalJackpot")}
-            </p>
-            <p className="text-sm font-semibold text-gold">
-              {formatMoney(config.nextJackpot, config.currency)}
-            </p>
           </div>
         </div>
         <div className="mt-4 flex justify-end">

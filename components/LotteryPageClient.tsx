@@ -98,21 +98,23 @@ export default function LotteryPageClient({
             <h2 className="mb-4 font-display text-lg font-bold text-white">
               {t("glance.heading")}
             </h2>
+
+            <div className="mb-5 rounded-xl border border-gold/30 bg-gold/10 px-4 py-3 text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-gold-light">
+                {t("glance.typicalJackpot")}
+              </p>
+              <p className="mt-0.5 text-4xl font-extrabold tracking-tight text-gold">
+                {formatMoney(config.nextJackpot, config.currency)}
+              </p>
+              <p className="mt-1 text-[11px] font-normal text-mist-500">
+                {t("glance.jackpotAsOf", { date: formatDate(NEXT_JACKPOT_AS_OF, locale) })}
+              </p>
+            </div>
+
             <dl className="space-y-4 text-sm">
               <div className="flex justify-between border-b border-felt-800 pb-3">
                 <dt className="text-mist-500">{t("glance.nextDraw")}</dt>
                 <dd className="font-semibold text-gold">{formatDate(nextDraw, locale)}</dd>
-              </div>
-              <div className="flex justify-between border-b border-felt-800 pb-3">
-                <dt className="text-mist-500">
-                  {t("glance.typicalJackpot")}
-                  <span className="block text-[11px] font-normal normal-case text-mist-500">
-                    {t("glance.jackpotAsOf", { date: formatDate(NEXT_JACKPOT_AS_OF, locale) })}
-                  </span>
-                </dt>
-                <dd className="font-semibold text-gold">
-                  {formatMoney(config.nextJackpot, config.currency)}
-                </dd>
               </div>
               <div className="flex justify-between border-b border-felt-800 pb-3">
                 <dt className="text-mist-500">{t("glance.numbersDrawn")}</dt>
@@ -223,7 +225,7 @@ export default function LotteryPageClient({
               {info?.country ?? config.country}
             </p>
             <h1
-              className="font-display text-3xl font-bold sm:text-4xl"
+              className="font-fun text-3xl font-bold tracking-wide sm:text-4xl"
               style={{ color: config.accent }}
             >
               {config.name}

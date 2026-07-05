@@ -56,6 +56,7 @@ const config: Config = {
           "Arial",
           "sans-serif",
         ],
+        fun: ["Fredoka", "ui-rounded", "-apple-system", "sans-serif"],
       },
       boxShadow: {
         soft: "0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.35)",
