@@ -60,6 +60,9 @@ export default function CompareView({ trends }: { trends: TrendEntry[] }) {
   return (
     <div>
       <h2 className="sr-only">{t("tabs.compare")}</h2>
+      <div className="mb-6 rounded-2xl border border-felt-800 bg-felt-900/60 p-6">
+        <p className="text-sm leading-relaxed text-mist-400">{t("compare.intro")}</p>
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <TrendList title={t("compare.heatingUp")} description={description} entries={risers} />
         <TrendList title={t("compare.coolingDown")} description={description} entries={fallers} />

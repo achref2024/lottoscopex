@@ -132,6 +132,7 @@ export interface Dictionary {
     headlineComeback: string;
   };
   compare: {
+    intro: string;
     heatingUp: string;
     coolingDown: string;
     description: string;
@@ -279,6 +280,8 @@ const en: Dictionary = {
       "When {label} is missing from a draw, it usually bounces back — it reappeared in the very next draw {pct}% of the time.",
   },
   compare: {
+    intro:
+      "We compare how often each number showed up in the last 20 draws against its long-term average across the last 100 draws. Numbers appearing noticeably more often lately show up on the left as \"heating up\"; numbers appearing noticeably less often show up on the right as \"cooling down\". This is a snapshot of recent activity, not a forecast — each draw is independent and random.",
     heatingUp: "Heating up recently",
     coolingDown: "Cooling down recently",
     description: "Compared to our recorded draws, based on the most recent 20.",
@@ -437,6 +440,8 @@ const fr: Dictionary = {
       "Quand la plage {label} est absente d'un tirage, elle fait généralement son retour — elle est réapparue dès le tirage suivant {pct}% du temps.",
   },
   compare: {
+    intro:
+      "Nous comparons la fréquence d'apparition de chaque numéro sur les 20 derniers tirages à sa moyenne de long terme calculée sur les 100 derniers tirages. Les numéros apparaissant nettement plus souvent récemment s'affichent à gauche, « en hausse » ; ceux apparaissant nettement moins souvent s'affichent à droite, « en baisse ». Il s'agit d'un instantané de l'activité récente, pas d'une prévision — chaque tirage est indépendant et aléatoire.",
     heatingUp: "En hausse récemment",
     coolingDown: "En baisse récemment",
     description: "Comparé à nos tirages enregistrés, basé sur les 20 plus récents.",
@@ -595,6 +600,8 @@ const de: Dictionary = {
       "Fehlt der Bereich {label} bei einer Ziehung, kommt er meist zurück — er erschien in {pct}% der Fälle direkt bei der nächsten Ziehung wieder.",
   },
   compare: {
+    intro:
+      "Wir vergleichen, wie oft jede Zahl in den letzten 20 Ziehungen aufgetaucht ist, mit ihrem langfristigen Durchschnitt über die letzten 100 Ziehungen. Zahlen, die zuletzt deutlich häufiger vorkamen, erscheinen links als „im Aufwind\"; Zahlen, die deutlich seltener vorkamen, erscheinen rechts als „abgekühlt\". Das ist eine Momentaufnahme der jüngsten Aktivität, keine Vorhersage — jede Ziehung ist unabhängig und zufällig.",
     heatingUp: "Zuletzt im Aufwind",
     coolingDown: "Zuletzt abgekühlt",
     description: "Verglichen mit unseren erfassten Ziehungen, basierend auf den letzten 20.",
