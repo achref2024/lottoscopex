@@ -1,27 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "./LanguageProvider";
+import { getDraws } from "@/lib/data";
+import { computeFrequency } from "@/lib/analytics";
+import { getLottery } from "@/lib/lotteries";
 
-type HeroItem =
-  | { kind: "number"; value: number; from: string; to: string }
-  | { kind: "currency"; symbol: string; from: string; to: string };
-
-// A colorful mix just for this decorative hero row — the rest of the site
-// intentionally keeps lottery balls a uniform white (see lib/colors.ts) so
-// real draw data stays easy to scan. This is the one deliberate exception,
-// purely for visual flair, plus a couple of currency symbols nodding to the
-// real jackpots shown throughout the site.
-const HERO_ITEMS: HeroItem[] = [
-  { kind: "number", value: 7, from: "#7DA8FF", to: "#3460F2" }, // blue
-  { kind: "currency", symbol: "€", from: "#FDE68A", to: "#D4AF37" }, // gold
-  { kind: "number", value: 23, from: "#FF9ED2", to: "#D6488F" }, // pink
-  { kind: "number", value: 41, from: "#FFC168", to: "#F2811D" }, // orange
-  { kind: "currency", symbol: "$", from: "#7CF0B2", to: "#2FBF6E" }, // green
-  { kind: "number", value: 16, from: "#C9A0FF", to: "#8B5CF6" }, // purple
-  { kind: "number", value: 34, from: "#7FE7F2", to: "#0EA5E9" }, // cyan
+const BAR_COLORS = [
+  "#3460F2", // blue
+  "#D6488F", // pink
+  "#F2811D", // orange
+  "#2FBF6E", // green
+  "#8B5CF6", // purple
+  "#0EA5E9", // cyan
+  "#D4AF37", // gold
+  "#E2001A", // red
 ];
+
+const CONTAINER_HEIGHT = 128; // px
 
 /** Counts up from 0 to `target` once, starting after `startDelayMs`. */
 function useCountUp(target: number, durationMs = 1200, startDelayMs = 500) {
@@ -50,58 +47,70 @@ function useCountUp(target: number, durationMs = 1200, startDelayMs = 500) {
   return value;
 }
 
-function HeroBall({ item, large }: { item: HeroItem; large?: boolean }) {
-  const size = large
-    ? "h-16 w-16 text-xl sm:h-20 sm:w-20 sm:text-2xl"
-    : "h-12 w-12 text-base sm:h-14 sm:w-14 sm:text-lg";
-  const label = item.kind === "number" ? item.value : item.symbol;
+/** Samples real EuroMillions frequency data (last 100 draws) into ~12 evenly spaced bars. */
+function useFrequencyBars() {
+  return useMemo(() => {
+    const config = getLottery("euromillions");
+    if (!config) return [];
+    const draws = getDraws(config.id).slice(0, 100);
+    const freq = computeFrequency(draws, config.main.min, config.main.max);
 
-  return (
-    <div
-      className={`flex items-center justify-center rounded-full font-display font-bold shadow-soft ring-2 ring-inset ring-black/10 ${size}`}
-      style={{
-        background: `linear-gradient(145deg, ${item.from}, ${item.to})`,
-        boxShadow: `0 4px 12px -3px ${item.to}88`,
-        color: "#0B2A1D",
-      }}
-    >
-      {label}
-    </div>
-  );
+    const sampleCount = 12;
+    const step = Math.max(1, Math.floor(freq.length / sampleCount));
+    const sample = Array.from({ length: sampleCount }, (_, i) => freq[i * step] ?? freq[freq.length - 1]);
+    const max = Math.max(...sample.map((f) => f.percent), 1);
+
+    return sample.map((f, i) => ({
+      number: f.number,
+      heightPx: Math.round(18 + (f.percent / max) * (CONTAINER_HEIGHT - 18)),
+      color: BAR_COLORS[i % BAR_COLORS.length],
+    }));
+  }, []);
 }
 
 /**
- * A small animated hero visual: a colorful row of lottery balls (plus a
- * couple of currency symbols for the real-jackpot angle) gently floating,
- * with a counter beneath ticking up to 100 — the real number of recent
- * draws the Probability Patterns feature analyzes for every lottery. No
- * fabricated stats, just a visual nod to the platform's actual methodology.
+ * A small animated hero visual: real EuroMillions number-frequency data
+ * (last 100 draws) rendered as a row of gently pulsing bars, plus a counter
+ * beneath ticking up to 100 — the real number of recent draws the
+ * Probability Patterns feature analyzes for every lottery. No fabricated
+ * stats — bar heights come straight from computeFrequency().
  */
 export default function HeroBallsAnimation() {
   const { t } = useLang();
   const count = useCountUp(100);
+  const bars = useFrequencyBars();
 
   return (
     <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-6 sm:mt-14">
-      <div className="flex flex-wrap items-end justify-center gap-3 sm:gap-4">
-        {HERO_ITEMS.map((item, i) => (
+      <div
+        className="flex w-full items-end justify-center gap-2 sm:gap-3"
+        style={{ height: CONTAINER_HEIGHT }}
+      >
+        {bars.map((bar, i) => (
           <motion.div
-            key={i}
-            initial={{ scale: 0.4, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: i * 0.08, type: "spring", stiffness: 260, damping: 16 }}
+            key={bar.number}
+            className="flex flex-col items-center gap-1.5"
+            initial={{ scaleY: 0, opacity: 0 }}
+            animate={{ scaleY: 1, opacity: 1 }}
+            transition={{ delay: i * 0.05, type: "spring", stiffness: 200, damping: 18 }}
+            style={{ transformOrigin: "bottom" }}
           >
             <motion.div
-              animate={{ y: [0, -14, 0] }}
+              className="w-4 rounded-t-md sm:w-5"
+              style={{
+                height: bar.heightPx,
+                background: `linear-gradient(180deg, ${bar.color}, ${bar.color}CC)`,
+                transformOrigin: "bottom",
+              }}
+              animate={{ scaleY: [0.88, 1.05, 0.88] }}
               transition={{
-                duration: 2.4,
+                duration: 2.6,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: i * 0.22,
+                delay: 0.6 + i * 0.12,
               }}
-            >
-              <HeroBall item={item} large={i === 3} />
-            </motion.div>
+            />
+            <span className="text-[10px] font-medium text-mist-600">{bar.number}</span>
           </motion.div>
         ))}
       </div>
