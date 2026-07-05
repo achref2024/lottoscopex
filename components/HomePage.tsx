@@ -4,6 +4,7 @@ import { LOTTERIES } from "@/lib/lotteries";
 import { getDraws } from "@/lib/data";
 import LotteryCard from "@/components/LotteryCard";
 import AdSlot from "@/components/AdSlot";
+import HeroBallsAnimation from "@/components/HeroBallsAnimation";
 import { useLang } from "@/components/LanguageProvider";
 
 const ICON = {
@@ -77,6 +78,7 @@ export default function HomePage() {
               </span>
             ))}
           </div>
+          <HeroBallsAnimation />
         </div>
       </section>
 

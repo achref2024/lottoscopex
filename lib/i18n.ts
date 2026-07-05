@@ -46,6 +46,7 @@ export interface Dictionary {
     tagHotCold: string;
     tagRanges: string;
     tagProbability: string;
+    drawsAnalyzed: string;
   };
   features: {
     heading: string;
@@ -180,14 +181,15 @@ const en: Dictionary = {
   },
   hero: {
     badge: "Statistics & patterns · 7 lotteries across Europe & the US",
-    titleLine1: "The house always tracks the numbers.",
-    titleLine2: "Now you can too.",
+    titleLine1: "Lottery statistics,",
+    titleLine2: "made visual.",
     subtitle:
       "LottoScopeX turns real draw history into bold, visual statistics — frequencies, hot & cold numbers, ranges, and simple probability patterns. No predictions, no guesswork. Just the numbers.",
     tagFrequency: "Frequency stats",
     tagHotCold: "Hot & cold numbers",
     tagRanges: "Range analysis",
     tagProbability: "Probability patterns",
+    drawsAnalyzed: "Recent draws analyzed, per lottery",
   },
   features: {
     heading: "What you can do with LottoScopeX",
@@ -340,14 +342,15 @@ const fr: Dictionary = {
   },
   hero: {
     badge: "Statistiques & tendances · 7 loteries en Europe et aux États-Unis",
-    titleLine1: "La maison suit toujours les numéros.",
-    titleLine2: "Maintenant, vous aussi.",
+    titleLine1: "Statistiques de loterie,",
+    titleLine2: "rendues visuelles.",
     subtitle:
       "LottoScopeX transforme l'historique réel des tirages en statistiques visuelles claires — fréquences, numéros chauds et froids, répartition par plage, et tendances de probabilité simples. Aucune prédiction, aucune conjecture. Juste les chiffres.",
     tagFrequency: "Statistiques de fréquence",
     tagHotCold: "Numéros chauds et froids",
     tagRanges: "Analyse par plage",
     tagProbability: "Tendances de probabilité",
+    drawsAnalyzed: "Tirages récents analysés, par loterie",
   },
   features: {
     heading: "Ce que vous pouvez faire avec LottoScopeX",
@@ -500,14 +503,15 @@ const de: Dictionary = {
   },
   hero: {
     badge: "Statistiken & Muster · 7 Lotterien in Europa und den USA",
-    titleLine1: "Das Haus verfolgt immer die Zahlen.",
-    titleLine2: "Jetzt können Sie das auch.",
+    titleLine1: "Lotteriestatistiken,",
+    titleLine2: "sichtbar gemacht.",
     subtitle:
       "LottoScopeX verwandelt echte Ziehungshistorien in klare, visuelle Statistiken — Häufigkeiten, heiße und kalte Zahlen, Zahlenbereiche und einfache Wahrscheinlichkeitsmuster. Keine Vorhersagen, kein Raten. Nur die Zahlen.",
     tagFrequency: "Häufigkeitsstatistik",
     tagHotCold: "Heiße & kalte Zahlen",
     tagRanges: "Bereichsanalyse",
     tagProbability: "Wahrscheinlichkeitsmuster",
+    drawsAnalyzed: "Aktuelle Ziehungen analysiert, pro Lotterie",
   },
   features: {
     heading: "Das kannst du mit LottoScopeX tun",
