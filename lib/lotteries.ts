@@ -15,7 +15,7 @@ export const LOTTERIES: LotteryConfig[] = [
     flag: "EU",
     tagline: "Europe's biggest jackpot lottery",
     gradient: ["#6366F1", "#EC4899"],
-    accent: "#3460F2", // EuroMillions' own royal blue
+    accent: "#2A4DC2", // EuroMillions' royal blue, darkened slightly for comfort
     main: { count: 5, min: 1, max: 50 },
     bonus: { label: "Lucky Stars", count: 2, min: 1, max: 12, shape: "star" },
     drawDays: [2, 5], // Tuesday, Friday
