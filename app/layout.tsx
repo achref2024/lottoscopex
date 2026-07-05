@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "LottoScopeX" }],
   robots: { index: true, follow: true },
+  verification: { google: "DViXNoXG7Peuz631GttDoRSus9W83UEkia4z2SH9qqw" },
   openGraph: {
     type: "website",
     url: SITE_URL,
