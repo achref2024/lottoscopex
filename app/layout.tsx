@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ADSENSE_CLIENT_ID } from "@/lib/ads";
 
 const SITE_URL = "https://lottoscopex.com";
 const SITE_TITLE = "LottoScopeX — Lottery Analytics";
@@ -76,6 +77,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        {ADSENSE_CLIENT_ID && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body className="font-body text-ink">{children}</body>
     </html>

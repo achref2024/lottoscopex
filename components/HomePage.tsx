@@ -3,6 +3,7 @@
 import { LOTTERIES } from "@/lib/lotteries";
 import { getDraws } from "@/lib/data";
 import LotteryCard from "@/components/LotteryCard";
+import AdSlot from "@/components/AdSlot";
 import { useLang } from "@/components/LanguageProvider";
 
 const ICON = {
@@ -106,21 +107,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">
-        <div className="mb-8 flex items-end justify-between">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <AdSlot slot="0000000000" label="Advertisement" minHeight={100} />
+      </div>
+
+      <section className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8">
+        <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
           <div>
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">
-              {t("chooseLottery.heading")}
-            </h2>
-            <p className="mt-1 text-mist-500">
-              {t("chooseLottery.subheading")}
-            </p>
+            <div className="mb-8 flex items-end justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                  {t("chooseLottery.heading")}
+                </h2>
+                <p className="mt-1 text-mist-500">
+                  {t("chooseLottery.subheading")}
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {cards.map(({ config, latest }, i) => (
+                <LotteryCard key={config.id} config={config} latest={latest} index={i} />
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ config, latest }, i) => (
-            <LotteryCard key={config.id} config={config} latest={latest} index={i} />
-          ))}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24">
+              <AdSlot slot="0000000001" label="Advertisement" minHeight={600} />
+            </div>
+          </aside>
         </div>
       </section>
     </div>
