@@ -33,9 +33,9 @@ export default function BackgroundBalls() {
             left: ball.left,
             width: ball.size,
             height: ball.size,
-            opacity: 0.24,
-            background: `radial-gradient(circle at 32% 28%, ${ball.from} 0%, ${ball.to} 65%)`,
-            boxShadow: `inset -12px -12px 40px rgba(0,0,0,0.35), inset 10px 10px 24px rgba(255,255,255,0.25)`,
+            opacity: 0.38,
+            background: `radial-gradient(circle at 30% 24%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 28%), radial-gradient(circle at 35% 30%, ${ball.from} 0%, ${ball.to} 72%)`,
+            boxShadow: `0 18px 36px -12px rgba(0,0,0,0.5), inset -16px -16px 32px rgba(0,0,0,0.4), inset 6px 6px 14px rgba(255,255,255,0.15)`,
           }}
         >
           {ball.number !== undefined && (
