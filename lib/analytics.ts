@@ -1,0 +1,210 @@
+import { Draw, LotteryConfig, RangeBucket } from "./types";
+
+/** Always returns exactly 5 buckets: 1-9, 10-19, 20-29, 30-39, 40-max */
+export function getRangeBuckets(config: LotteryConfig): RangeBucket[] {
+  const bucketCount = 5;
+  const buckets: RangeBucket[] = [];
+  for (let i = 0; i < bucketCount; i++) {
+    const lo = i === 0 ? 1 : i * 10;
+    const hi = i === bucketCount - 1 ? config.main.max : i * 10 + 9;
+    buckets.push({ key: `${lo}-${hi}`, label: `${lo}–${hi}`, min: lo, max: hi });
+  }
+  return buckets;
+}
+
+export interface FrequencyEntry {
+  number: number;
+  count: number;
+  percent: number;
+}
+
+export function computeFrequency(
+  draws: Draw[],
+  min: number,
+  max: number,
+  field: "main" | "bonus" = "main"
+): FrequencyEntry[] {
+  const counts = new Map<number, number>();
+  for (let n = min; n <= max; n++) counts.set(n, 0);
+  for (const draw of draws) {
+    for (const n of draw[field]) {
+      counts.set(n, (counts.get(n) ?? 0) + 1);
+    }
+  }
+  const total = draws.length || 1;
+  return Array.from(counts.entries())
+    .map(([number, count]) => ({ number, count, percent: (count / total) * 100 }))
+    .sort((a, b) => a.number - b.number);
+}
+
+export interface HotCold {
+  hot: FrequencyEntry[];
+  cold: FrequencyEntry[];
+}
+
+export function getHotCold(freq: FrequencyEntry[], take = 6): HotCold {
+  const sorted = [...freq].sort((a, b) => b.count - a.count);
+  return {
+    hot: sorted.slice(0, take),
+    cold: [...sorted].reverse().slice(0, take),
+  };
+}
+
+export interface RangeStat {
+  bucket: RangeBucket;
+  totalHits: number;
+  avgPerDraw: number;
+  shareOfNumbers: number; // % of all drawn numbers that fall in this range
+}
+
+export function rangeDistribution(draws: Draw[], config: LotteryConfig): RangeStat[] {
+  const buckets = getRangeBuckets(config);
+  const totalNumbers = draws.length * config.main.count || 1;
+  return buckets.map((bucket) => {
+    let hits = 0;
+    for (const draw of draws) {
+      for (const n of draw.main) {
+        if (n >= bucket.min && n <= bucket.max) hits++;
+      }
+    }
+    return {
+      bucket,
+      totalHits: hits,
+      avgPerDraw: draws.length ? hits / draws.length : 0,
+      shareOfNumbers: (hits / totalNumbers) * 100,
+    };
+  });
+}
+
+function countInBucket(draw: Draw, bucket: RangeBucket): number {
+  return draw.main.filter((n) => n >= bucket.min && n <= bucket.max).length;
+}
+
+export type Tendency = "increase" | "decrease" | "stable" | "comeback";
+
+export interface RangeProbability {
+  bucket: RangeBucket;
+  sampleSize: number;
+  pctMore: number; // next draw had MORE numbers from this range
+  pctSame: number; // same amount
+  pctFewer: number; // fewer
+  comebackRate: number; // when a draw had ZERO from this range, % chance next draw had at least 1
+  dominant: Tendency;
+}
+
+/**
+ * Signature "Probability Patterns" engine.
+ * For each range, looks at consecutive draw pairs within the last 100 draws
+ * and summarizes what typically happens next, in plain language.
+ */
+export function computeRangeProbabilities(
+  allDraws: Draw[],
+  config: LotteryConfig
+): RangeProbability[] {
+  // allDraws is newest-first; take last 100 and put in chronological order
+  const window = allDraws.slice(0, 100);
+  const chronological = [...window].reverse(); // oldest -> newest
+  const buckets = getRangeBuckets(config);
+
+  return buckets.map((bucket) => {
+    let more = 0;
+    let same = 0;
+    let fewer = 0;
+    let zeroCases = 0;
+    let zeroThenAppeared = 0;
+    const pairs = Math.max(chronological.length - 1, 0);
+
+    for (let i = 0; i < chronological.length - 1; i++) {
+      const prevCount = countInBucket(chronological[i], bucket);
+      const nextCount = countInBucket(chronological[i + 1], bucket);
+      if (nextCount > prevCount) more++;
+      else if (nextCount < prevCount) fewer++;
+      else same++;
+
+      if (prevCount === 0) {
+        zeroCases++;
+        if (nextCount > 0) zeroThenAppeared++;
+      }
+    }
+
+    const pctMore = pairs ? (more / pairs) * 100 : 0;
+    const pctSame = pairs ? (same / pairs) * 100 : 0;
+    const pctFewer = pairs ? (fewer / pairs) * 100 : 0;
+    const comebackRate = zeroCases ? (zeroThenAppeared / zeroCases) * 100 : 0;
+
+    let dominant: Tendency = "stable";
+
+    const top = Math.max(pctMore, pctSame, pctFewer);
+    if (top === pctMore && pctMore > pctSame && pctMore > pctFewer) {
+      dominant = "increase";
+    } else if (top === pctFewer && pctFewer > pctSame) {
+      dominant = "decrease";
+    } else {
+      dominant = "stable";
+    }
+
+    if (comebackRate >= 65) {
+      dominant = "comeback";
+    }
+
+    return {
+      bucket,
+      sampleSize: pairs,
+      pctMore,
+      pctSame,
+      pctFewer,
+      comebackRate,
+      dominant,
+    };
+  });
+}
+
+export interface TrendEntry extends FrequencyEntry {
+  delta: number; // percentage point change vs historical baseline
+  direction: "up" | "down" | "flat";
+}
+
+export function compareRecentVsHistorical(
+  allDraws: Draw[],
+  config: LotteryConfig,
+  recentCount = 20,
+  historicalCount = 100
+): TrendEntry[] {
+  const recent = allDraws.slice(0, recentCount);
+  const historical = allDraws.slice(0, historicalCount);
+  const recentFreq = computeFrequency(recent, config.main.min, config.main.max);
+  const historicalFreq = computeFrequency(historical, config.main.min, config.main.max);
+  const historicalMap = new Map(historicalFreq.map((f) => [f.number, f.percent]));
+
+  return recentFreq
+    .map((entry) => {
+      const baseline = historicalMap.get(entry.number) ?? 0;
+      const delta = entry.percent - baseline;
+      return {
+        ...entry,
+        delta,
+        direction: (delta > 3 ? "up" : delta < -3 ? "down" : "flat") as
+          | "up"
+          | "down"
+          | "flat",
+      };
+    })
+    .sort((a, b) => b.delta - a.delta);
+}
+
+export function filterDrawsByDateRange(
+  draws: Draw[],
+  from?: string,
+  to?: string
+): Draw[] {
+  return draws.filter((d) => {
+    if (from && d.date < from) return false;
+    if (to && d.date > to) return false;
+    return true;
+  });
+}
+
+export function filterDrawsByNumber(draws: Draw[], number?: number): Draw[] {
+  if (number == null) return draws;
+  return draws.filter((d) => d.main.includes(number) || d.bonus.includes(number));
+}
