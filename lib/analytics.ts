@@ -192,6 +192,53 @@ export function compareRecentVsHistorical(
     .sort((a, b) => b.delta - a.delta);
 }
 
+export interface DrawInsights {
+  oddCount: number;
+  evenCount: number;
+  sum: number;
+  lowest: number;
+  highest: number;
+  rangeCounts: { bucket: RangeBucket; count: number }[];
+  consecutivePairs: [number, number][];
+  repeatedFromPrevious: number[];
+}
+
+/**
+ * Real, purely computed facts about a single draw — no fabricated or
+ * predictive content, just arithmetic on the numbers that were actually
+ * drawn. Used on each draw's dedicated results page.
+ */
+export function getDrawInsights(draw: Draw, prevDraw: Draw | null, config: LotteryConfig): DrawInsights {
+  const sorted = [...draw.main].sort((a, b) => a - b);
+  const oddCount = draw.main.filter((n) => n % 2 !== 0).length;
+  const evenCount = draw.main.length - oddCount;
+  const sum = draw.main.reduce((a, b) => a + b, 0);
+
+  const buckets = getRangeBuckets(config);
+  const rangeCounts = buckets.map((bucket) => ({
+    bucket,
+    count: draw.main.filter((n) => n >= bucket.min && n <= bucket.max).length,
+  }));
+
+  const consecutivePairs: [number, number][] = [];
+  for (let i = 0; i < sorted.length - 1; i++) {
+    if (sorted[i + 1] - sorted[i] === 1) consecutivePairs.push([sorted[i], sorted[i + 1]]);
+  }
+
+  const repeatedFromPrevious = prevDraw ? draw.main.filter((n) => prevDraw.main.includes(n)) : [];
+
+  return {
+    oddCount,
+    evenCount,
+    sum,
+    lowest: sorted[0],
+    highest: sorted[sorted.length - 1],
+    rangeCounts,
+    consecutivePairs,
+    repeatedFromPrevious,
+  };
+}
+
 export function filterDrawsByDateRange(
   draws: Draw[],
   from?: string,

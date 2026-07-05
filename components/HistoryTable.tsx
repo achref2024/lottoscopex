@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Draw, LotteryConfig } from "@/lib/types";
 import { filterDrawsByDateRange, filterDrawsByNumber } from "@/lib/analytics";
 import DrawCard from "./DrawCard";
@@ -15,7 +16,7 @@ export default function HistoryTable({
   draws: Draw[];
   config: LotteryConfig;
 }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [number, setNumber] = useState<string>("");
@@ -99,9 +100,19 @@ export default function HistoryTable({
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
-          {filtered.slice(0, visible).map((draw) => (
-            <DrawCard key={draw.id} draw={draw} config={config} size="sm" animate={false} />
-          ))}
+          {filtered.slice(0, visible).map((draw) =>
+            lang === "en" ? (
+              <Link
+                key={draw.id}
+                href={`/lottery/${config.id}/results/${draw.date}`}
+                className="block rounded-2xl transition-transform hover:scale-[1.02]"
+              >
+                <DrawCard draw={draw} config={config} size="sm" animate={false} />
+              </Link>
+            ) : (
+              <DrawCard key={draw.id} draw={draw} config={config} size="sm" animate={false} />
+            )
+          )}
         </div>
       )}
 

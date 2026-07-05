@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { LOTTERIES } from "@/lib/lotteries";
+import { getDraws } from "@/lib/data";
 import { LANGUAGES, localePath } from "@/lib/i18n";
 
 const SITE_URL = "https://lottoscopex.com";
@@ -30,5 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
-  return [...homePages, ...lotteryPages, ...legalPages];
+  const drawResultPages: MetadataRoute.Sitemap = LOTTERIES.flatMap((lottery) =>
+    getDraws(lottery.id).map((draw) => ({
+      url: `${SITE_URL}/lottery/${lottery.id}/results/${draw.date}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    }))
+  );
+
+  return [...homePages, ...lotteryPages, ...legalPages, ...drawResultPages];
 }

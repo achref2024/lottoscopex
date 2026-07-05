@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { LotteryConfig, Draw } from "@/lib/types";
 import { FrequencyEntry, RangeStat, RangeProbability, TrendEntry } from "@/lib/analytics";
 import DrawCard from "@/components/DrawCard";
@@ -78,7 +79,7 @@ export default function LotteryPageClient({
   trends: TrendEntry[];
   last100Length: number;
 }) {
-  const { t, locale, dict } = useLang();
+  const { t, locale, dict, lang } = useLang();
   const latest = draws[0];
   const recentDraws = draws.slice(1, 4);
   const info = dict.lotteries[config.id];
@@ -94,6 +95,14 @@ export default function LotteryPageClient({
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <DrawCard draw={latest} config={config} highlight />
+              {lang === "en" && (
+                <Link
+                  href={`/lottery/${config.id}/results/${latest.date}`}
+                  className="mt-3 inline-block text-sm font-semibold text-gold hover:text-gold-light"
+                >
+                  View full result breakdown →
+                </Link>
+              )}
             </div>
           <div className="rounded-2xl border border-felt-800 bg-felt-900 p-6">
             <h2 className="mb-4 font-display text-lg font-bold text-white">
@@ -159,9 +168,19 @@ export default function LotteryPageClient({
               {t("recentDraws.heading")}
             </h2>
             <div className="grid gap-4 sm:grid-cols-3">
-              {recentDraws.map((draw) => (
-                <DrawCard key={draw.id} draw={draw} config={config} size="sm" animate={false} />
-              ))}
+              {recentDraws.map((draw) =>
+                lang === "en" ? (
+                  <Link
+                    key={draw.id}
+                    href={`/lottery/${config.id}/results/${draw.date}`}
+                    className="block rounded-2xl transition-transform hover:scale-[1.02]"
+                  >
+                    <DrawCard draw={draw} config={config} size="sm" animate={false} />
+                  </Link>
+                ) : (
+                  <DrawCard key={draw.id} draw={draw} config={config} size="sm" animate={false} />
+                )
+              )}
             </div>
           </div>
         )}
