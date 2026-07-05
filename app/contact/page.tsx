@@ -14,15 +14,11 @@ export default function Page() {
     <PageShell lang="en">
       <LegalPage title="Contact">
         <p>
-          Have a question, spotted an error in the data, or want to share feedback? We'd like to
-          hear from you.
+          LottoScopeX is an independently run project. We don't have a public contact channel set
+          up just yet, but we're working on it — check back soon.
         </p>
         <p>
-          Email us at <a href="mailto:achrefsliti07@gmail.com">achrefsliti07@gmail.com</a> and
-          we'll get back to you as soon as we can.
-        </p>
-        <p>
-          For questions about how your data is handled, see our{" "}
+          In the meantime, you can find out how your data is handled in our{" "}
           <a href="/privacy">Privacy Policy</a>.
         </p>
       </LegalPage>
