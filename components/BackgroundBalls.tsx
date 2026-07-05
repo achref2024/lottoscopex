@@ -7,9 +7,9 @@ import { LOTTERIES } from "@/lib/lotteries";
 // aria-hidden and never intercepts clicks.
 const POSITIONS: { top: string; left: string; size: number; number?: number }[] = [
   { top: "-6%", left: "4%", size: 260, number: 7 },
-  { top: "6%", left: "78%", size: 320 },
+  { top: "6%", left: "78%", size: 320, number: 34 },
   { top: "38%", left: "-8%", size: 240, number: 23 },
-  { top: "58%", left: "86%", size: 300 },
+  { top: "58%", left: "86%", size: 300, number: 19 },
   { top: "80%", left: "8%", size: 230, number: 41 },
   { top: "22%", left: "45%", size: 190 },
   { top: "92%", left: "58%", size: 250, number: 16 },
