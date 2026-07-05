@@ -173,7 +173,7 @@ export interface Dictionary {
 
 const en: Dictionary = {
   nav: {
-    lotteries: "Lotteries",
+    lotteries: "Results",
     howItWorks: "How it works",
     pill: "Real stats · No predictions",
   },
@@ -331,7 +331,7 @@ const en: Dictionary = {
 
 const fr: Dictionary = {
   nav: {
-    lotteries: "Loteries",
+    lotteries: "Résultats",
     howItWorks: "Comment ça marche",
     pill: "Statistiques réelles · Aucune prédiction",
   },
@@ -489,7 +489,7 @@ const fr: Dictionary = {
 
 const de: Dictionary = {
   nav: {
-    lotteries: "Lotterien",
+    lotteries: "Ergebnisse",
     howItWorks: "So funktioniert's",
     pill: "Echte Statistiken · Keine Vorhersagen",
   },
