@@ -14,7 +14,7 @@ function EmptyBall({ shape }: { shape?: BonusShape }) {
   const shapeClass = shape === "diamond" ? "rounded-lg rotate-45" : "rounded-full";
   return (
     <div
-      className={`flex h-20 w-20 items-center justify-center border-2 border-dashed border-felt-700 ${shapeClass}`}
+      className={`flex h-24 w-24 items-center justify-center border-2 border-dashed border-felt-700 ${shapeClass}`}
       aria-hidden="true"
     >
       <span className={shape === "diamond" ? "-rotate-45 text-felt-700" : "text-felt-700"}>?</span>

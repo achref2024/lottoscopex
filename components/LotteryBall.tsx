@@ -15,10 +15,10 @@ interface LotteryBallProps {
 }
 
 const SIZE_MAP = {
-  xs: "h-8 w-8 text-xs",
-  sm: "h-10 w-10 text-sm",
-  md: "h-14 w-14 text-lg",
-  lg: "h-20 w-20 text-2xl",
+  xs: "h-9 w-9 text-sm",
+  sm: "h-12 w-12 text-base",
+  md: "h-16 w-16 text-xl",
+  lg: "h-24 w-24 text-3xl",
 };
 
 export default function LotteryBall({
