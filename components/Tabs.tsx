@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 
@@ -13,6 +13,16 @@ export interface TabSection {
 
 export default function Tabs({ sections }: { sections: TabSection[] }) {
   const [active, setActive] = useState(sections[0]?.id);
+
+  // Deep-link support: /lottery/euromillions#probability opens straight on
+  // that tab instead of always defaulting to the first one.
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && sections.some((s) => s.id === hash)) {
+      setActive(hash);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>

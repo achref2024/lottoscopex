@@ -1,11 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { LOTTERIES } from "@/lib/lotteries";
 import { getDraws } from "@/lib/data";
+import { localePath } from "@/lib/i18n";
 import LotteryCard from "@/components/LotteryCard";
 import AdSlot from "@/components/AdSlot";
 import HeroBallsAnimation from "@/components/HeroBallsAnimation";
 import { useLang } from "@/components/LanguageProvider";
+
+// The 4 feature cards link straight into a live stats page on the relevant
+// tab — EuroMillions as the flagship lottery — instead of just describing
+// the feature in the abstract.
+const FEATURE_TAB_IDS = ["frequency", "hotcold", "ranges", "probability"] as const;
 
 const ICON = {
   frequency: (
@@ -33,7 +40,7 @@ const ICON = {
 };
 
 export default function HomePage() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const cards = LOTTERIES.map((config) => ({
     config,
     latest: getDraws(config.id)[0],
@@ -47,10 +54,10 @@ export default function HomePage() {
   ];
 
   const features = [
-    { title: t("features.frequencyTitle"), desc: t("features.frequencyDesc"), icon: ICON.frequency },
-    { title: t("features.hotColdTitle"), desc: t("features.hotColdDesc"), icon: ICON.hotcold },
-    { title: t("features.rangesTitle"), desc: t("features.rangesDesc"), icon: ICON.ranges },
-    { title: t("features.probabilityTitle"), desc: t("features.probabilityDesc"), icon: ICON.probability },
+    { title: t("features.frequencyTitle"), desc: t("features.frequencyDesc"), icon: ICON.frequency, tab: FEATURE_TAB_IDS[0] },
+    { title: t("features.hotColdTitle"), desc: t("features.hotColdDesc"), icon: ICON.hotcold, tab: FEATURE_TAB_IDS[1] },
+    { title: t("features.rangesTitle"), desc: t("features.rangesDesc"), icon: ICON.ranges, tab: FEATURE_TAB_IDS[2] },
+    { title: t("features.probabilityTitle"), desc: t("features.probabilityDesc"), icon: ICON.probability, tab: FEATURE_TAB_IDS[3] },
   ];
 
   return (
@@ -94,16 +101,20 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f) => (
-              <div
+              <Link
                 key={f.title}
-                className="rounded-2xl border border-felt-800 bg-felt-900 p-6"
+                href={localePath(lang, `/lottery/euromillions#${f.tab}`)}
+                className="group block rounded-2xl border border-felt-800 bg-felt-900 p-6 transition-all duration-200 hover:border-gold/40 hover:shadow-glow"
               >
                 <div className="mb-4">{f.icon}</div>
                 <h3 className="mb-1.5 text-lg font-bold text-white">
                   {f.title}
                 </h3>
                 <p className="text-sm text-mist-500">{f.desc}</p>
-              </div>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-gold opacity-0 transition-opacity group-hover:opacity-100">
+                  {t("features.viewStats")} →
+                </span>
+              </Link>
             ))}
           </div>
         </div>

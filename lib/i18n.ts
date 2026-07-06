@@ -59,6 +59,7 @@ export interface Dictionary {
     rangesDesc: string;
     probabilityTitle: string;
     probabilityDesc: string;
+    viewStats: string;
   };
   chooseLottery: {
     heading: string;
@@ -207,6 +208,7 @@ const en: Dictionary = {
     rangesDesc: "Understand how numbers are spread across 1–9, 10–19, 20–29, 30–39 and 40+.",
     probabilityTitle: "Probability patterns",
     probabilityDesc: "Our signature feature: plain-language insight into what tends to happen next.",
+    viewStats: "View live stats",
   },
   chooseLottery: {
     heading: "Choose a lottery",
@@ -372,6 +374,7 @@ const fr: Dictionary = {
     rangesDesc: "Comprenez comment les numéros se répartissent entre 1–9, 10–19, 20–29, 30–39 et 40+.",
     probabilityTitle: "Tendances de probabilité",
     probabilityDesc: "Notre fonctionnalité phare : une explication simple de ce qui se passe généralement ensuite.",
+    viewStats: "Voir les statistiques",
   },
   chooseLottery: {
     heading: "Choisissez une loterie",
@@ -537,6 +540,7 @@ const de: Dictionary = {
     rangesDesc: "Verstehe, wie sich Zahlen auf 1–9, 10–19, 20–29, 30–39 und 40+ verteilen.",
     probabilityTitle: "Wahrscheinlichkeitsmuster",
     probabilityDesc: "Unser Hauptfeature: verständliche Einblicke, was danach meist passiert.",
+    viewStats: "Live-Statistiken ansehen",
   },
   chooseLottery: {
     heading: "Lotterie auswählen",
