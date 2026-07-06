@@ -31,6 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const analyzerPages: MetadataRoute.Sitemap = LANGUAGES.map((l) => ({
+    url: `${SITE_URL}${localePath(l.code, "/analyzer")}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const legalPages: MetadataRoute.Sitemap = ["/about", "/privacy", "/terms", "/contact"].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,
@@ -60,6 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...homePages,
     ...lotteryPages,
     ...generatorPages,
+    ...analyzerPages,
     ...legalPages,
     ...methodologyPage,
     ...drawResultPages,

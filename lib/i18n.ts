@@ -36,6 +36,7 @@ export interface Dictionary {
     lotteries: string;
     howItWorks: string;
     generator: string;
+    analyzer: string;
     pill: string;
   };
   hero: {
@@ -66,6 +67,7 @@ export interface Dictionary {
     probabilityDesc: string;
     viewStats: string;
     methodologyLink: string;
+    learnMore: string;
   };
   chooseLottery: {
     heading: string;
@@ -193,6 +195,27 @@ export interface Dictionary {
     generateButton: string;
     regenerateButton: string;
   };
+  analyzer: {
+    heading: string;
+    subheading: string;
+    disclaimer: string;
+    selectLabel: string;
+    pickMainLabel: string; // "Pick {count} numbers to analyze"
+    pickBonusLabel: string; // "Pick your {label}"
+    analyzeButton: string;
+    reanalyzeButton: string;
+    resetLink: string;
+    sampleLabel: string; // "Based on the last {n} draws"
+    sumLabel: string;
+    oddEvenLabel: string;
+    hotLabel: string;
+    coldLabel: string;
+    neutralLabel: string;
+    hotTag: string;
+    coldTag: string;
+    neutralTag: string;
+    percentLabel: string; // "{pct}% of draws"
+  };
 }
 
 const en: Dictionary = {
@@ -200,6 +223,7 @@ const en: Dictionary = {
     lotteries: "Results",
     howItWorks: "How it works",
     generator: "Number Generator",
+    analyzer: "Lottery Analyzer",
     pill: "Real stats · No predictions",
   },
   hero: {
@@ -232,6 +256,7 @@ const en: Dictionary = {
     probabilityDesc: "Our signature feature: plain-language insight into what tends to happen next.",
     viewStats: "View live stats",
     methodologyLink: "See exactly how every statistic is calculated",
+    learnMore: "Learn how it's calculated",
   },
   chooseLottery: {
     heading: "Choose a lottery",
@@ -377,6 +402,28 @@ const en: Dictionary = {
     generateButton: "Generate numbers",
     regenerateButton: "Generate again",
   },
+  analyzer: {
+    heading: "Lottery Analyzer",
+    subheading: "Pick your own numbers and see how they've performed over the last 100 draws.",
+    disclaimer:
+      "This shows what has already happened — it doesn't predict future draws or improve your odds. Every draw is independent and random.",
+    selectLabel: "Choose a lottery",
+    pickMainLabel: "Pick {count} numbers to analyze",
+    pickBonusLabel: "Pick your {label}",
+    analyzeButton: "Analyze my numbers",
+    reanalyzeButton: "Analyze again",
+    resetLink: "Clear picks",
+    sampleLabel: "Based on the last {n} draws",
+    sumLabel: "Sum",
+    oddEvenLabel: "Odd / Even",
+    hotLabel: "Hot numbers",
+    coldLabel: "Cold numbers",
+    neutralLabel: "Neutral numbers",
+    hotTag: "Hot",
+    coldTag: "Cold",
+    neutralTag: "Neutral",
+    percentLabel: "{pct}% of draws",
+  },
 };
 
 const fr: Dictionary = {
@@ -384,6 +431,7 @@ const fr: Dictionary = {
     lotteries: "Résultats",
     howItWorks: "Comment ça marche",
     generator: "Générateur de numéros",
+    analyzer: "Analyseur de loterie",
     pill: "Statistiques réelles · Aucune prédiction",
   },
   hero: {
@@ -416,6 +464,7 @@ const fr: Dictionary = {
     probabilityDesc: "Notre fonctionnalité phare : une explication simple de ce qui se passe généralement ensuite.",
     viewStats: "Voir les statistiques",
     methodologyLink: "Voir précisément comment chaque statistique est calculée",
+    learnMore: "Découvrir comment c'est calculé",
   },
   chooseLottery: {
     heading: "Choisissez une loterie",
@@ -561,6 +610,29 @@ const fr: Dictionary = {
     generateButton: "Générer des numéros",
     regenerateButton: "Générer à nouveau",
   },
+  analyzer: {
+    heading: "Analyseur de loterie",
+    subheading:
+      "Choisissez vos propres numéros et découvrez leurs performances sur les 100 derniers tirages.",
+    disclaimer:
+      "Ceci montre ce qui s'est déjà produit — cela ne prédit pas les tirages futurs et n'améliore pas vos chances. Chaque tirage est indépendant et aléatoire.",
+    selectLabel: "Choisir une loterie",
+    pickMainLabel: "Choisissez {count} numéros à analyser",
+    pickBonusLabel: "Choisissez votre {label}",
+    analyzeButton: "Analyser mes numéros",
+    reanalyzeButton: "Analyser à nouveau",
+    resetLink: "Effacer la sélection",
+    sampleLabel: "Basé sur les {n} derniers tirages",
+    sumLabel: "Somme",
+    oddEvenLabel: "Pair / Impair",
+    hotLabel: "Numéros chauds",
+    coldLabel: "Numéros froids",
+    neutralLabel: "Numéros neutres",
+    hotTag: "Chaud",
+    coldTag: "Froid",
+    neutralTag: "Neutre",
+    percentLabel: "{pct}% des tirages",
+  },
 };
 
 const de: Dictionary = {
@@ -568,6 +640,7 @@ const de: Dictionary = {
     lotteries: "Ergebnisse",
     howItWorks: "So funktioniert's",
     generator: "Zahlengenerator",
+    analyzer: "Lotterie-Analysator",
     pill: "Echte Statistiken · Keine Vorhersagen",
   },
   hero: {
@@ -600,6 +673,7 @@ const de: Dictionary = {
     probabilityDesc: "Unser Hauptfeature: verständliche Einblicke, was danach meist passiert.",
     viewStats: "Live-Statistiken ansehen",
     methodologyLink: "Sehen Sie genau, wie jede Statistik berechnet wird",
+    learnMore: "Erfahren, wie es berechnet wird",
   },
   chooseLottery: {
     heading: "Lotterie auswählen",
@@ -744,6 +818,29 @@ const de: Dictionary = {
     mainNumbersLabel: "Deine Zahlen",
     generateButton: "Zahlen generieren",
     regenerateButton: "Erneut generieren",
+  },
+  analyzer: {
+    heading: "Lotterie-Analysator",
+    subheading:
+      "Wähle deine eigenen Zahlen und sieh, wie sie sich in den letzten 100 Ziehungen entwickelt haben.",
+    disclaimer:
+      "Das zeigt, was bereits passiert ist — es sagt keine zukünftigen Ziehungen voraus und verbessert nicht deine Gewinnchancen. Jede Ziehung ist unabhängig und zufällig.",
+    selectLabel: "Lotterie wählen",
+    pickMainLabel: "Wähle {count} Zahlen zur Analyse",
+    pickBonusLabel: "Wähle deine {label}",
+    analyzeButton: "Meine Zahlen analysieren",
+    reanalyzeButton: "Erneut analysieren",
+    resetLink: "Auswahl löschen",
+    sampleLabel: "Basierend auf den letzten {n} Ziehungen",
+    sumLabel: "Summe",
+    oddEvenLabel: "Gerade / Ungerade",
+    hotLabel: "Heiße Zahlen",
+    coldLabel: "Kalte Zahlen",
+    neutralLabel: "Neutrale Zahlen",
+    hotTag: "Heiß",
+    coldTag: "Kalt",
+    neutralTag: "Neutral",
+    percentLabel: "{pct}% der Ziehungen",
   },
 };
 

@@ -73,7 +73,7 @@ export default function Page() {
           new draws as they happen and never alter historical figures after the fact.
         </p>
 
-        <h2>Frequency stats</h2>
+        <h2 id="frequency-stats">Frequency stats</h2>
         <p>
           For a given set of draws, we count how many times each possible number appeared as a
           winning number, then express that count as a percentage of draws. A number that appeared
@@ -81,7 +81,7 @@ export default function Page() {
           no weighting, no adjustment.
         </p>
 
-        <h2>Hot &amp; cold numbers</h2>
+        <h2 id="hot-cold-numbers">Hot &amp; cold numbers</h2>
         <p>
           Once we have frequency counts for the last 100 draws, hot numbers are simply the ones
           with the highest counts, and cold numbers are the ones with the lowest. It's a ranking
@@ -89,7 +89,7 @@ export default function Page() {
           and a cold number isn't "due" to appear soon. Each draw is independent.
         </p>
 
-        <h2>Range analysis</h2>
+        <h2 id="range-analysis">Range analysis</h2>
         <p>
           We split each lottery's number range into five bands — 1–9, 10–19, 20–29, 30–39, and
           40 and above — and count how many winning numbers from the last 100 draws fall into each

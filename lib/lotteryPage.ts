@@ -126,6 +126,34 @@ export function buildGeneratorMetadata(lang: Lang): Metadata {
   };
 }
 
+export function buildAnalyzerMetadata(lang: Lang): Metadata {
+  const dict = DICTIONARIES[lang];
+  const title = dict.analyzer.heading;
+  const description = dict.analyzer.subheading;
+
+  const canonical = `${SITE_URL}${localePath(lang, "/analyzer")}`;
+  const languages: Record<string, string> = {
+    en: `${SITE_URL}${localePath("en", "/analyzer")}`,
+    fr: `${SITE_URL}${localePath("fr", "/analyzer")}`,
+    de: `${SITE_URL}${localePath("de", "/analyzer")}`,
+    "x-default": `${SITE_URL}${localePath("en", "/analyzer")}`,
+  };
+
+  return {
+    title,
+    description,
+    alternates: { canonical, languages },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      locale: OG_LOCALE[lang],
+      alternateLocale: (["en", "fr", "de"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
+    },
+    twitter: { title, description },
+  };
+}
+
 const BREADCRUMB_HOME_LABEL: Record<Lang, string> = {
   en: "Home",
   fr: "Accueil",

@@ -48,10 +48,30 @@ export default function HomePage() {
   ];
 
   const features = [
-    { title: t("features.frequencyTitle"), desc: t("features.frequencyDesc"), icon: ICON.frequency },
-    { title: t("features.hotColdTitle"), desc: t("features.hotColdDesc"), icon: ICON.hotcold },
-    { title: t("features.rangesTitle"), desc: t("features.rangesDesc"), icon: ICON.ranges },
-    { title: t("features.probabilityTitle"), desc: t("features.probabilityDesc"), icon: ICON.probability },
+    {
+      title: t("features.frequencyTitle"),
+      desc: t("features.frequencyDesc"),
+      icon: ICON.frequency,
+      href: "/methodology#frequency-stats",
+    },
+    {
+      title: t("features.hotColdTitle"),
+      desc: t("features.hotColdDesc"),
+      icon: ICON.hotcold,
+      href: "/methodology#hot-cold-numbers",
+    },
+    {
+      title: t("features.rangesTitle"),
+      desc: t("features.rangesDesc"),
+      icon: ICON.ranges,
+      href: "/methodology#range-analysis",
+    },
+    {
+      title: t("features.probabilityTitle"),
+      desc: t("features.probabilityDesc"),
+      icon: ICON.probability,
+      href: "/methodology#probability-patterns",
+    },
   ];
 
   return (
@@ -97,7 +117,7 @@ export default function HomePage() {
             {features.map((f) => (
               <Link
                 key={f.title}
-                href="#choose-lottery"
+                href={f.href}
                 className="group block rounded-2xl border border-felt-800 bg-felt-900 p-6 transition-all duration-200 hover:border-gold/40 hover:shadow-glow"
               >
                 <div className="mb-4">{f.icon}</div>
@@ -106,7 +126,7 @@ export default function HomePage() {
                 </h3>
                 <p className="text-sm text-mist-500">{f.desc}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-gold opacity-0 transition-opacity group-hover:opacity-100">
-                  {t("features.viewStats")} →
+                  {t("features.learnMore")} →
                 </span>
               </Link>
             ))}

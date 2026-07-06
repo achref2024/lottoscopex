@@ -26,7 +26,7 @@ export default function LegalPage({
       <section className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
         <div
           className="space-y-4 text-sm leading-relaxed text-mist-400 sm:text-base
-          [&_h2]:mb-2 [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:first:mt-0
+          [&_h2]:mb-2 [&_h2]:mt-8 [&_h2]:scroll-mt-28 [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:first:mt-0
           [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5
           [&_a]:font-semibold [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-gold-light"
         >

@@ -239,6 +239,82 @@ export function getDrawInsights(draw: Draw, prevDraw: Draw | null, config: Lotte
   };
 }
 
+export interface NumberPickAnalysis {
+  number: number;
+  count: number;
+  percent: number;
+  rank: number; // 1 = most frequent number in the window
+  status: "hot" | "cold" | "neutral";
+  bucketLabel: string;
+}
+
+export interface PickAnalysisResult {
+  perNumber: NumberPickAnalysis[];
+  sum: number;
+  oddCount: number;
+  evenCount: number;
+  hotCount: number;
+  coldCount: number;
+  neutralCount: number;
+  sampleSize: number;
+}
+
+/**
+ * Real, purely descriptive analysis of a user-chosen set of numbers against
+ * the last 100 draws — how often each number actually appeared, whether it
+ * ranks among the hottest or coldest numbers, and which range it falls in.
+ * No weighting, no fabrication, and nothing here predicts future draws.
+ *
+ * Works for either a lottery's main numbers or its bonus numbers — pass the
+ * matching min/max/field, and range-bucket labels only when they're
+ * meaningful (skip them for small bonus-number pools like EuroMillions Stars).
+ */
+export function analyzeNumberPick(
+  numbers: number[],
+  allDraws: Draw[],
+  options: { min: number; max: number; field?: "main" | "bonus"; buckets?: RangeBucket[] }
+): PickAnalysisResult {
+  const { min, max, field = "main", buckets = [] } = options;
+  const window = allDraws.slice(0, 100);
+  const freq = computeFrequency(window, min, max, field);
+  const sorted = [...freq].sort((a, b) => b.count - a.count);
+  const rankMap = new Map(sorted.map((f, i) => [f.number, i + 1]));
+  const total = sorted.length || 1;
+  const thirdCut = Math.max(1, Math.round(total / 3));
+
+  const freqMap = new Map(freq.map((f) => [f.number, f]));
+
+  const perNumber: NumberPickAnalysis[] = numbers.map((n) => {
+    const entry = freqMap.get(n);
+    const rank = rankMap.get(n) ?? total;
+    const status: "hot" | "cold" | "neutral" =
+      rank <= thirdCut ? "hot" : rank > total - thirdCut ? "cold" : "neutral";
+    const bucket = buckets.find((b) => n >= b.min && n <= b.max);
+    return {
+      number: n,
+      count: entry?.count ?? 0,
+      percent: entry?.percent ?? 0,
+      rank,
+      status,
+      bucketLabel: bucket?.label ?? "",
+    };
+  });
+
+  const sum = numbers.reduce((a, b) => a + b, 0);
+  const oddCount = numbers.filter((n) => n % 2 !== 0).length;
+
+  return {
+    perNumber,
+    sum,
+    oddCount,
+    evenCount: numbers.length - oddCount,
+    hotCount: perNumber.filter((p) => p.status === "hot").length,
+    coldCount: perNumber.filter((p) => p.status === "cold").length,
+    neutralCount: perNumber.filter((p) => p.status === "neutral").length,
+    sampleSize: window.length,
+  };
+}
+
 export function filterDrawsByDateRange(
   draws: Draw[],
   from?: string,
