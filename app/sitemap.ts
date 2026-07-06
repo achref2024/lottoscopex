@@ -24,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  const generatorPages: MetadataRoute.Sitemap = LANGUAGES.map((l) => ({
+    url: `${SITE_URL}${localePath(l.code, "/generator")}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const legalPages: MetadataRoute.Sitemap = ["/about", "/privacy", "/terms", "/contact"].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,
@@ -40,5 +47,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...homePages, ...lotteryPages, ...legalPages, ...drawResultPages];
+  return [...homePages, ...lotteryPages, ...generatorPages, ...legalPages, ...drawResultPages];
 }

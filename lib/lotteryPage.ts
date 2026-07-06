@@ -98,6 +98,34 @@ export function buildHomeMetadata(lang: Lang): Metadata {
   };
 }
 
+export function buildGeneratorMetadata(lang: Lang): Metadata {
+  const dict = DICTIONARIES[lang];
+  const title = dict.generator.heading;
+  const description = dict.generator.subheading;
+
+  const canonical = `${SITE_URL}${localePath(lang, "/generator")}`;
+  const languages: Record<string, string> = {
+    en: `${SITE_URL}${localePath("en", "/generator")}`,
+    fr: `${SITE_URL}${localePath("fr", "/generator")}`,
+    de: `${SITE_URL}${localePath("de", "/generator")}`,
+    "x-default": `${SITE_URL}${localePath("en", "/generator")}`,
+  };
+
+  return {
+    title,
+    description,
+    alternates: { canonical, languages },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      locale: OG_LOCALE[lang],
+      alternateLocale: (["en", "fr", "de"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
+    },
+    twitter: { title, description },
+  };
+}
+
 /** Real, data-grounded Dataset + FAQPage JSON-LD for a lottery page, localized. */
 export function buildLotteryJsonLd(
   lang: Lang,

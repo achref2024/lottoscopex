@@ -35,6 +35,9 @@ export default function Navbar() {
           <Link href={localePath(lang, "/#how-it-works")} className="transition-colors hover:text-white">
             {t("nav.howItWorks")}
           </Link>
+          <Link href={localePath(lang, "/generator")} className="transition-colors hover:text-white">
+            {t("nav.generator")}
+          </Link>
         </nav>
         <div className="ml-auto flex items-center gap-3 sm:ml-0">
           <div className="hidden rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold text-gold-light md:block">

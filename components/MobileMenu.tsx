@@ -86,6 +86,14 @@ export default function MobileMenu() {
           >
             {t("nav.howItWorks")}
           </Link>
+
+          <Link
+            href={localePath(lang, "/generator")}
+            onClick={() => setOpen(false)}
+            className="mt-3 block rounded-2xl border border-felt-800 bg-felt-900 px-4 py-3.5 text-sm font-bold text-mist-300 transition-colors hover:bg-felt-800 hover:text-white"
+          >
+            {t("nav.generator")}
+          </Link>
         </div>
       )}
     </div>

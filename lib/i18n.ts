@@ -35,6 +35,7 @@ export interface Dictionary {
   nav: {
     lotteries: string;
     howItWorks: string;
+    generator: string;
     pill: string;
   };
   hero: {
@@ -176,12 +177,22 @@ export interface Dictionary {
     lotteryTitle: string; // "{name} Statistics — Number Frequency, Hot & Cold Numbers"
     lotteryDescription: string; // "Explore {count} real {name} draws ({country})..."
   };
+  generator: {
+    heading: string;
+    subheading: string;
+    disclaimer: string;
+    selectLabel: string;
+    mainNumbersLabel: string;
+    generateButton: string;
+    regenerateButton: string;
+  };
 }
 
 const en: Dictionary = {
   nav: {
     lotteries: "Results",
     howItWorks: "How it works",
+    generator: "Number Generator",
     pill: "Real stats · No predictions",
   },
   hero: {
@@ -342,12 +353,23 @@ const en: Dictionary = {
     lotteryDescription:
       "Explore {count} real {name} draws ({country}). Number frequency, hot & cold numbers, range analysis and probability patterns based on the last 100 draws — updated with genuine historical results, not predictions.",
   },
+  generator: {
+    heading: "Number Generator",
+    subheading: "Pick a lottery and get a random set of numbers to play.",
+    disclaimer:
+      "Purely random — this doesn't use any statistics and doesn't improve your chances of winning. Lottery draws are random, every time.",
+    selectLabel: "Choose a lottery",
+    mainNumbersLabel: "Your numbers",
+    generateButton: "Generate numbers",
+    regenerateButton: "Generate again",
+  },
 };
 
 const fr: Dictionary = {
   nav: {
     lotteries: "Résultats",
     howItWorks: "Comment ça marche",
+    generator: "Générateur de numéros",
     pill: "Statistiques réelles · Aucune prédiction",
   },
   hero: {
@@ -508,12 +530,23 @@ const fr: Dictionary = {
     lotteryDescription:
       "Explorez {count} tirages {name} réels ({country}). Fréquence des numéros, numéros chauds et froids, analyse par plage et tendances de probabilité basées sur les 100 derniers tirages — des résultats historiques authentiques, pas des prédictions.",
   },
+  generator: {
+    heading: "Générateur de numéros",
+    subheading: "Choisissez une loterie et obtenez une sélection aléatoire de numéros à jouer.",
+    disclaimer:
+      "Entièrement aléatoire — cet outil n'utilise aucune statistique et n'améliore pas vos chances de gagner. Les tirages de loterie sont aléatoires, à chaque fois.",
+    selectLabel: "Choisir une loterie",
+    mainNumbersLabel: "Vos numéros",
+    generateButton: "Générer des numéros",
+    regenerateButton: "Générer à nouveau",
+  },
 };
 
 const de: Dictionary = {
   nav: {
     lotteries: "Ergebnisse",
     howItWorks: "So funktioniert's",
+    generator: "Zahlengenerator",
     pill: "Echte Statistiken · Keine Vorhersagen",
   },
   hero: {
@@ -673,6 +706,16 @@ const de: Dictionary = {
     lotteryTitle: "{name} Statistiken — Zahlenhäufigkeit, heiße & kalte Zahlen",
     lotteryDescription:
       "Entdecke {count} echte {name}-Ziehungen ({country}). Zahlenhäufigkeit, heiße & kalte Zahlen, Bereichsanalyse und Wahrscheinlichkeitsmuster basierend auf den letzten 100 Ziehungen — echte historische Ergebnisse, keine Vorhersagen.",
+  },
+  generator: {
+    heading: "Zahlengenerator",
+    subheading: "Wähle eine Lotterie und erhalte eine zufällige Zahlenauswahl zum Spielen.",
+    disclaimer:
+      "Rein zufällig — dieses Tool nutzt keine Statistiken und verbessert nicht deine Gewinnchancen. Lotterieziehungen sind jedes Mal zufällig.",
+    selectLabel: "Lotterie wählen",
+    mainNumbersLabel: "Deine Zahlen",
+    generateButton: "Zahlen generieren",
+    regenerateButton: "Erneut generieren",
   },
 };
 
