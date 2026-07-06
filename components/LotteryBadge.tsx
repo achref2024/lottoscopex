@@ -1,10 +1,10 @@
 import { BADGES } from "@/lib/badges";
 
 /**
- * A circular flag-crest badge for a lottery — original artwork combining
- * that lottery's real national/EU flag colors with its name, in the style
- * of classic lottery-site badges, sized to drop in wherever a lottery's
- * identity is shown (cards, page headers, nav menus).
+ * A glossy 3D-sphere flag-crest badge for a lottery — original artwork
+ * combining that lottery's real national/EU flag colors with its name,
+ * rendered as a premium glass/lacquer ball (highlight + rim shading), sized
+ * to drop in wherever a lottery's identity is shown (cards, headers, nav).
  */
 export default function LotteryBadge({ id, size = 64 }: { id: string; size?: number }) {
   const spec = BADGES[id];
@@ -21,12 +21,21 @@ export default function LotteryBadge({ id, size = 64 }: { id: string; size?: num
       viewBox="-70 -70 140 140"
       role="img"
       aria-label={`${spec.label.join(" ")} badge`}
-      className="shrink-0 drop-shadow-[0_4px_10px_rgba(0,0,0,0.35)]"
+      className="shrink-0 drop-shadow-[0_6px_14px_rgba(0,0,0,0.45)]"
     >
       <defs>
         <clipPath id={uid}>
           <circle r={r} />
         </clipPath>
+        <radialGradient id={`${uid}-rim`} cx="50%" cy="88%" r="65%">
+          <stop offset="0%" stopColor="rgba(0,0,0,0.55)" />
+          <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+        </radialGradient>
+        <radialGradient id={`${uid}-hl`} cx="32%" cy="24%" r="55%">
+          <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
+          <stop offset="55%" stopColor="rgba(255,255,255,0.22)" />
+          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+        </radialGradient>
       </defs>
 
       <g clipPath={`url(#${uid})`}>
@@ -109,6 +118,10 @@ export default function LotteryBadge({ id, size = 64 }: { id: string; size?: num
       >
         {spec.label[1]}
       </text>
+
+      {/* Glossy 3D sphere finish: bottom rim shading + upper-left specular highlight. */}
+      <circle r={r} fill={`url(#${uid}-rim)`} pointerEvents="none" />
+      <circle r={r} fill={`url(#${uid}-hl)`} pointerEvents="none" />
     </svg>
   );
 }
