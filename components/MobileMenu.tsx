@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LOTTERIES } from "@/lib/lotteries";
-import { flagEmoji } from "@/lib/flags";
 import { localePath } from "@/lib/i18n";
 import { useLang } from "./LanguageProvider";
+import LotteryBadge from "./LotteryBadge";
 
 /**
  * The desktop nav (Results dropdown + How it works) is hidden below the `sm`
@@ -67,9 +67,7 @@ export default function MobileMenu() {
                   onClick={() => setOpen(false)}
                   className="flex items-center gap-3 border-b border-felt-800 px-4 py-3.5 transition-colors last:border-b-0 hover:bg-felt-800"
                 >
-                  <span aria-hidden="true" className="text-lg leading-none">
-                    {flagEmoji(config.flag)}
-                  </span>
+                  <LotteryBadge id={config.id} size={40} />
                   <span>
                     <span className="block text-sm font-semibold" style={{ color: config.accent }}>
                       {config.name}

@@ -7,6 +7,7 @@ import { formatDate, formatMoney, getNextDrawISO } from "@/lib/format";
 import { flagEmoji } from "@/lib/flags";
 import { localePath } from "@/lib/i18n";
 import LotteryBall from "./LotteryBall";
+import LotteryBadge from "./LotteryBadge";
 import { useLang } from "./LanguageProvider";
 
 interface LotteryCardProps {
@@ -31,15 +32,18 @@ export default function LotteryCard({ config, latest, index }: LotteryCardProps)
         href={localePath(lang, `/lottery/${config.id}`)}
         className="group block rounded-2xl border border-felt-800 bg-felt-900 p-6 transition-all duration-200 hover:border-gold/40 hover:shadow-glow sm:p-7"
       >
-        <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-felt-800 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-mist-400">
-            <span aria-hidden="true">{flagEmoji(config.flag)}</span>
-            {info?.country ?? config.country}
-          </span>
-          <h3 className="mt-3 font-fun text-2xl font-bold tracking-wide" style={{ color: config.accent }}>
-            {config.name}
-          </h3>
-          <p className="mt-1 text-sm text-mist-500">{info?.tagline ?? config.tagline}</p>
+        <div className="flex items-start gap-4">
+          <LotteryBadge id={config.id} size={64} />
+          <div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-felt-800 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-mist-400">
+              <span aria-hidden="true">{flagEmoji(config.flag)}</span>
+              {info?.country ?? config.country}
+            </span>
+            <h3 className="mt-3 font-fun text-2xl font-bold tracking-wide" style={{ color: config.accent }}>
+              {config.name}
+            </h3>
+            <p className="mt-1 text-sm text-mist-500">{info?.tagline ?? config.tagline}</p>
+          </div>
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-2">
