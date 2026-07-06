@@ -99,7 +99,7 @@ export default function HistoryTable({
           {t("history.noMatch")}
         </div>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4">
           {filtered.slice(0, visible).map((draw) =>
             lang === "en" ? (
               <Link
