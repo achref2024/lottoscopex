@@ -3,16 +3,10 @@
 import Link from "next/link";
 import { LOTTERIES } from "@/lib/lotteries";
 import { getDraws } from "@/lib/data";
-import { localePath } from "@/lib/i18n";
 import LotteryCard from "@/components/LotteryCard";
 import AdSlot from "@/components/AdSlot";
 import HeroBallsAnimation from "@/components/HeroBallsAnimation";
 import { useLang } from "@/components/LanguageProvider";
-
-// The 4 feature cards link straight into a live stats page on the relevant
-// tab — EuroMillions as the flagship lottery — instead of just describing
-// the feature in the abstract.
-const FEATURE_TAB_IDS = ["frequency", "hotcold", "ranges", "probability"] as const;
 
 const ICON = {
   frequency: (
@@ -40,7 +34,7 @@ const ICON = {
 };
 
 export default function HomePage() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
   const cards = LOTTERIES.map((config) => ({
     config,
     latest: getDraws(config.id)[0],
@@ -54,10 +48,10 @@ export default function HomePage() {
   ];
 
   const features = [
-    { title: t("features.frequencyTitle"), desc: t("features.frequencyDesc"), icon: ICON.frequency, tab: FEATURE_TAB_IDS[0] },
-    { title: t("features.hotColdTitle"), desc: t("features.hotColdDesc"), icon: ICON.hotcold, tab: FEATURE_TAB_IDS[1] },
-    { title: t("features.rangesTitle"), desc: t("features.rangesDesc"), icon: ICON.ranges, tab: FEATURE_TAB_IDS[2] },
-    { title: t("features.probabilityTitle"), desc: t("features.probabilityDesc"), icon: ICON.probability, tab: FEATURE_TAB_IDS[3] },
+    { title: t("features.frequencyTitle"), desc: t("features.frequencyDesc"), icon: ICON.frequency },
+    { title: t("features.hotColdTitle"), desc: t("features.hotColdDesc"), icon: ICON.hotcold },
+    { title: t("features.rangesTitle"), desc: t("features.rangesDesc"), icon: ICON.ranges },
+    { title: t("features.probabilityTitle"), desc: t("features.probabilityDesc"), icon: ICON.probability },
   ];
 
   return (
@@ -103,7 +97,7 @@ export default function HomePage() {
             {features.map((f) => (
               <Link
                 key={f.title}
-                href={localePath(lang, `/lottery/euromillions#${f.tab}`)}
+                href="#choose-lottery"
                 className="group block rounded-2xl border border-felt-800 bg-felt-900 p-6 transition-all duration-200 hover:border-gold/40 hover:shadow-glow"
               >
                 <div className="mb-4">{f.icon}</div>
@@ -124,7 +118,7 @@ export default function HomePage() {
         <AdSlot slot="0000000000" label="Advertisement" minHeight={100} />
       </div>
 
-      <section className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8">
+      <section id="choose-lottery" className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
           <div>
             <div className="mb-8 flex items-end justify-between">
