@@ -48,6 +48,9 @@ export interface Dictionary {
     tagRanges: string;
     tagProbability: string;
     drawsAnalyzed: string;
+    prevLottery: string;
+    nextLottery: string;
+    viewLatestFor: string;
   };
   features: {
     heading: string;
@@ -206,6 +209,9 @@ const en: Dictionary = {
     tagRanges: "Range analysis",
     tagProbability: "Probability patterns",
     drawsAnalyzed: "Recent draws analyzed, per lottery",
+    prevLottery: "Previous lottery",
+    nextLottery: "Next lottery",
+    viewLatestFor: "View latest {name} draw",
   },
   features: {
     heading: "What you can do with LottoScopeX",
@@ -383,6 +389,9 @@ const fr: Dictionary = {
     tagRanges: "Analyse par plage",
     tagProbability: "Tendances de probabilité",
     drawsAnalyzed: "Tirages récents analysés, par loterie",
+    prevLottery: "Loterie précédente",
+    nextLottery: "Loterie suivante",
+    viewLatestFor: "Voir le dernier tirage {name}",
   },
   features: {
     heading: "Ce que vous pouvez faire avec LottoScopeX",
@@ -560,6 +569,9 @@ const de: Dictionary = {
     tagRanges: "Bereichsanalyse",
     tagProbability: "Wahrscheinlichkeitsmuster",
     drawsAnalyzed: "Aktuelle Ziehungen analysiert, pro Lotterie",
+    prevLottery: "Vorherige Lotterie",
+    nextLottery: "Nächste Lotterie",
+    viewLatestFor: "Letzte {name}-Ziehung ansehen",
   },
   features: {
     heading: "Das kannst du mit LottoScopeX tun",
