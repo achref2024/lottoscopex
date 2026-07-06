@@ -3,9 +3,24 @@
 import { useMemo, useState } from "react";
 import clsx from "clsx";
 import { LOTTERIES, getLottery } from "@/lib/lotteries";
+import { BonusShape } from "@/lib/types";
 import LotteryBall from "./LotteryBall";
 import LotteryBadge from "./LotteryBadge";
 import { useLang } from "./LanguageProvider";
+
+/** A dashed placeholder in the same size as a real ball, shown before the
+ * first "Generate" click so the layout doesn't jump when numbers appear. */
+function EmptyBall({ shape }: { shape?: BonusShape }) {
+  const shapeClass = shape === "diamond" ? "rounded-lg rotate-45" : "rounded-full";
+  return (
+    <div
+      className={`flex h-20 w-20 items-center justify-center border-2 border-dashed border-felt-700 ${shapeClass}`}
+      aria-hidden="true"
+    >
+      <span className={shape === "diamond" ? "-rotate-45 text-felt-700" : "text-felt-700"}>?</span>
+    </div>
+  );
+}
 
 /** Fisher–Yates shuffle, then take the first `count` — genuinely random, no weighting. */
 function pickRandomUnique(count: number, min: number, max: number): number[] {
@@ -22,17 +37,21 @@ export default function GeneratorPage() {
   const { t, dict } = useLang();
   const [lotteryId, setLotteryId] = useState(LOTTERIES[0].id);
   const [gen, setGen] = useState(0);
+  const [hasGenerated, setHasGenerated] = useState(false);
   const config = getLottery(lotteryId)!;
 
   const main = useMemo(
-    () => pickRandomUnique(config.main.count, config.main.min, config.main.max),
+    () => (hasGenerated ? pickRandomUnique(config.main.count, config.main.min, config.main.max) : []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [lotteryId, gen]
+    [lotteryId, gen, hasGenerated]
   );
   const bonus = useMemo(
-    () => (config.bonus ? pickRandomUnique(config.bonus.count, config.bonus.min, config.bonus.max) : []),
+    () =>
+      hasGenerated && config.bonus
+        ? pickRandomUnique(config.bonus.count, config.bonus.min, config.bonus.max)
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [lotteryId, gen]
+    [lotteryId, gen, hasGenerated]
   );
 
   return (
@@ -56,7 +75,7 @@ export default function GeneratorPage() {
               key={l.id}
               onClick={() => {
                 setLotteryId(l.id);
-                setGen((g) => g + 1);
+                setHasGenerated(false);
               }}
               className={clsx(
                 "flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold transition-colors",
@@ -73,29 +92,39 @@ export default function GeneratorPage() {
 
         <div className="mt-8 rounded-2xl border border-felt-800 bg-felt-900 p-8 text-center sm:p-12">
           <div key={gen} className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            {main.map((n) => (
-              <LotteryBall key={`m-${n}`} number={n} variant="main" size="lg" animate />
-            ))}
-            {bonus.length > 0 && <span className="mx-1 h-12 w-px bg-felt-700" aria-hidden />}
-            {bonus.map((n, i) => (
-              <LotteryBall
-                key={`b-${n}`}
-                number={n}
-                variant="bonus"
-                shape={config.bonus?.shape}
-                size="lg"
-                delay={(main.length + i) * 0.05}
-                animate
-              />
-            ))}
+            {hasGenerated
+              ? main.map((n) => <LotteryBall key={`m-${n}`} number={n} variant="main" size="lg" animate />)
+              : Array.from({ length: config.main.count }).map((_, i) => (
+                  <EmptyBall key={`empty-m-${i}`} />
+                ))}
+            {config.bonus && <span className="mx-1 h-12 w-px bg-felt-700" aria-hidden />}
+            {hasGenerated
+              ? bonus.map((n, i) => (
+                  <LotteryBall
+                    key={`b-${n}`}
+                    number={n}
+                    variant="bonus"
+                    shape={config.bonus?.shape}
+                    size="lg"
+                    delay={(main.length + i) * 0.05}
+                    animate
+                  />
+                ))
+              : config.bonus &&
+                Array.from({ length: config.bonus.count }).map((_, i) => (
+                  <EmptyBall key={`empty-b-${i}`} shape={config.bonus?.shape} />
+                ))}
           </div>
           {config.bonus && <p className="mt-4 text-xs font-medium text-mist-500">{config.bonus.label}</p>}
 
           <button
-            onClick={() => setGen((g) => g + 1)}
+            onClick={() => {
+              setHasGenerated(true);
+              setGen((g) => g + 1);
+            }}
             className="mt-8 rounded-full bg-gold px-8 py-3 text-sm font-bold text-black transition-transform hover:scale-105"
           >
-            {gen === 0 ? t("generator.generateButton") : t("generator.regenerateButton")}
+            {hasGenerated ? t("generator.regenerateButton") : t("generator.generateButton")}
           </button>
         </div>
 
