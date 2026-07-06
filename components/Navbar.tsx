@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLang } from "./LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
 import LotteriesDropdown from "./LotteriesDropdown";
+import MobileMenu from "./MobileMenu";
 import { localePath } from "@/lib/i18n";
 
 export default function Navbar() {
@@ -40,6 +41,7 @@ export default function Navbar() {
             {t("nav.pill")}
           </div>
           <LanguageSwitcher />
+          <MobileMenu />
         </div>
       </div>
     </header>
