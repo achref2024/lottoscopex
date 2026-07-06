@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 import { useLang } from "./LanguageProvider";
 import { getDraws } from "@/lib/data";
 import { computeRangeProbabilities, RangeProbability } from "@/lib/analytics";
@@ -41,12 +42,6 @@ export default function HeroBallsAnimation() {
   }, []);
 
   const config = getLottery(lotteryId) ?? LOTTERIES[0];
-  const index = LOTTERIES.findIndex((l) => l.id === config.id);
-
-  function step(offset: number) {
-    const next = LOTTERIES[(index + offset + LOTTERIES.length) % LOTTERIES.length];
-    setLotteryId(next.id);
-  }
 
   const strongest = useMemo(() => {
     const draws = getDraws(config.id);
@@ -70,40 +65,46 @@ export default function HeroBallsAnimation() {
   }
 
   return (
-    <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-7 sm:mt-16">
-      <div className="flex items-center gap-3 sm:gap-6">
-        <button
-          type="button"
-          onClick={() => step(-1)}
-          aria-label={t("hero.prevLottery")}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-felt-800 bg-felt-900 text-mist-400 transition-colors hover:border-gold hover:text-gold"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-
-        <Link
-          href={localePath(lang, `/lottery/${config.id}`)}
-          aria-label={t("hero.viewLatestFor", { name: config.name })}
-          className="relative flex h-56 w-56 shrink-0 items-center justify-center rounded-[2.5rem] border border-gold/30 bg-gradient-to-b from-felt-900 to-felt-950 transition-transform hover:scale-[1.03] sm:h-80 sm:w-80"
-          style={{ boxShadow: "0 0 0 1px rgba(212,175,55,0.08), 0 30px 90px -25px rgba(212,175,55,0.45), inset 0 0 60px rgba(212,175,55,0.06)" }}
-        >
-          <div className="pointer-events-none absolute inset-6 rounded-[2rem] bg-gold/5 blur-2xl" aria-hidden="true" />
-          <LotteryBadge id={config.id} size={188} />
-        </Link>
-
-        <button
-          type="button"
-          onClick={() => step(1)}
-          aria-label={t("hero.nextLottery")}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-felt-800 bg-felt-900 text-mist-400 transition-colors hover:border-gold hover:text-gold"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
+    <div className="mx-auto mt-12 flex max-w-3xl flex-col items-center gap-8 sm:mt-16">
+      <div>
+        <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wide text-mist-500">
+          {t("hero.pickLottery")}
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {LOTTERIES.map((l) => (
+            <button
+              key={l.id}
+              type="button"
+              onClick={() => setLotteryId(l.id)}
+              aria-label={l.name}
+              aria-pressed={l.id === config.id}
+              className={clsx(
+                "flex items-center justify-center rounded-full border-2 p-1 transition-all",
+                l.id === config.id
+                  ? "scale-110 border-gold"
+                  : "border-transparent opacity-60 hover:opacity-100"
+              )}
+              style={
+                l.id === config.id
+                  ? { boxShadow: "0 0 24px -4px rgba(212,175,55,0.7)" }
+                  : undefined
+              }
+            >
+              <LotteryBadge id={l.id} size={44} />
+            </button>
+          ))}
+        </div>
       </div>
+
+      <Link
+        href={localePath(lang, `/lottery/${config.id}`)}
+        aria-label={t("hero.viewLatestFor", { name: config.name })}
+        className="relative flex h-56 w-56 shrink-0 items-center justify-center rounded-[2.5rem] border border-gold/30 bg-gradient-to-b from-felt-900 to-felt-950 transition-transform hover:scale-[1.03] sm:h-72 sm:w-72"
+        style={{ boxShadow: "0 0 0 1px rgba(212,175,55,0.08), 0 30px 90px -25px rgba(212,175,55,0.45), inset 0 0 60px rgba(212,175,55,0.06)" }}
+      >
+        <div className="pointer-events-none absolute inset-6 rounded-[2rem] bg-gold/5 blur-2xl" aria-hidden="true" />
+        <LotteryBadge id={config.id} size={164} />
+      </Link>
 
       <h2
         className="font-fun text-2xl font-bold tracking-wide sm:text-3xl"

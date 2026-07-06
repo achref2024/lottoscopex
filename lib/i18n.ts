@@ -51,6 +51,7 @@ export interface Dictionary {
     prevLottery: string;
     nextLottery: string;
     viewLatestFor: string;
+    pickLottery: string;
   };
   features: {
     heading: string;
@@ -212,6 +213,7 @@ const en: Dictionary = {
     prevLottery: "Previous lottery",
     nextLottery: "Next lottery",
     viewLatestFor: "View latest {name} draw",
+    pickLottery: "Pick a lottery",
   },
   features: {
     heading: "What you can do with LottoScopeX",
@@ -392,6 +394,7 @@ const fr: Dictionary = {
     prevLottery: "Loterie précédente",
     nextLottery: "Loterie suivante",
     viewLatestFor: "Voir le dernier tirage {name}",
+    pickLottery: "Choisissez une loterie",
   },
   features: {
     heading: "Ce que vous pouvez faire avec LottoScopeX",
@@ -572,6 +575,7 @@ const de: Dictionary = {
     prevLottery: "Vorherige Lotterie",
     nextLottery: "Nächste Lotterie",
     viewLatestFor: "Letzte {name}-Ziehung ansehen",
+    pickLottery: "Lotterie auswählen",
   },
   features: {
     heading: "Das kannst du mit LottoScopeX tun",
