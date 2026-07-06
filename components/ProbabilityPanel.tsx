@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { RangeProbability } from "@/lib/analytics";
 import { useLang } from "./LanguageProvider";
@@ -62,6 +63,12 @@ export default function ProbabilityPanel({ data }: { data: RangeProbability[] })
         <p className="text-sm leading-relaxed text-mist-400">
           {t("probability.intro", { n: sampleSize })}
         </p>
+        <Link
+          href="/methodology#probability-patterns"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold-light"
+        >
+          {t("probability.methodologyLink")} →
+        </Link>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">

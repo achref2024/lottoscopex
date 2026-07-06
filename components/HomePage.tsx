@@ -111,6 +111,14 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/methodology"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light"
+            >
+              {t("features.methodologyLink")} →
+            </Link>
+          </div>
         </div>
       </section>
 

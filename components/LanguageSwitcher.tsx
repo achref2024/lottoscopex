@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useLang } from "./LanguageProvider";
 import { LANGUAGES, localePath, stripLocalePrefix, Lang } from "@/lib/i18n";
 
-const EN_ONLY_EXACT = new Set(["/about", "/privacy", "/terms", "/contact"]);
+const EN_ONLY_EXACT = new Set(["/about", "/privacy", "/terms", "/contact", "/methodology"]);
 const RESULTS_PAGE = /^\/lottery\/([a-z0-9-]+)\/results\/\d{4}-\d{2}-\d{2}$/;
 
 /**

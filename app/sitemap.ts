@@ -38,6 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
+  const methodologyPage: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/methodology`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+    },
+  ];
+
   const drawResultPages: MetadataRoute.Sitemap = LOTTERIES.flatMap((lottery) =>
     getDraws(lottery.id).map((draw) => ({
       url: `${SITE_URL}/lottery/${lottery.id}/results/${draw.date}`,
@@ -47,5 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...homePages, ...lotteryPages, ...generatorPages, ...legalPages, ...drawResultPages];
+  return [
+    ...homePages,
+    ...lotteryPages,
+    ...generatorPages,
+    ...legalPages,
+    ...methodologyPage,
+    ...drawResultPages,
+  ];
 }

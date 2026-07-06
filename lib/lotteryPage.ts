@@ -126,6 +126,47 @@ export function buildGeneratorMetadata(lang: Lang): Metadata {
   };
 }
 
+const BREADCRUMB_HOME_LABEL: Record<Lang, string> = {
+  en: "Home",
+  fr: "Accueil",
+  de: "Startseite",
+};
+
+/** Generic schema.org BreadcrumbList builder — pass ordered {name, url} pairs. */
+export function buildBreadcrumbJsonLd(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+/** Breadcrumb for a lottery detail page: Home > {Lottery name}. */
+export function buildLotteryBreadcrumbJsonLd(lang: Lang, id: string) {
+  const config = getLottery(id);
+  if (!config) return null;
+  const homeUrl = `${SITE_URL}${localePath(lang, "/")}`;
+  const lotteryUrl = `${SITE_URL}${localePath(lang, `/lottery/${id}`)}`;
+  return buildBreadcrumbJsonLd([
+    { name: BREADCRUMB_HOME_LABEL[lang], url: homeUrl },
+    { name: config.name, url: lotteryUrl },
+  ]);
+}
+
+/** Breadcrumb for a per-draw results page (English-only section): Home > Lottery > Date. */
+export function buildResultsBreadcrumbJsonLd(id: string, lotteryName: string, dateLabel: string, date: string) {
+  return buildBreadcrumbJsonLd([
+    { name: "Home", url: SITE_URL },
+    { name: lotteryName, url: `${SITE_URL}/lottery/${id}` },
+    { name: dateLabel, url: `${SITE_URL}/lottery/${id}/results/${date}` },
+  ]);
+}
+
 /** Real, data-grounded Dataset + FAQPage JSON-LD for a lottery page, localized. */
 export function buildLotteryJsonLd(
   lang: Lang,

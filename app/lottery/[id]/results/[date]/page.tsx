@@ -4,7 +4,7 @@ import { LOTTERIES, getLottery } from "@/lib/lotteries";
 import { getDraws } from "@/lib/data";
 import { getDrawInsights } from "@/lib/analytics";
 import { formatDate } from "@/lib/format";
-import { SITE_URL } from "@/lib/lotteryPage";
+import { SITE_URL, buildResultsBreadcrumbJsonLd } from "@/lib/lotteryPage";
 import PageShell from "@/components/PageShell";
 import DrawResultPage from "@/components/DrawResultPage";
 
@@ -56,8 +56,20 @@ export default function Page({ params }: { params: { id: string; date: string } 
   const data = loadDraw(params.id, params.date);
   if (!data) notFound();
 
+  const dateLabel = formatDate(data.draw.date);
+  const breadcrumbJsonLd = buildResultsBreadcrumbJsonLd(
+    data.config.id,
+    data.config.name,
+    dateLabel,
+    data.draw.date
+  );
+
   return (
     <PageShell lang="en">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <DrawResultPage
         config={data.config}
         draw={data.draw}

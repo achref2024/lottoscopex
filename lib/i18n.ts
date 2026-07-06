@@ -65,6 +65,7 @@ export interface Dictionary {
     probabilityTitle: string;
     probabilityDesc: string;
     viewStats: string;
+    methodologyLink: string;
   };
   chooseLottery: {
     heading: string;
@@ -137,6 +138,7 @@ export interface Dictionary {
     headlineDecrease: string;
     headlineStable: string;
     headlineComeback: string;
+    methodologyLink: string;
   };
   compare: {
     intro: string;
@@ -159,6 +161,7 @@ export interface Dictionary {
     disclaimer: string;
     copyright: string; // "© {year} LottoScopeX. Play responsibly."
     about: string;
+    methodology: string;
     privacy: string;
     terms: string;
     contact: string;
@@ -228,6 +231,7 @@ const en: Dictionary = {
     probabilityTitle: "Probability patterns",
     probabilityDesc: "Our signature feature: plain-language insight into what tends to happen next.",
     viewStats: "View live stats",
+    methodologyLink: "See exactly how every statistic is calculated",
   },
   chooseLottery: {
     heading: "Choose a lottery",
@@ -305,6 +309,7 @@ const en: Dictionary = {
       "{label} tends to stay steady — the same amount of numbers showed up again {pct}% of the time.",
     headlineComeback:
       "When {label} is missing from a draw, it usually bounces back — it reappeared in the very next draw {pct}% of the time.",
+    methodologyLink: "How is this calculated? See our methodology",
   },
   compare: {
     intro:
@@ -329,6 +334,7 @@ const en: Dictionary = {
       "LottoScopeX is an analytics tool for exploring historical lottery data. It does not predict future results — lottery draws are random.",
     copyright: "© {year} LottoScopeX. Play responsibly.",
     about: "About",
+    methodology: "Methodology",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     contact: "Contact",
@@ -409,6 +415,7 @@ const fr: Dictionary = {
     probabilityTitle: "Tendances de probabilité",
     probabilityDesc: "Notre fonctionnalité phare : une explication simple de ce qui se passe généralement ensuite.",
     viewStats: "Voir les statistiques",
+    methodologyLink: "Voir précisément comment chaque statistique est calculée",
   },
   chooseLottery: {
     heading: "Choisissez une loterie",
@@ -486,6 +493,7 @@ const fr: Dictionary = {
       "La plage {label} a tendance à rester stable — la même quantité de numéros est réapparue {pct}% du temps.",
     headlineComeback:
       "Quand la plage {label} est absente d'un tirage, elle fait généralement son retour — elle est réapparue dès le tirage suivant {pct}% du temps.",
+    methodologyLink: "Comment est-ce calculé ? Voir notre méthodologie",
   },
   compare: {
     intro:
@@ -510,6 +518,7 @@ const fr: Dictionary = {
       "LottoScopeX est un outil d'analyse pour explorer l'historique des tirages de loterie. Il ne prédit pas les résultats futurs — les tirages de loterie sont aléatoires.",
     copyright: "© {year} LottoScopeX. Jouez de manière responsable.",
     about: "À propos",
+    methodology: "Méthodologie",
     privacy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
     contact: "Contact",
@@ -590,6 +599,7 @@ const de: Dictionary = {
     probabilityTitle: "Wahrscheinlichkeitsmuster",
     probabilityDesc: "Unser Hauptfeature: verständliche Einblicke, was danach meist passiert.",
     viewStats: "Live-Statistiken ansehen",
+    methodologyLink: "Sehen Sie genau, wie jede Statistik berechnet wird",
   },
   chooseLottery: {
     heading: "Lotterie auswählen",
@@ -667,6 +677,7 @@ const de: Dictionary = {
       "Der Bereich {label} bleibt meist stabil — die gleiche Anzahl an Zahlen erschien in {pct}% der Fälle erneut.",
     headlineComeback:
       "Fehlt der Bereich {label} bei einer Ziehung, kommt er meist zurück — er erschien in {pct}% der Fälle direkt bei der nächsten Ziehung wieder.",
+    methodologyLink: "Wie wird das berechnet? Unsere Methodik ansehen",
   },
   compare: {
     intro:
@@ -691,6 +702,7 @@ const de: Dictionary = {
       "LottoScopeX ist ein Analysetool zur Erkundung historischer Lotteriedaten. Es sagt keine zukünftigen Ergebnisse voraus — Lotterieziehungen sind zufällig.",
     copyright: "© {year} LottoScopeX. Bitte verantwortungsvoll spielen.",
     about: "Über uns",
+    methodology: "Methodik",
     privacy: "Datenschutzerklärung",
     terms: "Nutzungsbedingungen",
     contact: "Kontakt",

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { LOTTERIES } from "@/lib/lotteries";
-import { getLotteryPageData, buildLotteryMetadata, buildLotteryJsonLd } from "@/lib/lotteryPage";
+import { getLotteryPageData, buildLotteryMetadata, buildLotteryJsonLd, buildLotteryBreadcrumbJsonLd } from "@/lib/lotteryPage";
 import LotteryPageClient from "@/components/LotteryPageClient";
 import PageShell from "@/components/PageShell";
 
@@ -19,6 +19,7 @@ export default function LotteryPage({ params }: { params: { id: string } }) {
   const { config, draws, last100, frequency, hot, cold, ranges, probability, trends } = data;
 
   const jsonLd = buildLotteryJsonLd("de", config.id, draws, hot);
+  const breadcrumbJsonLd = buildLotteryBreadcrumbJsonLd("de", config.id);
 
   return (
     <PageShell lang="de">
@@ -33,6 +34,12 @@ export default function LotteryPage({ params }: { params: { id: string } }) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqJsonLd) }}
           />
         </>
+      )}
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
       )}
       <LotteryPageClient
         config={config}
