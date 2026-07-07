@@ -31,7 +31,8 @@
       2,
       6
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-26",
@@ -48,7 +49,8 @@
       11,
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-23",
@@ -65,7 +67,8 @@
       5,
       6
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-19",
@@ -82,7 +85,8 @@
       2,
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-16",
@@ -99,7 +103,8 @@
       4,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-12",
@@ -116,7 +121,8 @@
       1,
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-09",
@@ -133,7 +139,8 @@
       3,
       5
     ],
-    "jackpot": 0
+    "jackpot": 175.0,
+    "jackpotWon": true
   },
   {
     "id": "euromillions-2026-06-05",
@@ -150,7 +157,8 @@
       2,
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-06-02",
@@ -167,7 +175,8 @@
       7,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-29",
@@ -184,7 +193,8 @@
       2,
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-26",
@@ -201,7 +211,8 @@
       6,
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-22",
@@ -218,7 +229,8 @@
       5,
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-19",
@@ -235,7 +247,8 @@
       2,
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-15",
@@ -252,7 +265,8 @@
       2,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-12",
@@ -269,7 +283,8 @@
       5,
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-08",
@@ -286,7 +301,8 @@
       8,
       11
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-05",
@@ -303,7 +319,8 @@
       6,
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-05-01",
@@ -320,7 +337,8 @@
       1,
       11
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-28",
@@ -337,7 +355,8 @@
       8,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-24",
@@ -354,7 +373,8 @@
       1,
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-21",
@@ -371,7 +391,8 @@
       3,
       4
     ],
-    "jackpot": 0
+    "jackpot": 144.5,
+    "jackpotWon": true
   },
   {
     "id": "euromillions-2026-04-17",
@@ -388,7 +409,8 @@
       6,
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-14",
@@ -405,7 +427,8 @@
       5,
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-10",
@@ -422,7 +445,8 @@
       6,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-07",
@@ -439,7 +463,8 @@
       6,
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-04-03",
@@ -456,7 +481,8 @@
       2,
       10
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-31",
@@ -473,7 +499,8 @@
       2,
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-27",
@@ -490,7 +517,8 @@
       2,
       4
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-24",
@@ -507,7 +535,8 @@
       1,
       3
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-20",
@@ -524,7 +553,8 @@
       8,
       10
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-17",
@@ -541,7 +571,8 @@
       3,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-13",
@@ -558,7 +589,8 @@
       4,
       10
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-10",
@@ -575,7 +607,8 @@
       4,
       12
     ],
-    "jackpot": 0
+    "jackpot": 209.5,
+    "jackpotWon": true
   },
   {
     "id": "euromillions-2026-03-06",
@@ -592,7 +625,8 @@
       6,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-03-03",
@@ -609,7 +643,8 @@
       5,
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-02-27",
@@ -626,7 +661,8 @@
       6,
       10
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-02-24",
@@ -643,7 +679,8 @@
       6,
       10
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-02-20",
@@ -660,7 +697,8 @@
       5,
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-02-17",
@@ -677,7 +715,8 @@
       5,
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2026-02-13",
