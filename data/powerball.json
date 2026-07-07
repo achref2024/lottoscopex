@@ -47,7 +47,8 @@
     "bonus": [
       6
     ],
-    "jackpot": 0
+    "jackpot": 375,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-29",
@@ -63,7 +64,8 @@
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-27",
@@ -79,7 +81,8 @@
     "bonus": [
       11
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-24",
@@ -95,7 +98,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-22",
@@ -111,7 +115,8 @@
     "bonus": [
       13
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-20",
@@ -127,7 +132,8 @@
     "bonus": [
       15
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-17",
@@ -143,7 +149,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-15",
@@ -159,7 +166,8 @@
     "bonus": [
       23
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-13",
@@ -175,7 +183,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-10",
@@ -191,7 +200,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-08",
@@ -207,7 +217,8 @@
     "bonus": [
       20
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-06",
@@ -223,7 +234,8 @@
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-03",
@@ -239,7 +251,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-06-01",
@@ -255,7 +268,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-30",
@@ -271,7 +285,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-27",
@@ -287,7 +302,8 @@
     "bonus": [
       13
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-25",
@@ -303,7 +319,8 @@
     "bonus": [
       10
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-23",
@@ -319,7 +336,8 @@
     "bonus": [
       26
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-20",
@@ -335,7 +353,8 @@
     "bonus": [
       25
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-18",
@@ -351,7 +370,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-16",
@@ -367,7 +387,8 @@
     "bonus": [
       18
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-13",
@@ -383,7 +404,8 @@
     "bonus": [
       15
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-11",
@@ -399,7 +421,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-09",
@@ -415,7 +438,8 @@
     "bonus": [
       22
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-06",
@@ -431,7 +455,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-04",
@@ -447,7 +472,8 @@
     "bonus": [
       13
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-05-02",
@@ -463,7 +489,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": true
   },
   {
     "id": "powerball-2026-04-29",
