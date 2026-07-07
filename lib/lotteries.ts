@@ -51,7 +51,7 @@ export const LOTTERIES: LotteryConfig[] = [
     gradient: ["#F59E0B", "#EF4444"],
     accent: "#E2001A", // the red of Germany's LOTTO brand
     main: { count: 6, min: 1, max: 49 },
-    bonus: { label: "Superzahl", count: 1, min: 0, max: 9, shape: "diamond" },
+    bonus: { label: "Superzahl", count: 1, min: 0, max: 9, shape: "circle" },
     drawDays: [3, 6], // Wednesday, Saturday
     currency: "EUR",
     jackpotMin: 1,
@@ -85,7 +85,7 @@ export const LOTTERIES: LotteryConfig[] = [
     gradient: ["#10B981", "#84CC16"],
     accent: "#2FBF6E", // shamrock green, Ireland's best-known colour
     main: { count: 6, min: 1, max: 47 },
-    bonus: { label: "Bonus Ball", count: 1, min: 1, max: 47, shape: "diamond" },
+    bonus: { label: "Bonus Ball", count: 1, min: 1, max: 47, shape: "circle" },
     drawDays: [3, 6], // Wednesday, Saturday
     currency: "EUR",
     jackpotMin: 2,
