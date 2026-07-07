@@ -93,7 +93,9 @@ export default function GeneratorPage() {
         <div className="mt-8 rounded-2xl border border-felt-800 bg-felt-900 p-8 text-center sm:p-12">
           <div key={gen} className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             {hasGenerated
-              ? main.map((n) => <LotteryBall key={`m-${n}`} number={n} variant="main" size="lg" animate />)
+              ? main.map((n) => (
+                  <LotteryBall key={`m-${n}`} number={n} variant="main" size="lg" animate lotteryId={config.id} />
+                ))
               : Array.from({ length: config.main.count }).map((_, i) => (
                   <EmptyBall key={`empty-m-${i}`} />
                 ))}

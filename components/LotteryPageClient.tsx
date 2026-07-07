@@ -214,7 +214,7 @@ export default function LotteryPageClient({
       id: "hotcold",
       label: t("tabs.hotCold"),
       icon: ICONS.hotcold,
-      content: <HotColdPanel hot={hot} cold={cold} />,
+      content: <HotColdPanel hot={hot} cold={cold} lotteryId={config.id} />,
     },
     {
       id: "ranges",
@@ -232,7 +232,7 @@ export default function LotteryPageClient({
       id: "compare",
       label: t("tabs.compare"),
       icon: ICONS.compare,
-      content: <CompareView trends={trends} />,
+      content: <CompareView trends={trends} lotteryId={config.id} />,
     },
   ];
 

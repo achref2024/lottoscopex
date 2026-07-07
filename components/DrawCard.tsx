@@ -53,6 +53,7 @@ export default function DrawCard({
             size={size}
             delay={animate ? i * 0.05 : 0}
             animate={animate}
+            lotteryId={config.id}
           />
         ))}
         {draw.bonus.length > 0 && (

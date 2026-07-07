@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { getBallGradient, BONUS_BALL, BALL_TEXT } from "@/lib/colors";
+import { getBallGradient, getBallTextColor, BONUS_BALL, BALL_TEXT } from "@/lib/colors";
 import { BonusShape } from "@/lib/types";
 import clsx from "clsx";
 
@@ -12,6 +12,7 @@ interface LotteryBallProps {
   size?: "xs" | "sm" | "md" | "lg";
   delay?: number;
   animate?: boolean;
+  lotteryId?: string;
 }
 
 const SIZE_MAP = {
@@ -28,8 +29,10 @@ export default function LotteryBall({
   size = "md",
   delay = 0,
   animate = true,
+  lotteryId,
 }: LotteryBallProps) {
-  const colors = variant === "bonus" ? BONUS_BALL : getBallGradient(number);
+  const colors = variant === "bonus" ? BONUS_BALL : getBallGradient(number, lotteryId);
+  const textColor = variant === "bonus" ? BALL_TEXT : getBallTextColor(lotteryId);
   const shapeClass =
     variant === "bonus" && shape === "diamond"
       ? "rounded-lg rotate-45"
@@ -45,7 +48,7 @@ export default function LotteryBall({
       style={{
         background: `linear-gradient(145deg, ${colors.from}, ${colors.to})`,
         boxShadow: `0 4px 10px -3px ${colors.to}66`,
-        color: BALL_TEXT,
+        color: textColor,
       }}
     >
       <span className={shape === "diamond" && variant === "bonus" ? "-rotate-45" : ""}>

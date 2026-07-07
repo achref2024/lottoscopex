@@ -48,7 +48,7 @@ export default function LotteryCard({ config, latest, index }: LotteryCardProps)
 
         <div className="mt-5 flex flex-wrap items-center gap-2">
           {latest.main.slice(0, 6).map((n) => (
-            <LotteryBall key={n} number={n} size="sm" animate={false} />
+            <LotteryBall key={n} number={n} size="sm" animate={false} lotteryId={config.id} />
           ))}
           {latest.bonus.slice(0, 2).map((n) => (
             <LotteryBall

@@ -20,7 +20,17 @@ function Arrow({ direction }: { direction: "up" | "down" | "flat" }) {
   );
 }
 
-function TrendList({ title, description, entries }: { title: string; description: string; entries: TrendEntry[] }) {
+function TrendList({
+  title,
+  description,
+  entries,
+  lotteryId,
+}: {
+  title: string;
+  description: string;
+  entries: TrendEntry[];
+  lotteryId?: string;
+}) {
   return (
     <div className="rounded-2xl border border-felt-800 bg-felt-900 p-6">
       <h3 className="mb-1 text-lg font-bold text-white">{title}</h3>
@@ -28,7 +38,7 @@ function TrendList({ title, description, entries }: { title: string; description
       <div className="space-y-3">
         {entries.map((e) => (
           <div key={e.number} className="flex items-center gap-3">
-            <LotteryBall number={e.number} size="sm" animate={false} />
+            <LotteryBall number={e.number} size="sm" animate={false} lotteryId={lotteryId} />
             <div className="flex-1">
               <div className="h-1.5 w-full overflow-hidden rounded-full bg-felt-800">
                 <div
@@ -51,7 +61,7 @@ function TrendList({ title, description, entries }: { title: string; description
   );
 }
 
-export default function CompareView({ trends }: { trends: TrendEntry[] }) {
+export default function CompareView({ trends, lotteryId }: { trends: TrendEntry[]; lotteryId?: string }) {
   const { t } = useLang();
   const risers = trends.filter((entry) => entry.direction === "up").slice(0, 6);
   const fallers = [...trends].reverse().filter((entry) => entry.direction === "down").slice(0, 6);
@@ -64,8 +74,8 @@ export default function CompareView({ trends }: { trends: TrendEntry[] }) {
         <p className="text-sm leading-relaxed text-mist-400">{t("compare.intro")}</p>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
-        <TrendList title={t("compare.heatingUp")} description={description} entries={risers} />
-        <TrendList title={t("compare.coolingDown")} description={description} entries={fallers} />
+        <TrendList title={t("compare.heatingUp")} description={description} entries={risers} lotteryId={lotteryId} />
+        <TrendList title={t("compare.coolingDown")} description={description} entries={fallers} lotteryId={lotteryId} />
       </div>
     </div>
   );

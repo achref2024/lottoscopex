@@ -25,12 +25,12 @@ function ColdIcon() {
   );
 }
 
-function BallRow({ entries }: { entries: FrequencyEntry[] }) {
+function BallRow({ entries, lotteryId }: { entries: FrequencyEntry[]; lotteryId?: string }) {
   return (
     <div className="flex flex-wrap gap-3">
       {entries.map((e) => (
         <div key={e.number} className="flex flex-col items-center gap-1.5">
-          <LotteryBall number={e.number} size="md" animate={false} />
+          <LotteryBall number={e.number} size="md" animate={false} lotteryId={lotteryId} />
           <span className="text-[11px] font-medium text-mist-500">
             {e.count}×
           </span>
@@ -43,9 +43,11 @@ function BallRow({ entries }: { entries: FrequencyEntry[] }) {
 export default function HotColdPanel({
   hot,
   cold,
+  lotteryId,
 }: {
   hot: FrequencyEntry[];
   cold: FrequencyEntry[];
+  lotteryId?: string;
 }) {
   const { t } = useLang();
   return (
@@ -60,7 +62,7 @@ export default function HotColdPanel({
         <p className="mb-5 text-sm text-mist-500">
           {t("hotCold.hotDesc")}
         </p>
-        <BallRow entries={hot} />
+        <BallRow entries={hot} lotteryId={lotteryId} />
       </div>
       <div className="rounded-2xl border border-felt-800 bg-felt-900 p-6">
         <div className="mb-4 flex items-center gap-2">
@@ -70,7 +72,7 @@ export default function HotColdPanel({
         <p className="mb-5 text-sm text-mist-500">
           {t("hotCold.coldDesc")}
         </p>
-        <BallRow entries={cold} />
+        <BallRow entries={cold} lotteryId={lotteryId} />
       </div>
       </div>
     </div>

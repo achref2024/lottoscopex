@@ -11,8 +11,24 @@ export const ACCENT = "#D4AF37";
 export const ACCENT_DARK = "#B8941F";
 export const ACCENT_LIGHT = "rgba(212, 175, 55, 0.14)";
 
-export function getBallGradient(_n: number): { from: string; to: string; ring: string } {
+// Per-lottery overrides for the main-number ball color, used when a
+// lottery's own brand color should show through instead of the uniform
+// white/cream. Text color is overridden alongside so it stays readable.
+export const MAIN_BALL_OVERRIDES: Record<string, { from: string; to: string; ring: string; text: string }> = {
+  lotto6aus49: { from: "#EF4444", to: "#B91C1C", ring: "#FCA5A5", text: "#FFFFFF" }, // German LOTTO red
+};
+
+export function getBallGradient(
+  _n: number,
+  lotteryId?: string
+): { from: string; to: string; ring: string } {
+  if (lotteryId && MAIN_BALL_OVERRIDES[lotteryId]) return MAIN_BALL_OVERRIDES[lotteryId];
   return MAIN_BALL;
+}
+
+export function getBallTextColor(lotteryId?: string): string {
+  if (lotteryId && MAIN_BALL_OVERRIDES[lotteryId]) return MAIN_BALL_OVERRIDES[lotteryId].text;
+  return BALL_TEXT;
 }
 
 // Converts a "#RRGGBB" hex string to an "rgba(r, g, b, alpha)" string.
