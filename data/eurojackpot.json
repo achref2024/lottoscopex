@@ -797,7 +797,8 @@
       8,
       9
     ],
-    "jackpot": 0
+    "jackpot": 10.0,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2026-01-23",
@@ -814,7 +815,8 @@
       6,
       9
     ],
-    "jackpot": 0
+    "jackpot": 53.7,
+    "jackpotWon": true
   },
   {
     "id": "eurojackpot-2026-01-20",
@@ -831,7 +833,8 @@
       2,
       3
     ],
-    "jackpot": 0
+    "jackpot": 42.8,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2026-01-16",
@@ -848,7 +851,8 @@
       5,
       11
     ],
-    "jackpot": 0
+    "jackpot": 34.2,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2026-01-13",
@@ -865,7 +869,8 @@
       6,
       12
     ],
-    "jackpot": 0
+    "jackpot": 24.5,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2026-01-09",
@@ -882,7 +887,8 @@
       6,
       12
     ],
-    "jackpot": 0
+    "jackpot": 17.5,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2026-01-06",
@@ -899,7 +905,8 @@
       8,
       12
     ],
-    "jackpot": 0
+    "jackpot": 10.0,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-30",
@@ -916,7 +923,8 @@
       1,
       6
     ],
-    "jackpot": 0
+    "jackpot": 61.3,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-26",
@@ -933,7 +941,8 @@
       4,
       12
     ],
-    "jackpot": 0
+    "jackpot": 50.5,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-23",
@@ -950,7 +959,8 @@
       6,
       7
     ],
-    "jackpot": 0
+    "jackpot": 40.7,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-19",
@@ -967,7 +977,8 @@
       2,
       5
     ],
-    "jackpot": 0
+    "jackpot": 31.4,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-16",
@@ -984,7 +995,8 @@
       4,
       11
     ],
-    "jackpot": 0
+    "jackpot": 23.1,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-12",
@@ -1001,7 +1013,8 @@
       2,
       11
     ],
-    "jackpot": 0
+    "jackpot": 17.5,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-09",
@@ -1018,7 +1031,8 @@
       2,
       9
     ],
-    "jackpot": 0
+    "jackpot": 10.0,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-12-05",
@@ -1035,7 +1049,8 @@
       6,
       10
     ],
-    "jackpot": 0
+    "jackpot": 10.0,
+    "jackpotWon": true
   },
   {
     "id": "eurojackpot-2025-12-02",
@@ -1052,7 +1067,8 @@
       4,
       6
     ],
-    "jackpot": 0
+    "jackpot": 23.5,
+    "jackpotWon": true
   },
   {
     "id": "eurojackpot-2025-11-28",
@@ -1069,7 +1085,8 @@
       3,
       5
     ],
-    "jackpot": 0
+    "jackpot": 17.6,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-11-25",
@@ -1086,7 +1103,8 @@
       4,
       8
     ],
-    "jackpot": 0
+    "jackpot": 10.0,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2025-11-21",
