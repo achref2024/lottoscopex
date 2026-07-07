@@ -230,7 +230,8 @@
     "bonus": [
       41
     ],
-    "jackpot": 3.731996
+    "jackpot": 3.731996,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-20",
@@ -247,7 +248,8 @@
     "bonus": [
       22
     ],
-    "jackpot": 3.341747
+    "jackpot": 3.341747,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-16",
@@ -264,7 +266,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 3.050302
+    "jackpot": 3.050302,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-13",
@@ -281,7 +284,8 @@
     "bonus": [
       13
     ],
-    "jackpot": 2.666279
+    "jackpot": 2.666279,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-09",
@@ -298,7 +302,8 @@
     "bonus": [
       22
     ],
-    "jackpot": 2.38184
+    "jackpot": 2.38184,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-06",
@@ -315,7 +320,8 @@
     "bonus": [
       18
     ],
-    "jackpot": 2.0
+    "jackpot": 2.0,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-02",
@@ -332,7 +338,8 @@
     "bonus": [
       26
     ],
-    "jackpot": 8.726418
+    "jackpot": 8.7,
+    "jackpotWon": true
   },
   {
     "id": "irish-lotto-2026-04-29",
@@ -349,7 +356,8 @@
     "bonus": [
       36
     ],
-    "jackpot": 8.261074
+    "jackpot": 8.261074,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-25",
@@ -366,7 +374,8 @@
     "bonus": [
       37
     ],
-    "jackpot": 7.907647
+    "jackpot": 7.907647,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-22",
@@ -383,7 +392,8 @@
     "bonus": [
       37
     ],
-    "jackpot": 7.46387
+    "jackpot": 7.46387,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-18",
@@ -400,7 +410,8 @@
     "bonus": [
       24
     ],
-    "jackpot": 7.120443
+    "jackpot": 7.120443,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-15",
@@ -417,7 +428,8 @@
     "bonus": [
       44
     ],
-    "jackpot": 6.67436
+    "jackpot": 6.67436,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-11",
@@ -434,7 +446,8 @@
     "bonus": [
       21
     ],
-    "jackpot": 6.342381
+    "jackpot": 6.342381,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-08",
@@ -451,7 +464,8 @@
     "bonus": [
       32
     ],
-    "jackpot": 5.926078
+    "jackpot": 5.926078,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-04",
@@ -468,7 +482,8 @@
     "bonus": [
       20
     ],
-    "jackpot": 5.6126
+    "jackpot": 5.6126,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-04-01",
@@ -485,7 +500,8 @@
     "bonus": [
       39
     ],
-    "jackpot": 5.170829
+    "jackpot": 5.170829,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-28",
@@ -502,7 +518,8 @@
     "bonus": [
       11
     ],
-    "jackpot": 4.850274
+    "jackpot": 4.850274,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-25",
@@ -519,7 +536,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 4.428509
+    "jackpot": 4.428509,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-21",
@@ -536,7 +554,8 @@
     "bonus": [
       40
     ],
-    "jackpot": 4.12135
+    "jackpot": 4.12135,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-18",
@@ -553,7 +572,8 @@
     "bonus": [
       43
     ],
-    "jackpot": 3.711847
+    "jackpot": 3.711847,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-14",
@@ -570,7 +590,8 @@
     "bonus": [
       17
     ],
-    "jackpot": 3.41857
+    "jackpot": 3.41857,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-11",
@@ -587,7 +608,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 2.987349
+    "jackpot": 2.987349,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-07",
@@ -604,7 +626,8 @@
     "bonus": [
       15
     ],
-    "jackpot": 2.693222
+    "jackpot": 2.693222,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-03-04",
@@ -621,7 +644,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 2.293415
+    "jackpot": 2.293415,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-02-28",
@@ -638,7 +662,8 @@
     "bonus": [
       20
     ],
-    "jackpot": 2.0
+    "jackpot": 2.0,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-02-25",
@@ -655,7 +680,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 11.101286
+    "jackpot": 11.1,
+    "jackpotWon": true
   },
   {
     "id": "irish-lotto-2026-02-21",
