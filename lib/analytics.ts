@@ -192,6 +192,31 @@ export function compareRecentVsHistorical(
     .sort((a, b) => b.delta - a.delta);
 }
 
+/**
+ * Attaches a computed `rolloverCount` to each draw: how many consecutive
+ * draws (including this one), counting backwards, had no jackpot winner.
+ * This is derived purely from each draw's own `jackpotWon` flag — never
+ * fetched or guessed — so the streak only reflects draws where we actually
+ * recorded a real won/not-won result. A draw with `jackpotWon` true or
+ * undefined breaks the streak (resets to 0) since we can't vouch for what
+ * came before it. Expects `draws` sorted newest-first.
+ */
+export function withRolloverCounts(draws: Draw[]): Draw[] {
+  const result: Draw[] = new Array(draws.length);
+  let running = 0;
+  for (let i = draws.length - 1; i >= 0; i--) {
+    const d = draws[i];
+    if (d.jackpotWon === false) {
+      running += 1;
+      result[i] = { ...d, rolloverCount: running };
+    } else {
+      running = 0;
+      result[i] = { ...d };
+    }
+  }
+  return result;
+}
+
 export interface DrawInsights {
   oddCount: number;
   evenCount: number;

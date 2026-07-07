@@ -14,7 +14,8 @@
       2,
       3
     ],
-    "jackpot": 0
+    "jackpot": 23,
+    "jackpotWon": false
   },
   {
     "id": "eurojackpot-2026-07-03",

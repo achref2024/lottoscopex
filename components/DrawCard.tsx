@@ -38,11 +38,25 @@ export default function DrawCard({
             {formatDate(draw.date, locale)}
           </p>
         </div>
-        {draw.jackpot ? (
-          <div className="rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-sm font-semibold text-gold-light">
-            {formatMoney(draw.jackpot, config.currency)} {t("drawCard.jackpotSuffix")}
+        {(draw.jackpot || draw.jackpotWon !== undefined) && (
+          <div className="flex flex-col items-end gap-1">
+            {draw.jackpot ? (
+              <div className="rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-sm font-semibold text-gold-light">
+                {formatMoney(draw.jackpot, config.currency)} {t("drawCard.jackpotSuffix")}
+              </div>
+            ) : null}
+            {draw.jackpotWon === true && (
+              <span className="text-xs font-semibold text-mist-500">{t("drawCard.jackpotWon")}</span>
+            )}
+            {draw.jackpotWon === false && (
+              <span className="text-xs font-medium text-mist-500">
+                {draw.rolloverCount && draw.rolloverCount > 1
+                  ? t("drawCard.rolloverStreak", { count: draw.rolloverCount })
+                  : t("drawCard.rolledOver")}
+              </span>
+            )}
           </div>
-        ) : null}
+        )}
       </div>
       <div className="flex flex-wrap items-center gap-2 sm:gap-3">
         {draw.main.map((n, i) => (

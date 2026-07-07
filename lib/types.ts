@@ -35,7 +35,11 @@ export interface Draw {
   date: string; // ISO date
   main: number[];
   bonus: number[];
-  jackpot: number;
+  jackpot: number; // amount (in millions) that was in play for this draw; 0/omitted = not recorded
+  jackpotWon?: boolean; // whether the top prize was won in this draw, if known
+  rolloverCount?: number; // computed: how many consecutive draws (including this one) rolled over without
+  // a jackpot winner, counting back from this draw. Derived at request time from jackpotWon history —
+  // never stored in the raw data files.
 }
 
 export interface RangeBucket {

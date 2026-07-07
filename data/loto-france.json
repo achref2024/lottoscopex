@@ -13,7 +13,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 3,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-07-04",

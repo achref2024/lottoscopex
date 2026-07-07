@@ -7,6 +7,7 @@ import {
   rangeDistribution,
   computeRangeProbabilities,
   compareRecentVsHistorical,
+  withRolloverCounts,
 } from "@/lib/analytics";
 import { Lang, DICTIONARIES, interpolate, localePath } from "@/lib/i18n";
 import { formatMoney } from "@/lib/format";
@@ -20,7 +21,7 @@ export function getLotteryPageData(id: string) {
   const config = getLottery(id);
   if (!config) return null;
 
-  const draws = getDraws(config.id); // newest-first
+  const draws = withRolloverCounts(getDraws(config.id)); // newest-first
   const last100 = draws.slice(0, 100);
 
   const frequency = computeFrequency(last100, config.main.min, config.main.max);

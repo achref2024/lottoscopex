@@ -84,6 +84,9 @@ export interface Dictionary {
     latestDraw: string;
     draw: string;
     jackpotSuffix: string;
+    jackpotWon: string;
+    rolledOver: string;
+    rolloverStreak: string; // "{count}x rolled over"
   };
   recentDraws: {
     heading: string;
@@ -273,6 +276,9 @@ const en: Dictionary = {
     latestDraw: "Latest draw",
     draw: "Draw",
     jackpotSuffix: "jackpot",
+    jackpotWon: "Jackpot won",
+    rolledOver: "No winner — rolled over",
+    rolloverStreak: "{count}× rolled over in a row",
   },
   recentDraws: {
     heading: "Recent draws",
@@ -481,6 +487,9 @@ const fr: Dictionary = {
     latestDraw: "Dernier tirage",
     draw: "Tirage",
     jackpotSuffix: "de jackpot",
+    jackpotWon: "Jackpot remporté",
+    rolledOver: "Aucun gagnant — report du jackpot",
+    rolloverStreak: "{count}× reporté d'affilée",
   },
   recentDraws: {
     heading: "Tirages récents",
@@ -690,6 +699,9 @@ const de: Dictionary = {
     latestDraw: "Letzte Ziehung",
     draw: "Ziehung",
     jackpotSuffix: "Jackpot",
+    jackpotWon: "Jackpot geknackt",
+    rolledOver: "Kein Gewinner — Jackpot wird übertragen",
+    rolloverStreak: "{count}× in Folge übertragen",
   },
   recentDraws: {
     heading: "Letzte Ziehungen",
