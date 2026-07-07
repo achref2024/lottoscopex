@@ -557,7 +557,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-03-10",
@@ -573,7 +574,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 533,
+    "jackpotWon": true
   },
   {
     "id": "megamillions-2026-03-06",
@@ -589,7 +591,8 @@
     "bonus": [
       24
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-03-03",
@@ -605,7 +608,8 @@
     "bonus": [
       16
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-27",
@@ -621,7 +625,8 @@
     "bonus": [
       23
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-24",
@@ -637,7 +642,8 @@
     "bonus": [
       23
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-20",
@@ -653,7 +659,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 193.1,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-17",
@@ -669,7 +676,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 183.3,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-13",
@@ -685,7 +693,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 0
+    "jackpot": 174.2,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-10",
@@ -701,7 +710,8 @@
     "bonus": [
       6
     ],
-    "jackpot": 0
+    "jackpot": 165.6,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-06",
@@ -717,7 +727,8 @@
     "bonus": [
       19
     ],
-    "jackpot": 0
+    "jackpot": 156.1,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-02-03",
@@ -733,7 +744,8 @@
     "bonus": [
       21
     ],
-    "jackpot": 0
+    "jackpot": 145.7,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-30",
@@ -749,7 +761,8 @@
     "bonus": [
       13
     ],
-    "jackpot": 0
+    "jackpot": 136.7,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-27",
@@ -765,7 +778,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 128.6,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-23",
@@ -781,7 +795,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 120.8,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-20",
@@ -797,7 +812,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 113.5,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-16",
@@ -813,7 +829,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 0
+    "jackpot": 105.1,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-13",
@@ -829,7 +846,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 98.3,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-09",
@@ -845,7 +863,8 @@
     "bonus": [
       16
     ],
-    "jackpot": 0
+    "jackpot": 90.5,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-06",
@@ -861,7 +880,8 @@
     "bonus": [
       24
     ],
-    "jackpot": 0
+    "jackpot": 81.9,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-01-02",
@@ -877,7 +897,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 72,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-30",
@@ -893,7 +914,8 @@
     "bonus": [
       6
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-26",
@@ -909,7 +931,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-23",
@@ -925,7 +948,8 @@
     "bonus": [
       21
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-19",
@@ -941,7 +965,8 @@
     "bonus": [
       18
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-16",
@@ -957,7 +982,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-12",
@@ -973,7 +999,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-09",
@@ -989,7 +1016,8 @@
     "bonus": [
       6
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-05",
@@ -1005,7 +1033,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-12-02",
@@ -1021,7 +1050,8 @@
     "bonus": [
       16
     ],
-    "jackpot": 0
+    "jackpot": 90,
+    "jackpotWon": true
   },
   {
     "id": "megamillions-2025-11-28",
@@ -1037,7 +1067,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 80,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-11-25",
@@ -1053,7 +1084,8 @@
     "bonus": [
       18
     ],
-    "jackpot": 0
+    "jackpot": 70,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-11-21",
@@ -1069,7 +1101,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 60,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-11-18",
@@ -1085,7 +1118,8 @@
     "bonus": [
       10
     ],
-    "jackpot": 0
+    "jackpot": 50,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-11-14",
@@ -1101,7 +1135,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 980,
+    "jackpotWon": true
   },
   {
     "id": "megamillions-2025-11-11",
@@ -1117,7 +1152,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 0
+    "jackpot": 900,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-11-07",
@@ -1133,7 +1169,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 843,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-11-04",
@@ -1149,7 +1186,8 @@
     "bonus": [
       6
     ],
-    "jackpot": 0
+    "jackpot": 800,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-31",
@@ -1165,7 +1203,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 754,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-28",
@@ -1181,7 +1220,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 714,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-24",
@@ -1197,7 +1237,8 @@
     "bonus": [
       24
     ],
-    "jackpot": 0
+    "jackpot": 680,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-21",
@@ -1213,7 +1254,8 @@
     "bonus": [
       18
     ],
-    "jackpot": 0
+    "jackpot": 650,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-17",
@@ -1229,7 +1271,8 @@
     "bonus": [
       10
     ],
-    "jackpot": 0
+    "jackpot": 625,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-14",
@@ -1245,7 +1288,8 @@
     "bonus": [
       19
     ],
-    "jackpot": 0
+    "jackpot": 600,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-10",
@@ -1261,7 +1305,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 575,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-07",
@@ -1277,7 +1322,8 @@
     "bonus": [
       19
     ],
-    "jackpot": 0
+    "jackpot": 547,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-10-03",
@@ -1293,7 +1339,8 @@
     "bonus": [
       19
     ],
-    "jackpot": 0
+    "jackpot": 520,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-30",
@@ -1309,7 +1356,8 @@
     "bonus": [
       14
     ],
-    "jackpot": 0
+    "jackpot": 497,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-26",
@@ -1325,7 +1373,8 @@
     "bonus": [
       21
     ],
-    "jackpot": 0
+    "jackpot": 474,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-23",
@@ -1341,7 +1390,8 @@
     "bonus": [
       18
     ],
-    "jackpot": 0
+    "jackpot": 451,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-19",
@@ -1357,7 +1407,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 423,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-16",
@@ -1373,7 +1424,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 400,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-12",
@@ -1389,7 +1441,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 381,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-09",
@@ -1405,7 +1458,8 @@
     "bonus": [
       22
     ],
-    "jackpot": 0
+    "jackpot": 358,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-05",
@@ -1421,7 +1475,8 @@
     "bonus": [
       24
     ],
-    "jackpot": 0
+    "jackpot": 336,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-09-02",
@@ -1437,7 +1492,8 @@
     "bonus": [
       23
     ],
-    "jackpot": 0
+    "jackpot": 302,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-29",
@@ -1453,7 +1509,8 @@
     "bonus": [
       21
     ],
-    "jackpot": 0
+    "jackpot": 277,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-26",
@@ -1469,7 +1526,8 @@
     "bonus": [
       17
     ],
-    "jackpot": 0
+    "jackpot": 253,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-22",
@@ -1485,7 +1543,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 234,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-19",
@@ -1501,7 +1560,8 @@
     "bonus": [
       10
     ],
-    "jackpot": 0
+    "jackpot": 216,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-15",
@@ -1517,7 +1577,8 @@
     "bonus": [
       16
     ],
-    "jackpot": 0
+    "jackpot": 198,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-12",
@@ -1533,7 +1594,8 @@
     "bonus": [
       23
     ],
-    "jackpot": 0
+    "jackpot": 182,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-08",
@@ -1549,7 +1611,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 0
+    "jackpot": 166,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-05",
@@ -1565,7 +1628,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 150,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-08-01",
@@ -1581,7 +1645,8 @@
     "bonus": [
       22
     ],
-    "jackpot": 0
+    "jackpot": 140,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-07-29",
@@ -1597,7 +1662,8 @@
     "bonus": [
       11
     ],
-    "jackpot": 0
+    "jackpot": 130,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-07-25",
@@ -1613,7 +1679,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 120,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-07-22",
@@ -1629,7 +1696,8 @@
     "bonus": [
       17
     ],
-    "jackpot": 0
+    "jackpot": 110,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2025-07-18",
