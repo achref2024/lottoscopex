@@ -30,7 +30,8 @@
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-07-01",
@@ -46,7 +47,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 2,
+    "jackpotWon": true
   },
   {
     "id": "loto-france-2026-06-29",
@@ -62,7 +64,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 2,
+    "jackpotWon": true
   },
   {
     "id": "loto-france-2026-06-27",
@@ -78,7 +81,8 @@
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 2,
+    "jackpotWon": true
   },
   {
     "id": "loto-france-2026-06-24",

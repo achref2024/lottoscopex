@@ -13,7 +13,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 416,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-07-04",
@@ -29,7 +30,8 @@
     "bonus": [
       20
     ],
-    "jackpot": 0
+    "jackpot": 396,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-07-01",

@@ -14,7 +14,8 @@
     "bonus": [
       39
     ],
-    "jackpot": 5.915657
+    "jackpot": 5.915657,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-07-01",
@@ -31,7 +32,8 @@
     "bonus": [
       12
     ],
-    "jackpot": 5.497742
+    "jackpot": 5.497742,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-27",
@@ -48,7 +50,8 @@
     "bonus": [
       25
     ],
-    "jackpot": 5.181046
+    "jackpot": 5.181046,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-24",
@@ -65,7 +68,8 @@
     "bonus": [
       43
     ],
-    "jackpot": 4.771077
+    "jackpot": 4.771077,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-20",
@@ -82,7 +86,8 @@
     "bonus": [
       46
     ],
-    "jackpot": 4.465633
+    "jackpot": 4.465633,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-17",
@@ -99,7 +104,8 @@
     "bonus": [
       28
     ],
-    "jackpot": 4.060235
+    "jackpot": 4.060235,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-13",
@@ -116,7 +122,8 @@
     "bonus": [
       24
     ],
-    "jackpot": 3.761162
+    "jackpot": 3.761162,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-10",
@@ -133,7 +140,8 @@
     "bonus": [
       29
     ],
-    "jackpot": 3.365989
+    "jackpot": 3.365989,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-06",
@@ -150,7 +158,8 @@
     "bonus": [
       35
     ],
-    "jackpot": 3.067628
+    "jackpot": 3.067628,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-06-03",
@@ -167,7 +176,8 @@
     "bonus": [
       30
     ],
-    "jackpot": 2.675319
+    "jackpot": 2.675319,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-30",
@@ -184,7 +194,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 2.395387
+    "jackpot": 2.395387,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-27",
@@ -201,7 +212,8 @@
     "bonus": [
       11
     ],
-    "jackpot": 2.0
+    "jackpot": 2.0,
+    "jackpotWon": false
   },
   {
     "id": "irish-lotto-2026-05-23",
