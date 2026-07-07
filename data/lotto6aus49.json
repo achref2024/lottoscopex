@@ -14,7 +14,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-07-01",
@@ -31,7 +32,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-27",
@@ -48,7 +50,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-24",
@@ -65,7 +68,8 @@
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-20",
@@ -82,7 +86,8 @@
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-17",
@@ -99,7 +104,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-13",
@@ -116,7 +122,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-10",
@@ -133,7 +140,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-06",
@@ -150,7 +158,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-06-03",
@@ -167,7 +176,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-30",
@@ -184,7 +194,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-27",
@@ -201,7 +212,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-23",
@@ -218,7 +230,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-20",
@@ -235,7 +248,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-16",
@@ -252,7 +266,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-13",
@@ -269,7 +284,8 @@
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-09",
@@ -286,7 +302,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-06",
@@ -303,7 +320,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-05-02",
@@ -320,7 +338,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-29",
@@ -337,7 +356,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-25",
@@ -354,7 +374,8 @@
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-22",
@@ -371,7 +392,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-18",
@@ -388,7 +410,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-15",
@@ -405,7 +428,8 @@
     "bonus": [
       0
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-11",
@@ -422,7 +446,8 @@
     "bonus": [
       0
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-08",
@@ -439,7 +464,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-04",
@@ -456,7 +482,8 @@
     "bonus": [
       2
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-04-01",
@@ -473,7 +500,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-03-28",
@@ -490,7 +518,8 @@
     "bonus": [
       1
     ],
-    "jackpot": 0
+    "jackpot": 0,
+    "jackpotWon": false
   },
   {
     "id": "lotto6aus49-2026-03-25",
@@ -507,7 +536,8 @@
     "bonus": [
       5
     ],
-    "jackpot": 0
+    "jackpot": 44.2,
+    "jackpotWon": true
   },
   {
     "id": "lotto6aus49-2026-03-21",
