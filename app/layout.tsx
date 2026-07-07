@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ADSENSE_CLIENT_ID } from "@/lib/ads";
+import { GA_MEASUREMENT_ID } from "@/lib/ga";
 
 const SITE_URL = "https://lottoscopex.com";
 const SITE_TITLE = "LottoScopeX — Lottery Analytics";
@@ -90,6 +91,24 @@ export default function RootLayout({
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
           />
+        )}
+        {GA_MEASUREMENT_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}');
+                `,
+              }}
+            />
+          </>
         )}
       </head>
       <body className="font-body text-ink">{children}</body>
