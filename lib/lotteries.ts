@@ -4,7 +4,7 @@ import { LotteryConfig } from "./types";
 // each operator's official site (or, where unavailable, the last officially
 // published figure). These are a live-changing number on a static site, so
 // they reflect the date below and should be refreshed periodically.
-export const NEXT_JACKPOT_AS_OF = "2026-07-05";
+export const NEXT_JACKPOT_AS_OF = "2026-07-07";
 
 export const LOTTERIES: LotteryConfig[] = [
   {
@@ -73,7 +73,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
-    nextJackpot: 3, // official "Prochain jackpot" figure for the next draw
+    nextJackpot: 4, // rolled over from the winner-less 6 Jul 2026 draw to €4M for 8 Jul
   },
   {
     id: "irish-lotto",
@@ -107,7 +107,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 20,
     jackpotMax: 500,
-    nextJackpot: 416, // official "Estimated Jackpot" for the next draw
+    nextJackpot: 434, // rolled over from the winner-less 6 Jul 2026 draw to $434M for 8 Jul
   },
   {
     id: "megamillions",
