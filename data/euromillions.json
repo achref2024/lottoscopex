@@ -1000,7 +1000,7 @@
       5,
       11
     ],
-    "jackpot": 0
+    "jackpot": 17.0
   },
   {
     "id": "euromillions-2025-12-09",
@@ -1017,7 +1017,7 @@
       2,
       11
     ],
-    "jackpot": 0
+    "jackpot": 142.4
   },
   {
     "id": "euromillions-2025-12-05",
@@ -1034,7 +1034,8 @@
       8,
       12
     ],
-    "jackpot": 0
+    "jackpot": 130.0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-12-02",
@@ -1051,7 +1052,8 @@
       6,
       12
     ],
-    "jackpot": 0
+    "jackpot": 17.0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-28",
@@ -1068,7 +1070,8 @@
       3,
       9
     ],
-    "jackpot": 0
+    "jackpot": 178.7,
+    "jackpotWon": true
   },
   {
     "id": "euromillions-2025-11-25",
@@ -1085,7 +1088,8 @@
       3,
       7
     ],
-    "jackpot": 0
+    "jackpot": 162.1,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-21",
@@ -1102,7 +1106,8 @@
       5,
       9
     ],
-    "jackpot": 0
+    "jackpot": 149.5,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-18",
@@ -1119,7 +1124,8 @@
       6,
       12
     ],
-    "jackpot": 0
+    "jackpot": 134.4,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-14",
@@ -1136,7 +1142,8 @@
       8,
       9
     ],
-    "jackpot": 0
+    "jackpot": 122.6,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-11",
@@ -1153,7 +1160,8 @@
       2,
       10
     ],
-    "jackpot": 0
+    "jackpot": 108.4,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-07",
@@ -1170,7 +1178,8 @@
       2,
       8
     ],
-    "jackpot": 0
+    "jackpot": 98.0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-11-04",
@@ -1187,7 +1196,8 @@
       1,
       4
     ],
-    "jackpot": 0
+    "jackpot": 85.2,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-31",
@@ -1204,7 +1214,8 @@
       7,
       11
     ],
-    "jackpot": 0
+    "jackpot": 75.6,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-28",
@@ -1221,7 +1232,8 @@
       2,
       12
     ],
-    "jackpot": 0
+    "jackpot": 62.6,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-24",
@@ -1238,7 +1250,8 @@
       7,
       12
     ],
-    "jackpot": 0
+    "jackpot": 52.2,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-21",
@@ -1255,7 +1268,8 @@
       6,
       12
     ],
-    "jackpot": 0
+    "jackpot": 39.1,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-17",
@@ -1272,7 +1286,8 @@
       3,
       5
     ],
-    "jackpot": 0
+    "jackpot": 29.4,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-14",
@@ -1289,7 +1304,8 @@
       3,
       10
     ],
-    "jackpot": 0
+    "jackpot": 17.0,
+    "jackpotWon": false
   },
   {
     "id": "euromillions-2025-10-10",
