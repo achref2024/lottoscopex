@@ -954,6 +954,24 @@
     "jackpotWon": false
   },
   {
+    "id": "eurojackpot-2026-01-02",
+    "lotteryId": "eurojackpot",
+    "date": "2026-01-02",
+    "main": [
+      10,
+      15,
+      29,
+      34,
+      38
+    ],
+    "bonus": [
+      2,
+      9
+    ],
+    "jackpot": 74.1,
+    "jackpotWon": true
+  },
+  {
     "id": "eurojackpot-2025-12-30",
     "lotteryId": "eurojackpot",
     "date": "2025-12-30",
