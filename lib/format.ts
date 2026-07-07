@@ -29,13 +29,20 @@ export function formatMoneyRange(min: number, max: number, currency = "EUR"): st
 }
 
 /** Returns the ISO date (YYYY-MM-DD) of the next upcoming draw, based on the
- * lottery's weekly draw days (0 = Sunday ... 6 = Saturday). Always looks
- * forward starting tomorrow, since we don't know the draw time for "today". */
-export function getNextDrawISO(drawDays: number[], from: Date = new Date()): string {
-  for (let i = 1; i <= 7; i++) {
+ * lottery's weekly draw days (0 = Sunday ... 6 = Saturday). Checks today
+ * first: if today is a draw day and we don't already have a recorded result
+ * for today (via latestDrawDate), today IS the next draw. Otherwise looks
+ * forward to the next matching day. */
+export function getNextDrawISO(
+  drawDays: number[],
+  from: Date = new Date(),
+  latestDrawDate?: string
+): string {
+  for (let i = 0; i <= 7; i++) {
     const d = new Date(Date.UTC(from.getUTCFullYear(), from.getUTCMonth(), from.getUTCDate() + i));
-    if (drawDays.includes(d.getUTCDay())) {
-      return d.toISOString().slice(0, 10);
+    const iso = d.toISOString().slice(0, 10);
+    if (drawDays.includes(d.getUTCDay()) && iso !== latestDrawDate) {
+      return iso;
     }
   }
   return from.toISOString().slice(0, 10);

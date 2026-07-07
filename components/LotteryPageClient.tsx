@@ -84,7 +84,7 @@ export default function LotteryPageClient({
   const latest = draws[0];
   const recentDraws = draws.slice(1, 4);
   const info = dict.lotteries[config.id];
-  const nextDraw = getNextDrawISO(config.drawDays);
+  const nextDraw = getNextDrawISO(config.drawDays, new Date(), latest.date);
 
   const sections: TabSection[] = [
     {

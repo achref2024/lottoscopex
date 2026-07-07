@@ -19,7 +19,7 @@ interface LotteryCardProps {
 export default function LotteryCard({ config, latest, index }: LotteryCardProps) {
   const { t, locale, dict, lang } = useLang();
   const info = dict.lotteries[config.id];
-  const nextDraw = getNextDrawISO(config.drawDays);
+  const nextDraw = getNextDrawISO(config.drawDays, new Date(), latest.date);
 
   return (
     <motion.div
