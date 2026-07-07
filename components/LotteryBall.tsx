@@ -47,7 +47,10 @@ export default function LotteryBall({
       )}
       style={{
         background: `linear-gradient(145deg, ${colors.from}, ${colors.to})`,
-        boxShadow: `0 4px 10px -3px ${colors.to}66`,
+        boxShadow:
+          variant === "main" && lotteryId
+            ? `0 0 0 2px ${colors.ring}, 0 4px 10px -3px ${colors.to}66`
+            : `0 4px 10px -3px ${colors.to}66`,
         color: textColor,
       }}
     >

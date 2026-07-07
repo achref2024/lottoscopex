@@ -11,11 +11,25 @@ export const ACCENT = "#D4AF37";
 export const ACCENT_DARK = "#B8941F";
 export const ACCENT_LIGHT = "rgba(212, 175, 55, 0.14)";
 
-// Per-lottery overrides for the main-number ball color, used when a
-// lottery's own brand color should show through instead of the uniform
-// white/cream. Text color is overridden alongside so it stays readable.
+// Per-lottery overrides for the main-number ball color, using each
+// lottery's own real/known brand color instead of the uniform white/cream.
+// Every entry is tuned to stay legible against the green felt background
+// (bg-felt-900 #0F7048): saturated/bright enough for hue+lightness contrast,
+// plus a solid white ring (applied in LotteryBall) to separate the edge from
+// the felt. Irish Lotto is the special case — its brand color IS green, so
+// instead of the muted shamrock green we use a brighter, more saturated
+// emerald that reads clearly against the darker felt tone. Mega Millions
+// uses its brand blue (not gold) for main balls, since gold is reserved
+// site-wide for bonus/"special" numbers — using it for Mega Millions' main
+// balls too would make its own Mega Ball indistinguishable.
 export const MAIN_BALL_OVERRIDES: Record<string, { from: string; to: string; ring: string; text: string }> = {
-  lotto6aus49: { from: "#EF4444", to: "#B91C1C", ring: "#FCA5A5", text: "#FFFFFF" }, // German LOTTO red
+  euromillions: { from: "#5B7FD6", to: "#1E3A8A", ring: "#FFFFFF", text: "#FFFFFF" }, // EuroMillions blue
+  eurojackpot: { from: "#FB923C", to: "#C2410C", ring: "#FFFFFF", text: "#FFFFFF" }, // EuroJackpot orange
+  lotto6aus49: { from: "#EF4444", to: "#B91C1C", ring: "#FFFFFF", text: "#FFFFFF" }, // German LOTTO red
+  "loto-france": { from: "#EC4899", to: "#BE185D", ring: "#FFFFFF", text: "#FFFFFF" }, // Loto pink
+  "irish-lotto": { from: "#34D399", to: "#047857", ring: "#FFFFFF", text: "#FFFFFF" }, // brightened shamrock green
+  powerball: { from: "#F87171", to: "#DC2626", ring: "#FFFFFF", text: "#FFFFFF" }, // Powerball red
+  megamillions: { from: "#4C6FFF", to: "#1B2A6B", ring: "#FFFFFF", text: "#FFFFFF" }, // Mega Millions blue
 };
 
 export function getBallGradient(
