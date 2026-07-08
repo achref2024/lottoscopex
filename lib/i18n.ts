@@ -109,6 +109,10 @@ export interface Dictionary {
     nextDraw: string;
     typicalJackpot: string;
     jackpotAsOf: string; // "as of {date}"
+    countdownDays: string;
+    countdownHours: string;
+    countdownMinutes: string;
+    countdownSeconds: string;
   };
   frequencyPanel: {
     heading: string;
@@ -302,6 +306,10 @@ const en: Dictionary = {
     nextDraw: "Next draw",
     typicalJackpot: "Next jackpot",
     jackpotAsOf: "as of {date}",
+    countdownDays: "Days",
+    countdownHours: "Hours",
+    countdownMinutes: "Min",
+    countdownSeconds: "Sec",
   },
   frequencyPanel: {
     heading: "Number frequency",
@@ -514,6 +522,10 @@ const fr: Dictionary = {
     nextDraw: "Prochain tirage",
     typicalJackpot: "Prochain jackpot",
     jackpotAsOf: "au {date}",
+    countdownDays: "Jours",
+    countdownHours: "Heures",
+    countdownMinutes: "Min",
+    countdownSeconds: "Sec",
   },
   frequencyPanel: {
     heading: "Fréquence des numéros",
@@ -727,6 +739,10 @@ const de: Dictionary = {
     nextDraw: "Nächste Ziehung",
     typicalJackpot: "Nächster Jackpot",
     jackpotAsOf: "Stand {date}",
+    countdownDays: "Tage",
+    countdownHours: "Std",
+    countdownMinutes: "Min",
+    countdownSeconds: "Sek",
   },
   frequencyPanel: {
     heading: "Zahlenhäufigkeit",

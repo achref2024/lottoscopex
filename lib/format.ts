@@ -47,3 +47,50 @@ export function getNextDrawISO(
   }
   return from.toISOString().slice(0, 10);
 }
+
+/**
+ * Converts a local wall-clock time in a given IANA timezone to a UTC
+ * timestamp (ms), correctly accounting for that zone's DST offset on the
+ * specific date given — not just a fixed UTC offset, which would drift by an
+ * hour for half the year in zones that observe daylight saving time.
+ */
+function zonedTimeToUtcMs(dateISO: string, time: string, timeZone: string): number {
+  const [hh, mm] = time.split(":").map(Number);
+  const [y, m, d] = dateISO.split("-").map(Number);
+  // Treat the wall-clock time as if it were already UTC, then measure how far
+  // off that same instant reads in the target timezone, and correct by that
+  // difference — the standard dependency-free zoned-time conversion trick.
+  const naiveUtcMs = Date.UTC(y, m - 1, d, hh, mm, 0);
+  const naive = new Date(naiveUtcMs);
+  const tzString = naive.toLocaleString("en-US", { timeZone });
+  const utcString = naive.toLocaleString("en-US", { timeZone: "UTC" });
+  const diff = new Date(utcString).getTime() - new Date(tzString).getTime();
+  return naiveUtcMs + diff;
+}
+
+/**
+ * Returns the exact UTC timestamp (ms) of the next upcoming draw, using each
+ * lottery's real published draw time and timezone. Skips a day whose result
+ * is already recorded (via latestDrawDate), and skips today's slot entirely
+ * if today's draw time has already passed but the result isn't recorded yet
+ * (avoids ever showing a negative countdown).
+ */
+export function getNextDrawTargetMs(
+  drawDays: number[],
+  drawTimes: Record<number, string>,
+  timeZone: string,
+  latestDrawDate?: string,
+  from: Date = new Date()
+): number {
+  for (let i = 0; i <= 8; i++) {
+    const d = new Date(Date.UTC(from.getUTCFullYear(), from.getUTCMonth(), from.getUTCDate() + i));
+    const dow = d.getUTCDay();
+    if (!drawDays.includes(dow)) continue;
+    const iso = d.toISOString().slice(0, 10);
+    if (iso === latestDrawDate) continue;
+    const time = drawTimes[dow] ?? "20:00";
+    const targetMs = zonedTimeToUtcMs(iso, time, timeZone);
+    if (targetMs > from.getTime()) return targetMs;
+  }
+  return from.getTime();
+}

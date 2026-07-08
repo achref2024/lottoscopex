@@ -13,8 +13,9 @@ import CompareView from "@/components/CompareView";
 import Tabs, { TabSection } from "@/components/Tabs";
 import AdSlot from "@/components/AdSlot";
 import LotteryBadge from "@/components/LotteryBadge";
+import NextDrawCountdown from "@/components/NextDrawCountdown";
 import { useLang } from "@/components/LanguageProvider";
-import { formatDate, formatMoney, getNextDrawISO } from "@/lib/format";
+import { formatDate, formatMoney, getNextDrawISO, getNextDrawTargetMs } from "@/lib/format";
 import { flagEmoji } from "@/lib/flags";
 import { NEXT_JACKPOT_AS_OF } from "@/lib/lotteries";
 
@@ -85,6 +86,12 @@ export default function LotteryPageClient({
   const recentDraws = draws.slice(1, 4);
   const info = dict.lotteries[config.id];
   const nextDraw = getNextDrawISO(config.drawDays, new Date(), latest.date);
+  const nextDrawTargetMs = getNextDrawTargetMs(
+    config.drawDays,
+    config.drawTimes,
+    config.drawTimeZone,
+    latest.date
+  );
 
   const sections: TabSection[] = [
     {
@@ -122,11 +129,25 @@ export default function LotteryPageClient({
               </p>
             </div>
 
-            <dl className="space-y-4 text-sm">
-              <div className="flex justify-between border-b border-felt-800 pb-3">
-                <dt className="text-mist-500">{t("glance.nextDraw")}</dt>
-                <dd className="font-semibold text-gold">{formatDate(nextDraw, locale)}</dd>
+            <div className="mb-5 rounded-xl border border-felt-700 bg-felt-800/40 px-4 py-4">
+              <div className="mb-3 flex items-center justify-between">
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-mist-500">
+                  {t("glance.nextDraw")}
+                </p>
+                <p className="text-xs font-semibold text-gold">{formatDate(nextDraw, locale)}</p>
               </div>
+              <NextDrawCountdown
+                targetMs={nextDrawTargetMs}
+                labels={{
+                  days: t("glance.countdownDays"),
+                  hours: t("glance.countdownHours"),
+                  minutes: t("glance.countdownMinutes"),
+                  seconds: t("glance.countdownSeconds"),
+                }}
+              />
+            </div>
+
+            <dl className="space-y-4 text-sm">
               <div className="flex justify-between border-b border-felt-800 pb-3">
                 <dt className="text-mist-500">{t("glance.numbersDrawn")}</dt>
                 <dd className="font-semibold text-white">

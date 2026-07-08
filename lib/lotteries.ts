@@ -19,6 +19,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 5, min: 1, max: 50 },
     bonus: { label: "Lucky Stars", count: 2, min: 1, max: 12, shape: "star" },
     drawDays: [2, 5], // Tuesday, Friday
+    drawTimeZone: "Europe/Paris",
+    drawTimes: { 2: "20:45", 5: "20:45" }, // draw held 20:45-21:15 CET/CEST in Paris
     currency: "EUR",
     jackpotMin: 17,
     jackpotMax: 240,
@@ -36,6 +38,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 5, min: 1, max: 50 },
     bonus: { label: "Euro Numbers", count: 2, min: 1, max: 12, shape: "circle" },
     drawDays: [2, 5], // Tuesday, Friday
+    drawTimeZone: "Europe/Berlin",
+    drawTimes: { 2: "20:00", 5: "20:00" }, // draw held 20:00 German time (drawn in Helsinki)
     currency: "EUR",
     jackpotMin: 10,
     jackpotMax: 120,
@@ -53,6 +57,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 6, min: 1, max: 49 },
     bonus: { label: "Superzahl", count: 1, min: 0, max: 9, shape: "circle" },
     drawDays: [3, 6], // Wednesday, Saturday
+    drawTimeZone: "Europe/Berlin",
+    drawTimes: { 3: "18:25", 6: "19:25" }, // Wednesday and Saturday draws start at different times
     currency: "EUR",
     jackpotMin: 1,
     jackpotMax: 50, // cap raised from €45M to €50M in Nov 2023
@@ -70,6 +76,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 5, min: 1, max: 49 },
     bonus: { label: "Numéro Chance", count: 1, min: 1, max: 10, shape: "circle" },
     drawDays: [1, 3, 6], // Monday, Wednesday, Saturday
+    drawTimeZone: "Europe/Paris",
+    drawTimes: { 1: "20:20", 3: "20:20", 6: "20:20" },
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
@@ -87,6 +95,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 6, min: 1, max: 47 },
     bonus: { label: "Bonus Ball", count: 1, min: 1, max: 47, shape: "circle" },
     drawDays: [3, 6], // Wednesday, Saturday
+    drawTimeZone: "Europe/Dublin",
+    drawTimes: { 3: "20:00", 6: "20:00" }, // approx. — sources vary between 19:55 and 20:00
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 19,
@@ -104,6 +114,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 5, min: 1, max: 69 },
     bonus: { label: "Powerball", count: 1, min: 1, max: 26, shape: "circle" },
     drawDays: [1, 3, 6], // Monday, Wednesday, Saturday
+    drawTimeZone: "America/New_York",
+    drawTimes: { 1: "22:59", 3: "22:59", 6: "22:59" },
     currency: "USD",
     jackpotMin: 20,
     jackpotMax: 500,
@@ -121,6 +133,8 @@ export const LOTTERIES: LotteryConfig[] = [
     main: { count: 5, min: 1, max: 70 },
     bonus: { label: "Mega Ball", count: 1, min: 1, max: 24, shape: "star" },
     drawDays: [2, 5], // Tuesday, Friday
+    drawTimeZone: "America/New_York",
+    drawTimes: { 2: "23:00", 5: "23:00" },
     currency: "USD",
     jackpotMin: 50,
     jackpotMax: 500,

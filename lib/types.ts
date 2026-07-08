@@ -22,6 +22,11 @@ export interface LotteryConfig {
     shape: BonusShape;
   } | null;
   drawDays: number[]; // 0 = Sunday ... 6 = Saturday
+  /** IANA timezone name the draw's official time is quoted in (e.g. "Europe/Paris"). */
+  drawTimeZone: string;
+  /** Local draw time ("HH:MM", 24h) for each day in drawDays — some lotteries (e.g. Lotto
+   * 6aus49) draw at a different time on different days, so this is keyed by day-of-week. */
+  drawTimes: Record<number, string>;
   currency: string;
   jackpotMin: number;
   jackpotMax: number;
