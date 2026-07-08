@@ -8,7 +8,9 @@ import { getDraws } from "@/lib/data";
 import { computeRangeProbabilities, RangeProbability } from "@/lib/analytics";
 import { LOTTERIES, getLottery } from "@/lib/lotteries";
 import { localePath } from "@/lib/i18n";
+import { formatDate, getNextDrawISO, getNextDrawTargetMs } from "@/lib/format";
 import LotteryBadge from "./LotteryBadge";
+import NextDrawCountdown from "./NextDrawCountdown";
 
 /** Which of a range's stats corresponds to its own dominant tendency — used to
  * find the single most striking pattern to feature. */
@@ -33,7 +35,7 @@ function headlinePercent(row: RangeProbability): number {
  * historical data, same as that lottery's own stats page.
  */
 export default function HeroBallsAnimation() {
-  const { t, lang } = useLang();
+  const { t, lang, locale } = useLang();
   const [lotteryId, setLotteryId] = useState(LOTTERIES[0].id);
 
   useEffect(() => {
@@ -47,6 +49,15 @@ export default function HeroBallsAnimation() {
     const draws = getDraws(config.id);
     const probability = computeRangeProbabilities(draws, config);
     return [...probability].sort((a, b) => headlinePercent(b) - headlinePercent(a))[0];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [config.id]);
+
+  const { nextDraw, nextDrawTargetMs } = useMemo(() => {
+    const latestDate = getDraws(config.id)[0]?.date;
+    return {
+      nextDraw: getNextDrawISO(config.drawDays, new Date(), latestDate),
+      nextDrawTargetMs: getNextDrawTargetMs(config.drawDays, config.drawTimes, config.drawTimeZone, latestDate),
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [config.id]);
 
@@ -105,6 +116,24 @@ export default function HeroBallsAnimation() {
         <div className="pointer-events-none absolute inset-6 rounded-[2rem] bg-gold/5 blur-2xl" aria-hidden="true" />
         <LotteryBadge id={config.id} size={164} />
       </Link>
+
+      <div className="w-full max-w-xs rounded-xl border border-felt-700 bg-felt-800/40 px-4 py-4">
+        <div className="mb-3 flex items-center justify-between">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-mist-500">
+            {t("glance.nextDraw")}
+          </p>
+          <p className="text-xs font-semibold text-gold">{formatDate(nextDraw, locale)}</p>
+        </div>
+        <NextDrawCountdown
+          targetMs={nextDrawTargetMs}
+          labels={{
+            days: t("glance.countdownDays"),
+            hours: t("glance.countdownHours"),
+            minutes: t("glance.countdownMinutes"),
+            seconds: t("glance.countdownSeconds"),
+          }}
+        />
+      </div>
 
       <h2
         className="font-fun text-2xl font-bold tracking-wide sm:text-3xl"
