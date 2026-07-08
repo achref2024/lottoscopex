@@ -40,6 +40,44 @@ const GUIDES = [
   },
 ];
 
+const HOW_TO_PLAY_GUIDES = [
+  {
+    href: "/guides/how-to-play-euromillions",
+    title: "How to Play EuroMillions",
+    description: "Which 9 countries can play, ticket prices, draw times, and the €240M jackpot cap.",
+  },
+  {
+    href: "/guides/how-to-play-eurojackpot",
+    title: "How to Play EuroJackpot",
+    description: "Which 19 countries can play, ticket prices, draw times, and the €120M jackpot cap.",
+  },
+  {
+    href: "/guides/how-to-play-lotto-6aus49",
+    title: "How to Play German Lotto 6aus49",
+    description: "Germany's classic lottery — rules, the Superzahl, prices, and draw times.",
+  },
+  {
+    href: "/guides/how-to-play-french-loto",
+    title: "How to Play French Loto",
+    description: "France's national Loto — rules, the Numéro Chance, prices, and draw times.",
+  },
+  {
+    href: "/guides/how-to-play-irish-lotto",
+    title: "How to Play Irish Lotto",
+    description: "Ireland's home-grown lottery — the best jackpot odds of any game we track.",
+  },
+  {
+    href: "/guides/how-to-play-powerball",
+    title: "How to Play Powerball",
+    description: "Which US states sell it, ticket prices, draw times, and how big the jackpot gets.",
+  },
+  {
+    href: "/guides/how-to-play-mega-millions",
+    title: "How to Play Mega Millions",
+    description: "Which US states sell it, ticket prices, draw times, and how big the jackpot gets.",
+  },
+];
+
 export default function Page() {
   return (
     <PageShell lang="en">
@@ -64,6 +102,29 @@ export default function Page() {
             </Link>
           ))}
         </div>
+
+        <h2 className="mb-4 mt-14 font-display text-2xl font-bold text-white">
+          How to Play Each Lottery
+        </h2>
+        <p className="mb-6 text-sm text-mist-400">
+          Which countries can play, ticket prices, draw schedules, and jackpot caps for every
+          lottery LottoScopeX tracks.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {HOW_TO_PLAY_GUIDES.map((g) => (
+            <Link
+              key={g.href}
+              href={g.href}
+              className="group rounded-2xl border border-felt-800 bg-felt-900 p-6 transition-colors hover:border-gold/40"
+            >
+              <h2 className="font-display text-lg font-bold text-white group-hover:text-gold-light">
+                {g.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-mist-400">{g.description}</p>
+            </Link>
+          ))}
+        </div>
+
         <p className="mt-8 text-sm text-mist-500">
           Looking for the exact formulas behind every statistic on the site? See our{" "}
           <Link href="/methodology" className="font-semibold text-gold underline underline-offset-2 hover:text-gold-light">

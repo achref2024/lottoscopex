@@ -60,6 +60,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/hot-and-cold-numbers",
     "/guides/what-is-a-lottery-rollover",
     "/guides/euromillions-vs-eurojackpot",
+    "/guides/how-to-play-euromillions",
+    "/guides/how-to-play-eurojackpot",
+    "/guides/how-to-play-lotto-6aus49",
+    "/guides/how-to-play-french-loto",
+    "/guides/how-to-play-irish-lotto",
+    "/guides/how-to-play-powerball",
+    "/guides/how-to-play-mega-millions",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,
