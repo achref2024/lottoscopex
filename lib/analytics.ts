@@ -42,7 +42,7 @@ export interface HotCold {
   cold: FrequencyEntry[];
 }
 
-export function getHotCold(freq: FrequencyEntry[], take = 6): HotCold {
+export function getHotCold(freq: FrequencyEntry[], take = 10): HotCold {
   const sorted = [...freq].sort((a, b) => b.count - a.count);
   return {
     hot: sorted.slice(0, take),
