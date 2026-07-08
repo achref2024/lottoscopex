@@ -227,6 +227,7 @@ export function buildLotteryJsonLd(
     creator: { "@type": "Organization", name: "LottoScopeX", url: SITE_URL },
     variableMeasured: ["Winning numbers", "Draw date", "Number frequency", "Jackpot amount"],
     inLanguage: lang,
+    license: `${SITE_URL}/terms`,
   };
 
   const faqJsonLd = {
