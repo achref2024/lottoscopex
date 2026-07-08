@@ -54,6 +54,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const guidePages: MetadataRoute.Sitemap = [
+    "/guides",
+    "/guides/how-lottery-odds-work",
+    "/guides/hot-and-cold-numbers",
+    "/guides/what-is-a-lottery-rollover",
+    "/guides/euromillions-vs-eurojackpot",
+  ].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
   const drawResultPages: MetadataRoute.Sitemap = LOTTERIES.flatMap((lottery) =>
     getDraws(lottery.id).map((draw) => ({
       url: `${SITE_URL}/lottery/${lottery.id}/results/${draw.date}`,
@@ -70,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...analyzerPages,
     ...legalPages,
     ...methodologyPage,
+    ...guidePages,
     ...drawResultPages,
   ];
 }

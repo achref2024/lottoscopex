@@ -167,6 +167,7 @@ export interface Dictionary {
     copyright: string; // "© {year} LottoScopeX. Play responsibly."
     about: string;
     methodology: string;
+    guides: string;
     privacy: string;
     terms: string;
     contact: string;
@@ -366,6 +367,7 @@ const en: Dictionary = {
     copyright: "© {year} LottoScopeX. Play responsibly.",
     about: "About",
     methodology: "Methodology",
+    guides: "Guides",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     contact: "Contact",
@@ -577,6 +579,7 @@ const fr: Dictionary = {
     copyright: "© {year} LottoScopeX. Jouez de manière responsable.",
     about: "À propos",
     methodology: "Méthodologie",
+    guides: "Guides",
     privacy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
     contact: "Contact",
@@ -789,6 +792,7 @@ const de: Dictionary = {
     copyright: "© {year} LottoScopeX. Bitte verantwortungsvoll spielen.",
     about: "Über uns",
     methodology: "Methodik",
+    guides: "Ratgeber",
     privacy: "Datenschutzerklärung",
     terms: "Nutzungsbedingungen",
     contact: "Kontakt",
