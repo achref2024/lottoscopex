@@ -62,7 +62,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 1,
     jackpotMax: 50, // cap raised from €45M to €50M in Nov 2023
-    nextJackpot: 50, // capped jackpot in play for the 4 Jul 2026 draw; next figure confirms Monday
+    nextJackpot: 50, // capped jackpot, unwon again on 8 Jul 2026 — stays at cap for the 11 Jul draw
   },
   {
     id: "loto-france",
@@ -81,7 +81,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
-    nextJackpot: 4, // rolled over from the winner-less 6 Jul 2026 draw to €4M for 8 Jul
+    nextJackpot: 5, // rolled over from the winner-less 8 Jul 2026 draw to €5M for the 11 Jul draw
   },
   {
     id: "irish-lotto",
@@ -100,7 +100,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 19,
-    nextJackpot: 6.2, // official current jackpot figure
+    nextJackpot: 6.8, // rolled over from the winner-less 8 Jul 2026 draw (€6.24M) to €6.8M for 11 Jul
   },
   {
     id: "powerball",
@@ -119,7 +119,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 20,
     jackpotMax: 500,
-    nextJackpot: 434, // rolled over from the winner-less 6 Jul 2026 draw to $434M for 8 Jul
+    nextJackpot: 457, // rolled over from the winner-less 8 Jul 2026 draw ($434M) to $457M for 11 Jul
   },
   {
     id: "megamillions",

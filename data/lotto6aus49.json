@@ -1,5 +1,23 @@
 [
   {
+    "id": "lotto6aus49-2026-07-08",
+    "lotteryId": "lotto6aus49",
+    "date": "2026-07-08",
+    "main": [
+      15,
+      28,
+      30,
+      31,
+      37,
+      45
+    ],
+    "bonus": [
+      5
+    ],
+    "jackpot": 50,
+    "jackpotWon": false
+  },
+  {
     "id": "lotto6aus49-2026-07-04",
     "lotteryId": "lotto6aus49",
     "date": "2026-07-04",
