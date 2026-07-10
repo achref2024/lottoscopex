@@ -24,7 +24,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 17,
     jackpotMax: 240,
-    nextJackpot: 17, // minimum jackpot — reset after a Belgian winner on 3 July 2026
+    nextJackpot: 38, // rolled over from the winner-less 10 Jul 2026 draw (€28.47M) to €38M for the 14 Jul draw
   },
   {
     id: "eurojackpot",
@@ -43,7 +43,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 10,
     jackpotMax: 120,
-    nextJackpot: 32, // rolled over from the winner-less 7 Jul 2026 draw to €32M for the 10 Jul draw
+    nextJackpot: 40, // rolled over from the winner-less 10 Jul 2026 draw (€32M) to €40M for the 14 Jul draw
   },
   {
     id: "lotto6aus49",
