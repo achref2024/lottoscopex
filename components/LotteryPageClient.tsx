@@ -19,6 +19,16 @@ import { formatDate, formatMoney, getNextDrawISO, getNextDrawTargetMs } from "@/
 import { flagEmoji } from "@/lib/flags";
 import { NEXT_JACKPOT_AS_OF } from "@/lib/lotteries";
 
+const HOW_TO_PLAY_SLUGS: Record<string, string> = {
+  euromillions: "how-to-play-euromillions",
+  eurojackpot: "how-to-play-eurojackpot",
+  lotto6aus49: "how-to-play-lotto-6aus49",
+  "loto-france": "how-to-play-french-loto",
+  "irish-lotto": "how-to-play-irish-lotto",
+  powerball: "how-to-play-powerball",
+  megamillions: "how-to-play-mega-millions",
+};
+
 const ICONS = {
   latest: (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
@@ -275,6 +285,14 @@ export default function LotteryPageClient({
                 {config.name}
               </h1>
               <p className="mt-3 max-w-2xl text-mist-500">{info?.tagline ?? config.tagline}</p>
+              {lang === "en" && HOW_TO_PLAY_SLUGS[config.id] && (
+                <Link
+                  href={`/guides/${HOW_TO_PLAY_SLUGS[config.id]}`}
+                  className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold-light"
+                >
+                  How to play &amp; who can enter →
+                </Link>
+              )}
             </div>
           </div>
           <div className="w-full lg:w-[336px] lg:shrink-0">
