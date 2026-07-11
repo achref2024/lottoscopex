@@ -138,7 +138,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 50,
     jackpotMax: 500,
-    nextJackpot: 604, // rolled over from the winner-less 7 Jul 2026 draw ($576M) to $604M for the 10 Jul draw
+    nextJackpot: 632, // rolled over from the winner-less 10 Jul 2026 draw ($604M) — estimate for the 14 Jul draw, pending official confirmation
   },
 ];
 
