@@ -81,7 +81,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
-    nextJackpot: 5, // rolled over from the winner-less 8 Jul 2026 draw to €5M for the 11 Jul draw
+    nextJackpot: 11, // rolled over from the winner-less 11 Jul 2026 draw (€4M) to €11M for the 13 Jul draw
   },
   {
     id: "irish-lotto",
@@ -100,7 +100,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 19,
-    nextJackpot: 6.8, // rolled over from the winner-less 8 Jul 2026 draw (€6.24M) to €6.8M for 11 Jul
+    nextJackpot: 6.8, // rolled over from the winner-less 11 Jul 2026 draw (€6.24M) to an estimated €6.8M for the 15 Jul draw
   },
   {
     id: "powerball",
