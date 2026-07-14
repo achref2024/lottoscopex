@@ -1,5 +1,21 @@
 [
   {
+    "id": "loto-france-2026-07-13",
+    "lotteryId": "loto-france",
+    "date": "2026-07-13",
+    "main": [
+      5,
+      7,
+      13,
+      18,
+      26
+    ],
+    "bonus": [
+      7
+    ],
+    "jackpot": 0
+  },
+  {
     "id": "loto-france-2026-07-11",
     "lotteryId": "loto-france",
     "date": "2026-07-11",
@@ -897,7 +913,7 @@
     "bonus": [
       3
     ],
-    "jackpot": 3.0,
+    "jackpot": 3,
     "jackpotWon": true
   },
   {
@@ -931,7 +947,7 @@
     "bonus": [
       9
     ],
-    "jackpot": 8.0,
+    "jackpot": 8,
     "jackpotWon": true
   },
   {
@@ -1050,7 +1066,7 @@
     "bonus": [
       7
     ],
-    "jackpot": 2.0,
+    "jackpot": 2,
     "jackpotWon": true
   },
   {
@@ -1067,7 +1083,7 @@
     "bonus": [
       3
     ],
-    "jackpot": 3.0,
+    "jackpot": 3,
     "jackpotWon": true
   },
   {
@@ -1118,7 +1134,7 @@
     "bonus": [
       3
     ],
-    "jackpot": 6.0,
+    "jackpot": 6,
     "jackpotWon": true
   },
   {
@@ -1203,7 +1219,7 @@
     "bonus": [
       4
     ],
-    "jackpot": 5.0,
+    "jackpot": 5,
     "jackpotWon": true
   },
   {
@@ -1271,7 +1287,7 @@
     "bonus": [
       4
     ],
-    "jackpot": 3.0,
+    "jackpot": 3,
     "jackpotWon": true
   },
   {
@@ -1305,7 +1321,7 @@
     "bonus": [
       5
     ],
-    "jackpot": 6.0,
+    "jackpot": 6,
     "jackpotWon": true
   },
   {
@@ -1390,7 +1406,7 @@
     "bonus": [
       2
     ],
-    "jackpot": 2.0,
+    "jackpot": 2,
     "jackpotWon": true
   },
   {
@@ -1407,7 +1423,7 @@
     "bonus": [
       1
     ],
-    "jackpot": 10.0,
+    "jackpot": 10,
     "jackpotWon": true
   },
   {
@@ -1475,7 +1491,7 @@
     "bonus": [
       1
     ],
-    "jackpot": 6.0,
+    "jackpot": 6,
     "jackpotWon": true
   },
   {
