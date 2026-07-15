@@ -5,15 +5,16 @@
     "date": "2026-07-13",
     "main": [
       5,
-      7,
-      13,
       18,
-      26
+      26,
+      29,
+      45
     ],
     "bonus": [
       7
     ],
-    "jackpot": 0
+    "jackpot": 11,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-07-11",
