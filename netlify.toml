@@ -1,3 +1,15 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+# Older draws no longer get their own dedicated /results/[date] page (only the
+# most recent few per lottery do — see lib/data.ts RESULT_PAGE_COUNT). Any
+# request for an out-of-range date falls back here to the lottery's main page,
+# where the full history is still browsable via the History tab. This rule
+# only fires when no static file exists at the exact path, so pages that do
+# still exist are served directly and untouched.
+[[redirects]]
+  from = "/lottery/:id/results/:date"
+  to = "/lottery/:id"
+  status = 301
+  force = false

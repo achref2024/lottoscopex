@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Draw, LotteryConfig } from "@/lib/types";
 import { filterDrawsByDateRange, filterDrawsByNumber } from "@/lib/analytics";
+import { hasResultPage } from "@/lib/data";
 import DrawCard from "./DrawCard";
 import { useLang } from "./LanguageProvider";
 
@@ -101,7 +102,7 @@ export default function HistoryTable({
       ) : (
         <div className="grid gap-4">
           {filtered.slice(0, visible).map((draw) =>
-            lang === "en" ? (
+            lang === "en" && hasResultPage(config.id, draw.date) ? (
               <Link
                 key={draw.id}
                 href={`/lottery/${config.id}/results/${draw.date}`}

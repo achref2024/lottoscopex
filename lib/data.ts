@@ -21,3 +21,24 @@ const DATASETS: Record<string, Draw[]> = {
 export function getDraws(lotteryId: string): Draw[] {
   return DATASETS[lotteryId] ?? [];
 }
+
+/**
+ * Only the most recent draws per lottery get a dedicated static
+ * /lottery/[id]/results/[date] page. Older draws are still fully present in
+ * the data (frequency/hot-cold/probability stats always use full history)
+ * and browsable via the filterable History tab — they just don't each get
+ * their own indexed URL, to keep the site's total page count small enough
+ * for Google to crawl and trust quickly instead of drowning in thousands of
+ * near-identical templated pages.
+ */
+export const RESULT_PAGE_COUNT = 4;
+
+/** The subset of a lottery's draws (newest-first) that have their own page. */
+export function getDrawsWithResultPage(lotteryId: string): Draw[] {
+  return getDraws(lotteryId).slice(0, RESULT_PAGE_COUNT);
+}
+
+/** Whether a specific draw date has its own dedicated results page. */
+export function hasResultPage(lotteryId: string, date: string): boolean {
+  return getDrawsWithResultPage(lotteryId).some((d) => d.date === date);
+}

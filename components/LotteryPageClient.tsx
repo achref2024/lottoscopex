@@ -18,6 +18,7 @@ import { useLang } from "@/components/LanguageProvider";
 import { formatDate, formatMoney, getNextDrawISO, getNextDrawTargetMs } from "@/lib/format";
 import { flagEmoji } from "@/lib/flags";
 import { NEXT_JACKPOT_AS_OF } from "@/lib/lotteries";
+import { hasResultPage } from "@/lib/data";
 
 const HOW_TO_PLAY_SLUGS: Record<string, string> = {
   euromillions: "how-to-play-euromillions",
@@ -113,7 +114,7 @@ export default function LotteryPageClient({
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <DrawCard draw={latest} config={config} highlight />
-              {lang === "en" && (
+              {lang === "en" && hasResultPage(config.id, latest.date) && (
                 <Link
                   href={`/lottery/${config.id}/results/${latest.date}`}
                   className="mt-3 inline-block text-sm font-semibold text-gold hover:text-gold-light"
@@ -201,7 +202,7 @@ export default function LotteryPageClient({
             </h2>
             <div className="grid gap-4">
               {recentDraws.map((draw) =>
-                lang === "en" ? (
+                lang === "en" && hasResultPage(config.id, draw.date) ? (
                   <Link
                     key={draw.id}
                     href={`/lottery/${config.id}/results/${draw.date}`}

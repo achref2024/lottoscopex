@@ -14,6 +14,7 @@ export default function DrawResultPage({
   config,
   draw,
   prevDraw,
+  prevDrawHasPage = true,
   nextDraw,
   insights,
   drawNumber,
@@ -22,6 +23,7 @@ export default function DrawResultPage({
   config: LotteryConfig;
   draw: Draw;
   prevDraw: Draw | null;
+  prevDrawHasPage?: boolean;
   nextDraw: Draw | null;
   insights: DrawInsights;
   drawNumber: number;
@@ -57,12 +59,19 @@ export default function DrawResultPage({
         <DrawCard draw={draw} config={config} highlight animate={false} />
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-          {prevDraw ? (
+          {prevDraw && prevDrawHasPage ? (
             <Link
               href={`/lottery/${config.id}/results/${prevDraw.date}`}
               className="flex items-center gap-2 rounded-full border border-felt-800 bg-felt-900 px-4 py-2 text-sm font-semibold text-mist-300 transition-colors hover:border-gold/40 hover:text-white"
             >
               ← {formatDate(prevDraw.date)}
+            </Link>
+          ) : prevDraw ? (
+            <Link
+              href={`/lottery/${config.id}#history`}
+              className="flex items-center gap-2 rounded-full border border-felt-800 bg-felt-900 px-4 py-2 text-sm font-semibold text-mist-300 transition-colors hover:border-gold/40 hover:text-white"
+            >
+              ← Browse older draws
             </Link>
           ) : (
             <span />
