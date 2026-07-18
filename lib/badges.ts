@@ -58,4 +58,10 @@ export const BADGES: Record<string, BadgeSpec> = {
     accent: "#F2C230",
     label: ["MEGA", "MILLIONS"],
   },
+  superenalotto: {
+    pattern: "stripes-v",
+    colors: ["#009246", "#ffffff", "#CE2B37"],
+    accent: "#F4A300",
+    label: ["SUPER", "ENALOTTO"],
+  },
 };
