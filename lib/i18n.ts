@@ -1,4 +1,4 @@
-export type Lang = "en" | "fr" | "de";
+export type Lang = "en" | "fr" | "de" | "it";
 
 export const DEFAULT_LANG: Lang = "en";
 
@@ -6,12 +6,14 @@ export const LANGUAGES: { code: Lang; label: string; short: string }[] = [
   { code: "en", label: "English", short: "EN" },
   { code: "fr", label: "Français", short: "FR" },
   { code: "de", label: "Deutsch", short: "DE" },
+  { code: "it", label: "Italiano", short: "IT" },
 ];
 
 export const LOCALE_MAP: Record<Lang, string> = {
   en: "en-GB",
   fr: "fr-FR",
   de: "de-DE",
+  it: "it-IT",
 };
 
 /**
@@ -26,7 +28,7 @@ export function localePath(lang: Lang, path: string): string {
 
 /** Strips a known locale prefix ("/fr", "/de") from a pathname, if present. */
 export function stripLocalePrefix(pathname: string): string {
-  const match = pathname.match(/^\/(fr|de)(\/.*)?$/);
+  const match = pathname.match(/^\/(fr|de|it)(\/.*)?$/);
   if (match) return match[2] || "/";
   return pathname;
 }
@@ -882,7 +884,226 @@ const de: Dictionary = {
   },
 };
 
-export const DICTIONARIES: Record<Lang, Dictionary> = { en, fr, de };
+const it: Dictionary = {
+  nav: {
+    lotteries: "Risultati",
+    howItWorks: "Come funziona",
+    generator: "Generatore di numeri",
+    analyzer: "Analizzatore di lotteria",
+    pill: "Statistiche reali · Nessuna previsione",
+  },
+  hero: {
+    badge: "Statistiche e tendenze · 9 lotterie in Europa e negli Stati Uniti",
+    titleLine1: "Statistiche di lotteria,",
+    titleLine2: "rese visive.",
+    subtitle:
+      "LottoScopeX trasforma la cronologia reale delle estrazioni in statistiche visive chiare — frequenze, numeri caldi e freddi, fasce numeriche e semplici tendenze di probabilità. Nessuna previsione, nessuna congettura. Solo i numeri.",
+    tagFrequency: "Statistiche di frequenza",
+    tagHotCold: "Numeri caldi e freddi",
+    tagRanges: "Analisi per fascia",
+    tagProbability: "Tendenze di probabilità",
+    drawsAnalyzed: "Estrazioni recenti analizzate, per lotteria",
+    prevLottery: "Lotteria precedente",
+    nextLottery: "Lotteria successiva",
+    viewLatestFor: "Vedi l'ultima estrazione {name}",
+    pickLottery: "Scegli una lotteria",
+  },
+  features: {
+    heading: "Cosa puoi fare con LottoScopeX",
+    subheading:
+      "Ogni lotteria sulla piattaforma offre gli stessi strumenti di statistica e analisi delle tendenze, pensati per la chiarezza prima di tutto.",
+    frequencyTitle: "Analisi di frequenza",
+    frequencyDesc: "Scopri a colpo d'occhio quanto spesso è uscito ogni numero.",
+    hotColdTitle: "Numeri caldi e freddi",
+    hotColdDesc: "Individua i numeri che sono usciti spesso di recente — e quelli che si sono fatti rari.",
+    rangesTitle: "Analisi per fascia",
+    rangesDesc: "Scopri come i numeri si distribuiscono tra 1–9, 10–19, 20–29, 30–39 e 40+.",
+    probabilityTitle: "Tendenze di probabilità",
+    probabilityDesc: "La nostra funzione distintiva: una spiegazione semplice di ciò che tende a succedere dopo.",
+    viewStats: "Vedi le statistiche in tempo reale",
+    methodologyLink: "Scopri esattamente come viene calcolata ogni statistica",
+    learnMore: "Scopri come viene calcolato",
+  },
+  chooseLottery: {
+    heading: "Scegli una lotteria",
+    subheading: "Analisi coerenti, su misura per ogni gioco.",
+  },
+  card: {
+    lastDraw: "Ultima estrazione",
+    jackpot: "Jackpot",
+    nextDraw: "Prossima estrazione",
+    typicalJackpot: "Prossimo jackpot",
+    jackpotAsOf: "aggiornato al {date}",
+  },
+  drawCard: {
+    latestDraw: "Ultima estrazione",
+    draw: "Estrazione",
+    jackpotSuffix: "di jackpot",
+    jackpotWon: "Jackpot vinto",
+    rolledOver: "Nessun vincitore — jackpot riportato",
+    rolloverStreak: "Riportato {count}× di fila",
+  },
+  recentDraws: {
+    heading: "Estrazioni recenti",
+  },
+  tabs: {
+    latest: "Ultima",
+    history: "Cronologia",
+    frequency: "Frequenza",
+    hotCold: "Caldi e freddi",
+    ranges: "Fasce",
+    probability: "Probabilità",
+    compare: "Confronta",
+  },
+  glance: {
+    heading: "In breve",
+    numbersDrawn: "Numeri estratti",
+    numbersDrawnValue: "{count} da {min}–{max}",
+    drawsTracked: "Estrazioni monitorate",
+    oldestDraw: "Estrazione più vecchia registrata",
+    nextDraw: "Prossima estrazione",
+    typicalJackpot: "Prossimo jackpot",
+    jackpotAsOf: "aggiornato al {date}",
+    countdownDays: "Giorni",
+    countdownHours: "Ore",
+    countdownMinutes: "Min",
+    countdownSeconds: "Sec",
+  },
+  frequencyPanel: {
+    heading: "Frequenza dei numeri",
+    subheading: "Quanto spesso è uscito ogni numero nelle ultime {n} estrazioni.",
+  },
+  chart: {
+    numberLabel: "Numero {n}",
+    appeared: "Uscite",
+    draws: "estrazioni",
+  },
+  hotCold: {
+    hotTitle: "Numeri caldi",
+    hotDesc: "Estratti più spesso nel periodo selezionato.",
+    coldTitle: "Numeri freddi",
+    coldDesc: "Estratti meno spesso nel periodo selezionato.",
+  },
+  ranges: {
+    shareOf: "di tutti i numeri estratti",
+    perDraw: "~{n} numeri per estrazione",
+  },
+  probability: {
+    intro:
+      "Per ogni fascia numerica, abbiamo esaminato ogni coppia di estrazioni tra le nostre ultime {n} estrazioni registrate per capire cosa succede di solito dopo. Niente termini tecnici — solo semplici tendenze da cogliere in pochi secondi.",
+    rangeLabel: "Fascia",
+    trendUp: "In aumento",
+    trendDown: "In diminuzione",
+    trendStable: "Resta stabile",
+    trendComeback: "Torna a salire",
+    barMore: "Più numeri all'estrazione successiva",
+    barSame: "Stessa quantità all'estrazione successiva",
+    barFewer: "Meno numeri all'estrazione successiva",
+    headlineIncrease:
+      "Dopo un'estrazione, la fascia {label} tende a comparire di più la volta successiva — è successo il {pct}% delle volte.",
+    headlineDecrease:
+      "La fascia {label} tende a raffreddarsi dopo — sono comparsi meno numeri di questa fascia all'estrazione successiva il {pct}% delle volte.",
+    headlineStable:
+      "La fascia {label} tende a restare stabile — la stessa quantità di numeri è ricomparsa il {pct}% delle volte.",
+    headlineComeback:
+      "Quando la fascia {label} manca in un'estrazione, di solito torna subito — è ricomparsa già nell'estrazione successiva il {pct}% delle volte.",
+    methodologyLink: "Come viene calcolato? Consulta la nostra metodologia",
+  },
+  compare: {
+    intro:
+      "Confrontiamo quanto spesso ogni numero è uscito nelle ultime 20 estrazioni rispetto alla sua media di lungo periodo calcolata sulle ultime 100 estrazioni. I numeri che sono comparsi molto più spesso di recente appaiono a sinistra come \"in aumento\"; quelli comparsi molto meno spesso appaiono a destra come \"in calo\". È un'istantanea dell'attività recente, non una previsione — ogni estrazione è indipendente e casuale.",
+    heatingUp: "In aumento di recente",
+    coolingDown: "In calo di recente",
+    description: "Rispetto alle nostre estrazioni registrate, basato sulle ultime 20.",
+  },
+  history: {
+    from: "Da",
+    to: "A",
+    containsNumber: "Contiene il numero",
+    placeholder: "es. 23",
+    clearFilters: "Cancella filtri",
+    drawsFoundOne: "estrazione trovata",
+    drawsFoundMany: "estrazioni trovate",
+    noMatch: "Nessuna estrazione corrisponde a questi filtri.",
+    loadMore: "Carica altre estrazioni",
+  },
+  footer: {
+    disclaimer:
+      "LottoScopeX è uno strumento di analisi per esplorare i dati storici delle lotterie. Non prevede risultati futuri — le estrazioni della lotteria sono casuali.",
+    copyright: "© {year} LottoScopeX. Gioca in modo responsabile.",
+    about: "Chi siamo",
+    methodology: "Metodologia",
+    guides: "Guide",
+    privacy: "Informativa sulla privacy",
+    terms: "Termini di utilizzo",
+    contact: "Contatti",
+  },
+  lotteries: {
+    euromillions: { country: "Paneuropea", tagline: "La più grande lotteria a jackpot d'Europa" },
+    eurojackpot: { country: "Paneuropea", tagline: "L'estrazione del martedì e venerdì preferita in Europa" },
+    lotto6aus49: { country: "Germania", tagline: "La classica lotteria tedesca del sabato" },
+    "loto-france": { country: "Francia", tagline: "La tradizione della lotteria nazionale francese" },
+    "irish-lotto": { country: "Irlanda", tagline: "La favorita di sempre in Irlanda" },
+    powerball: { country: "Stati Uniti", tagline: "La più grande lotteria a jackpot d'America" },
+    megamillions: { country: "Stati Uniti", tagline: "L'altra gigantesca estrazione a jackpot americana" },
+    superenalotto: { country: "Italia", tagline: "La lotteria italiana dai jackpot da record" },
+    "uk-lotto": { country: "Regno Unito", tagline: "L'estrazione storica della lotteria nazionale britannica" },
+  },
+  faq: {
+    drawCountQuestion: "Quante estrazioni {name} analizza LottoScopeX?",
+    drawCountAnswer:
+      "LottoScopeX monitora {count} estrazioni {name} reali, dal {oldest} al {latest}. La funzione di probabilità si basa sulle ultime 100 di queste estrazioni.",
+    hotNumbersQuestion: "Quali sono i numeri caldi del {name} in questo momento?",
+    hotNumbersAnswer:
+      "In base alle ultime {n} estrazioni, i numeri {name} estratti più di frequente sono {numbers}.",
+    jackpotQuestion: "Qual è il jackpot per la prossima estrazione {name}?",
+    jackpotAnswer:
+      "Il jackpot stimato per la prossima estrazione {name} è {amount}, aggiornato al {date}.",
+  },
+  seo: {
+    homeTitle: "LottoScopeX — Analisi delle lotterie",
+    homeDescription:
+      "Esplora i dati storici di EuroMillions, EuroJackpot, Lotto 6aus49, Loto francese, Irish Lotto, Powerball e Mega Millions attraverso statistiche semplici e interattive.",
+    lotteryTitle: "Statistiche {name} — Frequenza dei numeri, numeri caldi e freddi",
+    lotteryDescription:
+      "Esplora {count} estrazioni {name} reali ({country}). Frequenza dei numeri, numeri caldi e freddi, analisi per fascia e tendenze di probabilità basate sulle ultime 100 estrazioni — risultati storici autentici, non previsioni.",
+  },
+  generator: {
+    heading: "Generatore di numeri",
+    subheading: "Scegli una lotteria e ottieni una serie casuale di numeri da giocare.",
+    disclaimer:
+      "Puramente casuale — non utilizza alcuna statistica e non migliora le tue probabilità di vincita. Le estrazioni della lotteria sono casuali, ogni volta.",
+    selectLabel: "Scegli una lotteria",
+    mainNumbersLabel: "I tuoi numeri",
+    generateButton: "Genera numeri",
+    regenerateButton: "Genera di nuovo",
+  },
+  analyzer: {
+    heading: "Analizzatore di lotteria",
+    subheading:
+      "Scegli i tuoi numeri e scopri come si sono comportati nelle ultime 100 estrazioni.",
+    disclaimer:
+      "Questo mostra ciò che è già accaduto — non prevede le estrazioni future né migliora le tue probabilità. Ogni estrazione è indipendente e casuale.",
+    selectLabel: "Scegli una lotteria",
+    pickMainLabel: "Scegli {count} numeri da analizzare",
+    pickBonusLabel: "Scegli il tuo {label}",
+    analyzeButton: "Analizza i miei numeri",
+    reanalyzeButton: "Analizza di nuovo",
+    resetLink: "Cancella la selezione",
+    sampleLabel: "Basato sulle ultime {n} estrazioni",
+    sumLabel: "Somma",
+    oddEvenLabel: "Pari / Dispari",
+    hotLabel: "Numeri caldi",
+    coldLabel: "Numeri freddi",
+    neutralLabel: "Numeri neutri",
+    hotTag: "Caldo",
+    coldTag: "Freddo",
+    neutralTag: "Neutro",
+    percentLabel: "{pct}% delle estrazioni",
+  },
+};
+
+export const DICTIONARIES: Record<Lang, Dictionary> = { en, fr, de, it };
 
 export function interpolate(template: string, vars: Record<string, string | number>): string {
   return template.replace(/\{(\w+)\}/g, (_, key) => String(vars[key] ?? ""));

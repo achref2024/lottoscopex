@@ -14,7 +14,7 @@ import { formatMoney } from "@/lib/format";
 
 export const SITE_URL = "https://lottoscopex.com";
 
-const OG_LOCALE: Record<Lang, string> = { en: "en_GB", fr: "fr_FR", de: "de_DE" };
+const OG_LOCALE: Record<Lang, string> = { en: "en_GB", fr: "fr_FR", de: "de_DE", it: "it_IT" };
 
 /** All computed data a lottery detail page needs, shared across every language variant. */
 export function getLotteryPageData(id: string) {
@@ -53,6 +53,7 @@ export function buildLotteryMetadata(lang: Lang, id: string): Metadata {
     en: `${SITE_URL}${localePath("en", path)}`,
     fr: `${SITE_URL}${localePath("fr", path)}`,
     de: `${SITE_URL}${localePath("de", path)}`,
+    it: `${SITE_URL}${localePath("it", path)}`,
     "x-default": `${SITE_URL}${localePath("en", path)}`,
   };
 
@@ -65,7 +66,7 @@ export function buildLotteryMetadata(lang: Lang, id: string): Metadata {
       description,
       url: canonical,
       locale: OG_LOCALE[lang],
-      alternateLocale: (["en", "fr", "de"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
+      alternateLocale: (["en", "fr", "de", "it"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
     },
     twitter: { title, description },
   };
@@ -81,6 +82,7 @@ export function buildHomeMetadata(lang: Lang): Metadata {
     en: `${SITE_URL}${localePath("en", "/")}`,
     fr: `${SITE_URL}${localePath("fr", "/")}`,
     de: `${SITE_URL}${localePath("de", "/")}`,
+    it: `${SITE_URL}${localePath("it", "/")}`,
     "x-default": `${SITE_URL}${localePath("en", "/")}`,
   };
 
@@ -93,7 +95,7 @@ export function buildHomeMetadata(lang: Lang): Metadata {
       description,
       url: canonical,
       locale: OG_LOCALE[lang],
-      alternateLocale: (["en", "fr", "de"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
+      alternateLocale: (["en", "fr", "de", "it"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
     },
     twitter: { title, description },
   };
@@ -109,6 +111,7 @@ export function buildGeneratorMetadata(lang: Lang): Metadata {
     en: `${SITE_URL}${localePath("en", "/generator")}`,
     fr: `${SITE_URL}${localePath("fr", "/generator")}`,
     de: `${SITE_URL}${localePath("de", "/generator")}`,
+    it: `${SITE_URL}${localePath("it", "/generator")}`,
     "x-default": `${SITE_URL}${localePath("en", "/generator")}`,
   };
 
@@ -121,7 +124,7 @@ export function buildGeneratorMetadata(lang: Lang): Metadata {
       description,
       url: canonical,
       locale: OG_LOCALE[lang],
-      alternateLocale: (["en", "fr", "de"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
+      alternateLocale: (["en", "fr", "de", "it"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
     },
     twitter: { title, description },
   };
@@ -137,6 +140,7 @@ export function buildAnalyzerMetadata(lang: Lang): Metadata {
     en: `${SITE_URL}${localePath("en", "/analyzer")}`,
     fr: `${SITE_URL}${localePath("fr", "/analyzer")}`,
     de: `${SITE_URL}${localePath("de", "/analyzer")}`,
+    it: `${SITE_URL}${localePath("it", "/analyzer")}`,
     "x-default": `${SITE_URL}${localePath("en", "/analyzer")}`,
   };
 
@@ -149,7 +153,7 @@ export function buildAnalyzerMetadata(lang: Lang): Metadata {
       description,
       url: canonical,
       locale: OG_LOCALE[lang],
-      alternateLocale: (["en", "fr", "de"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
+      alternateLocale: (["en", "fr", "de", "it"] as Lang[]).filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
     },
     twitter: { title, description },
   };
@@ -159,6 +163,7 @@ const BREADCRUMB_HOME_LABEL: Record<Lang, string> = {
   en: "Home",
   fr: "Accueil",
   de: "Startseite",
+  it: "Home",
 };
 
 /** Generic schema.org BreadcrumbList builder — pass ordered {name, url} pairs. */
