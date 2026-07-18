@@ -30,6 +30,7 @@ export const MAIN_BALL_OVERRIDES: Record<string, { from: string; to: string; rin
   "irish-lotto": { from: "#34D399", to: "#047857", ring: "#FFFFFF", text: "#FFFFFF" }, // brightened shamrock green
   powerball: { from: "#F87171", to: "#DC2626", ring: "#FFFFFF", text: "#FFFFFF" }, // Powerball red
   megamillions: { from: "#4C6FFF", to: "#1B2A6B", ring: "#FFFFFF", text: "#FFFFFF" }, // Mega Millions blue
+  superenalotto: { from: "#4ADE80", to: "#16A34A", ring: "#FFFFFF", text: "#FFFFFF" }, // bright Italian green, kept light — not the dark flag green
 };
 
 export function getBallGradient(
