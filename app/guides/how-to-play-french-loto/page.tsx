@@ -90,7 +90,7 @@ export default function Page() {
           With a 5-from-49 plus 1-from-10 format, the jackpot odds are 1 in 19,068,840 — noticeably
           more favourable than EuroMillions or EuroJackpot's odds, since both the main pool and the
           bonus pool are smaller. See our{" "}
-          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 7 lotteries</Link>{" "}
+          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 8 lotteries</Link>{" "}
           for the exact numbers.
         </p>
 

@@ -6,6 +6,7 @@ import lotoFrance from "@/data/loto-france.json";
 import irishLotto from "@/data/irish-lotto.json";
 import powerball from "@/data/powerball.json";
 import megamillions from "@/data/megamillions.json";
+import superenalotto from "@/data/superenalotto.json";
 
 const DATASETS: Record<string, Draw[]> = {
   euromillions: euromillions as Draw[],
@@ -15,6 +16,7 @@ const DATASETS: Record<string, Draw[]> = {
   "irish-lotto": irishLotto as Draw[],
   powerball: powerball as Draw[],
   megamillions: megamillions as Draw[],
+  superenalotto: superenalotto as Draw[],
 };
 
 /** Returns draws newest-first */

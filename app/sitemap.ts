@@ -67,6 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides/how-to-play-irish-lotto",
     "/guides/how-to-play-powerball",
     "/guides/how-to-play-mega-millions",
+    "/guides/how-to-play-superenalotto",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,

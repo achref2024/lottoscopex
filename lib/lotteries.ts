@@ -140,6 +140,25 @@ export const LOTTERIES: LotteryConfig[] = [
     jackpotMax: 500,
     nextJackpot: 707, // rolled over from the winner-less 17 Jul 2026 draw ($672M) to $707M for the 21 Jul draw
   },
+  {
+    id: "superenalotto",
+    name: "SuperEnalotto",
+    shortName: "SuperEnalotto",
+    country: "Italy",
+    flag: "IT",
+    tagline: "Italy's record-breaking jackpot lottery",
+    gradient: ["#009246", "#CE2B37"], // the green and red of the Italian flag
+    accent: "#CE2B37",
+    main: { count: 6, min: 1, max: 90 },
+    bonus: { label: "Jolly", count: 1, min: 1, max: 90, shape: "circle" },
+    drawDays: [2, 4, 5, 6], // Tuesday, Thursday, Friday, Saturday
+    drawTimeZone: "Europe/Rome",
+    drawTimes: { 2: "20:00", 4: "20:00", 5: "20:00", 6: "20:00" },
+    currency: "EUR",
+    jackpotMin: 1.3,
+    jackpotMax: 400, // no hard cap — the record jackpot (Feb 2023) was €371M
+    nextJackpot: 196.1, // rolled over from the winner-less 17 Jul 2026 draw (€195.2M) to €196.1M for the 18 Jul draw
+  },
 ];
 
 export function getLottery(id: string): LotteryConfig | undefined {

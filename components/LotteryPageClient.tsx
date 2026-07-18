@@ -28,6 +28,7 @@ const HOW_TO_PLAY_SLUGS: Record<string, string> = {
   "irish-lotto": "how-to-play-irish-lotto",
   powerball: "how-to-play-powerball",
   megamillions: "how-to-play-mega-millions",
+  superenalotto: "how-to-play-superenalotto",
 };
 
 const ICONS = {
