@@ -69,6 +69,23 @@ export default function LotteryBadge({ id, size = 64 }: { id: string; size?: num
           </>
         )}
 
+        {spec.pattern === "uk" && (
+          <>
+            {/* Union Jack: navy field, white St Andrew's/St Patrick's diagonal
+                saltire, then the straight white/red St George's cross on top —
+                simplified (no counterchange offset) to stay legible at badge size. */}
+            <rect x={-r} y={-r} width={r * 2} height={r * 2} fill={c1} />
+            <line x1={-r} y1={-r} x2={r} y2={r} stroke={c2} strokeWidth={42} />
+            <line x1={-r} y1={r} x2={r} y2={-r} stroke={c2} strokeWidth={42} />
+            <line x1={-r} y1={-r} x2={r} y2={r} stroke={c3} strokeWidth={20} />
+            <line x1={-r} y1={r} x2={r} y2={-r} stroke={c3} strokeWidth={20} />
+            <rect x={-r} y={-24} width={r * 2} height={48} fill={c2} />
+            <rect x={-24} y={-r} width={48} height={r * 2} fill={c2} />
+            <rect x={-r} y={-14} width={r * 2} height={28} fill={c3} />
+            <rect x={-14} y={-r} width={28} height={r * 2} fill={c3} />
+          </>
+        )}
+
         {spec.pattern === "us" && (
           <>
             {Array.from({ length: 7 }).map((_, i) => (

@@ -31,6 +31,7 @@ export const MAIN_BALL_OVERRIDES: Record<string, { from: string; to: string; rin
   powerball: { from: "#F87171", to: "#DC2626", ring: "#FFFFFF", text: "#FFFFFF" }, // Powerball red
   megamillions: { from: "#4C6FFF", to: "#1B2A6B", ring: "#FFFFFF", text: "#FFFFFF" }, // Mega Millions blue
   superenalotto: { from: "#4ADE80", to: "#16A34A", ring: "#FFFFFF", text: "#FFFFFF" }, // bright Italian green, kept light — not the dark flag green
+  "uk-lotto": { from: "#C8102E", to: "#012169", ring: "#FFFFFF", text: "#FFFFFF" }, // Union Jack red into navy, white ring
 };
 
 export function getBallGradient(

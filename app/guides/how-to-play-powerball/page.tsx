@@ -90,7 +90,7 @@ export default function Page() {
           has rolled over for a while. With a 5-from-69 plus 1-from-26 format, the odds of matching
           every number are 1 in 292,201,338, among the longest odds of any lottery LottoScopeX
           tracks — see our{" "}
-          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 8 lotteries</Link>.
+          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 9 lotteries</Link>.
         </p>
 
         <h2 id="history">A brief history</h2>

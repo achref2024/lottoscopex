@@ -1,4 +1,4 @@
-export type BadgePattern = "eu" | "stripes-h" | "stripes-v" | "us";
+export type BadgePattern = "eu" | "stripes-h" | "stripes-v" | "us" | "uk";
 
 export interface BadgeSpec {
   pattern: BadgePattern;
@@ -63,5 +63,11 @@ export const BADGES: Record<string, BadgeSpec> = {
     colors: ["#009246", "#ffffff", "#CE2B37"],
     accent: "#F4A300",
     label: ["SUPER", "ENALOTTO"],
+  },
+  "uk-lotto": {
+    pattern: "uk",
+    colors: ["#012169", "#ffffff", "#C8102E"], // navy field, white, red — the Union Jack's three tones
+    accent: "#C8102E",
+    label: ["UK", "LOTTO"],
   },
 };

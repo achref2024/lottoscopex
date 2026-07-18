@@ -159,6 +159,25 @@ export const LOTTERIES: LotteryConfig[] = [
     jackpotMax: 400, // no hard cap — the record jackpot (Feb 2023) was €371M
     nextJackpot: 196.1, // rolled over from the winner-less 17 Jul 2026 draw (€195.2M) to €196.1M for the 18 Jul draw
   },
+  {
+    id: "uk-lotto",
+    name: "UK Lotto",
+    shortName: "UK Lotto",
+    country: "United Kingdom",
+    flag: "GB",
+    tagline: "Britain's original national lottery draw",
+    gradient: ["#C8102E", "#012169"], // Union Jack red and navy blue
+    accent: "#012169",
+    main: { count: 6, min: 1, max: 59 },
+    bonus: { label: "Bonus Ball", count: 1, min: 1, max: 59, shape: "circle" },
+    drawDays: [3, 6], // Wednesday, Saturday
+    drawTimeZone: "Europe/London",
+    drawTimes: { 3: "20:00", 6: "20:00" },
+    currency: "GBP",
+    jackpotMin: 2,
+    jackpotMax: 66, // record jackpot (9 Jan 2016) was £66.1M, split between two winners
+    nextJackpot: 9.5, // rolled over from the winner-less 15 Jul 2026 draw (£7.66M) to an estimated £9.5M for the 18 Jul draw
+  },
 ];
 
 export function getLottery(id: string): LotteryConfig | undefined {

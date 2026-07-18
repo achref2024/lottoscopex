@@ -91,7 +91,7 @@ export default function Page() {
           keeps growing every time it goes unwon. The odds of matching all 6 numbers are{" "}
           <strong>1 in 622,614,630</strong> — by far the longest odds of any lottery LottoScopeX
           tracks, over twice as long as Powerball's. See our{" "}
-          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 8 lotteries</Link>{" "}
+          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 9 lotteries</Link>{" "}
           for how that's calculated. Those long odds are exactly why SuperEnalotto has produced some
           of the largest lottery prizes ever recorded: the biggest, €371,133,424.51, was split between
           90 winning tickets on 16 February 2023, while the largest single-winner jackpot —

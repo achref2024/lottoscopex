@@ -18,7 +18,7 @@ const GUIDES = [
     href: "/guides/how-lottery-odds-work",
     title: "How Lottery Odds Actually Work",
     description:
-      "The real math behind jackpot odds, with a computed comparison table across all 8 lotteries.",
+      "The real math behind jackpot odds, with a computed comparison table across all 9 lotteries.",
   },
   {
     href: "/guides/hot-and-cold-numbers",
@@ -80,6 +80,11 @@ const HOW_TO_PLAY_GUIDES = [
     href: "/guides/how-to-play-superenalotto",
     title: "How to Play SuperEnalotto",
     description: "Italy's national lottery — the longest odds and biggest jackpots we track.",
+  },
+  {
+    href: "/guides/how-to-play-uk-lotto",
+    title: "How to Play UK Lotto",
+    description: "Britain's original national lottery draw — rules, odds, and the Bonus Ball.",
   },
 ];
 

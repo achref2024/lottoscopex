@@ -89,7 +89,7 @@ export default function Page() {
           climbing past $500 million and occasionally over $1 billion. With a 5-from-70 plus
           1-from-24 format, the odds of matching every number are 1 in 290,472,336 — nearly
           identical to Powerball's odds. See our{" "}
-          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 8 lotteries</Link>{" "}
+          <Link href="/guides/how-lottery-odds-work">full odds comparison across all 9 lotteries</Link>{" "}
           for exactly how the two compare.
         </p>
 

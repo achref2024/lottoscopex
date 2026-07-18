@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/lotteryPage";
 
 const TITLE = "How Lottery Odds Actually Work (With Real Numbers)";
 const DESCRIPTION =
-  "A plain-language explanation of how lottery jackpot odds are calculated, with real, computed odds for EuroMillions, EuroJackpot, Lotto 6aus49, French Loto, Irish Lotto, Powerball, Mega Millions, and SuperEnalotto.";
+  "A plain-language explanation of how lottery jackpot odds are calculated, with real, computed odds for EuroMillions, EuroJackpot, Lotto 6aus49, French Loto, Irish Lotto, UK Lotto, Powerball, Mega Millions, and SuperEnalotto.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -30,7 +30,7 @@ const faqJsonLd = {
       name: "Which lottery has the best jackpot odds?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Among the games LottoScopeX covers, Irish Lotto has the best jackpot odds at 1 in 10,737,573, followed by French Loto at 1 in 19,068,840. EuroMillions, EuroJackpot, and Lotto 6aus49 share odds of 1 in 139,838,160. Powerball and Mega Millions are longer still, both above 1 in 290 million. SuperEnalotto has by far the longest odds of any game tracked here, at 1 in 622,614,630 — over twice as long as Powerball — which is exactly why its jackpots have grown larger than any other lottery's, including a record €371 million win in February 2023.",
+        text: "Among the games LottoScopeX covers, Irish Lotto has the best jackpot odds at 1 in 10,737,573, followed by French Loto at 1 in 19,068,840 and UK Lotto at 1 in 45,057,474. EuroMillions, EuroJackpot, and Lotto 6aus49 share odds of 1 in 139,838,160. Powerball and Mega Millions are longer still, both above 1 in 290 million. SuperEnalotto has by far the longest odds of any game tracked here, at 1 in 622,614,630 — over twice as long as Powerball — which is exactly why its jackpots have grown larger than any other lottery's, including a record €371 million win in February 2023.",
       },
     },
     {
@@ -99,6 +99,11 @@ export default function Page() {
               <td className="py-2">1 in 19,068,840</td>
             </tr>
             <tr className="border-b border-felt-800">
+              <td className="py-2 pr-4">UK Lotto</td>
+              <td className="py-2 pr-4">6 numbers from 59</td>
+              <td className="py-2">1 in 45,057,474</td>
+            </tr>
+            <tr className="border-b border-felt-800">
               <td className="py-2 pr-4">EuroMillions</td>
               <td className="py-2 pr-4">5 numbers from 50 + 2 Lucky Stars from 12</td>
               <td className="py-2">1 in 139,838,160</td>
@@ -131,10 +136,11 @@ export default function Page() {
           </tbody>
         </table>
         <p className="text-xs text-mist-500">
-          Note: for Irish Lotto specifically, the Bonus Ball only affects a lower prize tier — the
-          jackpot itself only requires matching the 6 main numbers, which is why its odds look more
-          favorable than a simple 6-from-47 comparison to other games might suggest. The same is true
-          for SuperEnalotto's Jolly number, which only boosts the second-prize tier.
+          Note: for Irish Lotto and UK Lotto specifically, the Bonus Ball only affects a lower prize
+          tier — the jackpot itself only requires matching the 6 main numbers, which is why their odds
+          look more favorable than a simple 6-from-47 or 6-from-59 comparison to other games might
+          suggest. The same is true for SuperEnalotto's Jolly number, which only boosts the
+          second-prize tier.
         </p>
 
         <h2 id="why-it-matters">Why the gap between games is so large</h2>

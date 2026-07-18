@@ -235,7 +235,7 @@ const en: Dictionary = {
     pill: "Real stats · No predictions",
   },
   hero: {
-    badge: "Statistics & patterns · 8 lotteries across Europe & the US",
+    badge: "Statistics & patterns · 9 lotteries across Europe & the US",
     titleLine1: "Lottery statistics,",
     titleLine2: "made visual.",
     subtitle:
@@ -389,6 +389,7 @@ const en: Dictionary = {
     powerball: { country: "United States", tagline: "America's biggest jackpot lottery" },
     megamillions: { country: "United States", tagline: "America's other giant jackpot draw" },
     superenalotto: { country: "Italy", tagline: "Italy's record-breaking jackpot lottery" },
+    "uk-lotto": { country: "United Kingdom", tagline: "Britain's original national lottery draw" },
   },
   faq: {
     drawCountQuestion: "How many {name} draws does LottoScopeX analyze?",
@@ -452,7 +453,7 @@ const fr: Dictionary = {
     pill: "Statistiques réelles · Aucune prédiction",
   },
   hero: {
-    badge: "Statistiques & tendances · 8 loteries en Europe et aux États-Unis",
+    badge: "Statistiques & tendances · 9 loteries en Europe et aux États-Unis",
     titleLine1: "Statistiques de loterie,",
     titleLine2: "rendues visuelles.",
     subtitle:
@@ -606,6 +607,7 @@ const fr: Dictionary = {
     powerball: { country: "États-Unis", tagline: "La plus grande loterie à jackpot des États-Unis" },
     megamillions: { country: "États-Unis", tagline: "L'autre immense tirage à jackpot américain" },
     superenalotto: { country: "Italie", tagline: "La loterie italienne aux jackpots records" },
+    "uk-lotto": { country: "Royaume-Uni", tagline: "Le tirage historique de la loterie nationale britannique" },
   },
   faq: {
     drawCountQuestion: "Combien de tirages {name} LottoScopeX analyse-t-il ?",
@@ -670,7 +672,7 @@ const de: Dictionary = {
     pill: "Echte Statistiken · Keine Vorhersagen",
   },
   hero: {
-    badge: "Statistiken & Muster · 8 Lotterien in Europa und den USA",
+    badge: "Statistiken & Muster · 9 Lotterien in Europa und den USA",
     titleLine1: "Lotteriestatistiken,",
     titleLine2: "sichtbar gemacht.",
     subtitle:
@@ -824,6 +826,7 @@ const de: Dictionary = {
     powerball: { country: "Vereinigte Staaten", tagline: "Amerikas größte Jackpot-Lotterie" },
     megamillions: { country: "Vereinigte Staaten", tagline: "Amerikas andere riesige Jackpot-Ziehung" },
     superenalotto: { country: "Italien", tagline: "Italiens rekordverdächtige Jackpot-Lotterie" },
+    "uk-lotto": { country: "Vereinigtes Königreich", tagline: "Großbritanniens ursprüngliche Nationallotterie" },
   },
   faq: {
     drawCountQuestion: "Wie viele {name}-Ziehungen analysiert LottoScopeX?",
