@@ -43,7 +43,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 10,
     jackpotMax: 120,
-    nextJackpot: 65, // rolled over from the winner-less 17 Jul 2026 draw (€50M) — estimate for the 21 Jul draw, pending official confirmation
+    nextJackpot: 59, // rolled over from the winner-less 17 Jul 2026 draw (€51.2M) to €59M for the 21 Jul draw
   },
   {
     id: "lotto6aus49",
