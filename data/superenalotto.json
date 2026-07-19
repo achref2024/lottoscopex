@@ -1,4 +1,5 @@
 [
+  { "id": "superenalotto-2026-07-18", "lotteryId": "superenalotto", "date": "2026-07-18", "main": [1,28,52,62,79,86], "bonus": [61], "jackpot": 196.1, "jackpotWon": false },
   { "id": "superenalotto-2026-07-17", "lotteryId": "superenalotto", "date": "2026-07-17", "main": [7,34,45,64,65,76], "bonus": [46], "jackpot": 195.2, "jackpotWon": false },
   { "id": "superenalotto-2026-07-16", "lotteryId": "superenalotto", "date": "2026-07-16", "main": [1,15,21,46,52,67], "bonus": [41], "jackpot": 194.5, "jackpotWon": false },
   { "id": "superenalotto-2026-07-14", "lotteryId": "superenalotto", "date": "2026-07-14", "main": [8,44,49,80,85,88], "bonus": [30], "jackpot": 193.6, "jackpotWon": false },

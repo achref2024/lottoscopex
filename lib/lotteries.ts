@@ -81,7 +81,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
-    nextJackpot: 13, // rolled over from the winner-less 15 Jul 2026 draw (€12M) to €13M for the 18 Jul draw
+    nextJackpot: 14, // rolled over from the winner-less 18 Jul 2026 draw (€13M) to €14M for the 20 Jul draw
   },
   {
     id: "irish-lotto",
@@ -157,7 +157,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 1.3,
     jackpotMax: 400, // no hard cap — the record jackpot (Feb 2023) was €371M
-    nextJackpot: 196.1, // rolled over from the winner-less 17 Jul 2026 draw (€195.2M) to €196.1M for the 18 Jul draw
+    nextJackpot: 197, // rolled over from the winner-less 18 Jul 2026 draw (€196.1M) to €197M for the 21 Jul draw
   },
   {
     id: "uk-lotto",
