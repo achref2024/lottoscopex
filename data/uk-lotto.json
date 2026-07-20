@@ -1,4 +1,5 @@
 [
+  { "id": "uk-lotto-2026-07-18", "lotteryId": "uk-lotto", "date": "2026-07-18", "main": [22, 32, 34, 47, 52, 55], "bonus": [10], "jackpot": 9.559451, "jackpotWon": false },
   { "id": "uk-lotto-2026-07-15", "lotteryId": "uk-lotto", "date": "2026-07-15", "main": [4, 13, 14, 17, 23, 31], "bonus": [56], "jackpot": 7.7, "jackpotWon": false },
   { "id": "uk-lotto-2026-07-11", "lotteryId": "uk-lotto", "date": "2026-07-11", "main": [9, 13, 22, 36, 40, 45], "bonus": [41], "jackpot": 6.6, "jackpotWon": false },
   { "id": "uk-lotto-2026-07-08", "lotteryId": "uk-lotto", "date": "2026-07-08", "main": [30, 35, 39, 45, 46, 53], "bonus": [37], "jackpot": 5.0, "jackpotWon": false },

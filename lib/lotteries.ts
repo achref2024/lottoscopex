@@ -100,7 +100,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 19,
-    nextJackpot: 7.5, // rolled over from the winner-less 15 Jul 2026 draw (€6.99M) to an estimated €7.5M for the 18 Jul draw
+    nextJackpot: 7.8, // rolled over from the winner-less 18 Jul 2026 draw (€7.43M) to €7.8M for the 22 Jul draw
   },
   {
     id: "powerball",
@@ -119,7 +119,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 20,
     jackpotMax: 500,
-    nextJackpot: 526, // rolled over from the winner-less 15 Jul 2026 draw ($499M) to $526M for the 18 Jul draw
+    nextJackpot: 544, // rolled over from the winner-less 18 Jul 2026 draw ($526.4M) to $544M for the 20 Jul draw
   },
   {
     id: "megamillions",
@@ -176,7 +176,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "GBP",
     jackpotMin: 2,
     jackpotMax: 66, // record jackpot (9 Jan 2016) was £66.1M, split between two winners
-    nextJackpot: 9.5, // rolled over from the winner-less 15 Jul 2026 draw (£7.66M) to an estimated £9.5M for the 18 Jul draw
+    nextJackpot: 11.5, // rolled over from the winner-less 18 Jul 2026 draw (£9.56M) to an estimated £11.5M for the 22 Jul draw
   },
 ];
 
