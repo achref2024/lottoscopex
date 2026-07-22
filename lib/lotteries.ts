@@ -62,7 +62,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 1,
     jackpotMax: 50, // cap raised from €45M to €50M in Nov 2023
-    nextJackpot: 50, // capped jackpot, unwon again on 18 Jul 2026 — stays at cap for the 22 Jul draw
+    nextJackpot: 50, // capped jackpot, unwon again on 22 Jul 2026 — stays at cap for the 25 Jul draw
   },
   {
     id: "loto-france",
