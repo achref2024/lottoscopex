@@ -13,7 +13,8 @@
     "bonus": [
       8
     ],
-    "jackpot": 0
+    "jackpot": 544,
+    "jackpotWon": false
   },
   {
     "id": "powerball-2026-07-18",

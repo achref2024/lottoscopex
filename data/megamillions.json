@@ -13,7 +13,8 @@
     "bonus": [
       10
     ],
-    "jackpot": 0
+    "jackpot": 707,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-07-17",
