@@ -24,7 +24,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 17,
     jackpotMax: 240,
-    nextJackpot: 70, // rolled over from the winner-less 21 Jul 2026 draw (€59M) to €70M for the 24 Jul draw
+    nextJackpot: 78, // rolled over from the winner-less 24 Jul 2026 draw (€70M) to €78M for the 28 Jul draw
   },
   {
     id: "eurojackpot",
@@ -43,7 +43,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 10,
     jackpotMax: 120,
-    nextJackpot: 68, // rolled over from the winner-less 21 Jul 2026 draw (€59.99M) to an estimated €68M for the 24 Jul draw
+    nextJackpot: 10, // 24 Jul 2026 draw (€70M) hit the maximum rollover count and paid down to the 5+1 tier — resets to €10M for the 28 Jul draw
   },
   {
     id: "lotto6aus49",
@@ -81,7 +81,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
-    nextJackpot: 15, // rolled over from the winner-less 20 Jul 2026 draw (€14M) to €15M for the 22 Jul draw
+    nextJackpot: 2, // €15M jackpot was won on 22 Jul 2026 — resets to the €2M minimum for the 25 Jul draw
   },
   {
     id: "irish-lotto",
@@ -100,7 +100,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 19,
-    nextJackpot: 7.8, // rolled over from the winner-less 18 Jul 2026 draw (€7.43M) to €7.8M for the 22 Jul draw
+    nextJackpot: 8.2, // rolled over from the winner-less 22 Jul 2026 draw (€7.77M) to an estimated €8.2M for the 25 Jul draw
   },
   {
     id: "powerball",
@@ -119,7 +119,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 20,
     jackpotMax: 500,
-    nextJackpot: 567, // rolled over from the winner-less 20 Jul 2026 draw ($544M) to $567M for the 22 Jul draw
+    nextJackpot: 600, // rolled over from the winner-less 22 Jul 2026 draw ($567M) to $600M for the 25 Jul draw
   },
   {
     id: "megamillions",
@@ -138,7 +138,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 50,
     jackpotMax: 500,
-    nextJackpot: 743, // rolled over from the winner-less 21 Jul 2026 draw ($707M) to $743M for the 24 Jul draw
+    nextJackpot: 780, // rolled over from the winner-less 24 Jul 2026 draw ($743M) to an estimated $780M for the 28 Jul draw
   },
   {
     id: "superenalotto",
@@ -157,7 +157,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 1.3,
     jackpotMax: 400, // no hard cap — the record jackpot (Feb 2023) was €371M
-    nextJackpot: 197.9, // rolled over from the winner-less 21 Jul 2026 draw (€197M) to €197.9M for the 24 Jul draw
+    nextJackpot: 199.6, // rolled over from the winner-less 24 Jul 2026 draw (€198.7M) to €199.6M for the next draw
   },
   {
     id: "uk-lotto",
@@ -176,7 +176,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "GBP",
     jackpotMin: 2,
     jackpotMax: 66, // record jackpot (9 Jan 2016) was £66.1M, split between two winners
-    nextJackpot: 11.5, // rolled over from the winner-less 18 Jul 2026 draw (£9.56M) to an estimated £11.5M for the 22 Jul draw
+    nextJackpot: 3.6, // 22 Jul 2026 draw hit the 5-rollover cap and paid down to the Match 5+Bonus tier — resets to an estimated £3.6M for the 25 Jul draw
   },
 ];
 
