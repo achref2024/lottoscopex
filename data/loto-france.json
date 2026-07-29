@@ -8,12 +8,13 @@
       7,
       8,
       16,
-      27
+      36
     ],
     "bonus": [
       3
     ],
-    "jackpot": 0
+    "jackpot": 3,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-07-25",
