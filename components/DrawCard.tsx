@@ -3,6 +3,7 @@
 import LotteryBall from "./LotteryBall";
 import { Draw, LotteryConfig } from "@/lib/types";
 import { formatDate, formatMoney } from "@/lib/format";
+import { formatJackpotCountries } from "@/lib/countries";
 import { useLang } from "./LanguageProvider";
 
 interface DrawCardProps {
@@ -20,7 +21,7 @@ export default function DrawCard({
   size = "md",
   animate = true,
 }: DrawCardProps) {
-  const { t, locale } = useLang();
+  const { t, locale, lang } = useLang();
   return (
     <div
       className={
@@ -46,7 +47,13 @@ export default function DrawCard({
               </div>
             ) : null}
             {draw.jackpotWon === true && (
-              <span className="text-xs font-semibold text-mist-500">{t("drawCard.jackpotWon")}</span>
+              <span className="text-xs font-semibold text-mist-500">
+                {draw.jackpotCountries && draw.jackpotCountries.length > 0
+                  ? t("drawCard.jackpotWonIn", {
+                      country: formatJackpotCountries(draw.jackpotCountries, lang),
+                    })
+                  : t("drawCard.jackpotWon")}
+              </span>
             )}
             {draw.jackpotWon === false && (
               <span className="text-xs font-medium text-mist-500">

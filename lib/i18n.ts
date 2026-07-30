@@ -87,6 +87,7 @@ export interface Dictionary {
     draw: string;
     jackpotSuffix: string;
     jackpotWon: string;
+    jackpotWonIn: string; // "Jackpot won — {country}"
     rolledOver: string;
     rolloverStreak: string; // "{count}x rolled over"
   };
@@ -284,6 +285,7 @@ const en: Dictionary = {
     draw: "Draw",
     jackpotSuffix: "jackpot",
     jackpotWon: "Jackpot won",
+    jackpotWonIn: "Jackpot won — {country}",
     rolledOver: "No winner — rolled over",
     rolloverStreak: "{count}× rolled over in a row",
   },
@@ -502,6 +504,7 @@ const fr: Dictionary = {
     draw: "Tirage",
     jackpotSuffix: "de jackpot",
     jackpotWon: "Jackpot remporté",
+    jackpotWonIn: "Jackpot remporté — {country}",
     rolledOver: "Aucun gagnant — report du jackpot",
     rolloverStreak: "{count}× reporté d'affilée",
   },
@@ -721,6 +724,7 @@ const de: Dictionary = {
     draw: "Ziehung",
     jackpotSuffix: "Jackpot",
     jackpotWon: "Jackpot geknackt",
+    jackpotWonIn: "Jackpot geknackt — {country}",
     rolledOver: "Kein Gewinner — Jackpot wird übertragen",
     rolloverStreak: "{count}× in Folge übertragen",
   },
@@ -940,6 +944,7 @@ const it: Dictionary = {
     draw: "Estrazione",
     jackpotSuffix: "di jackpot",
     jackpotWon: "Jackpot vinto",
+    jackpotWonIn: "Jackpot vinto — {country}",
     rolledOver: "Nessun vincitore — jackpot riportato",
     rolloverStreak: "Riportato {count}× di fila",
   },

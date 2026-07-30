@@ -33,7 +33,10 @@
       10
     ],
     "jackpot": 71.262143,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "ES"
+    ]
   },
   {
     "id": "eurojackpot-2026-07-21",
@@ -177,7 +180,10 @@
       9
     ],
     "jackpot": 87,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2026-06-23",
@@ -339,7 +345,10 @@
       12
     ],
     "jackpot": 120,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "CZ"
+    ]
   },
   {
     "id": "eurojackpot-2026-05-22",
@@ -627,7 +636,10 @@
       8
     ],
     "jackpot": 70.7,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2026-03-27",
@@ -771,7 +783,10 @@
       10
     ],
     "jackpot": 10,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "SI"
+    ]
   },
   {
     "id": "eurojackpot-2026-02-27",
@@ -789,7 +804,10 @@
       7
     ],
     "jackpot": 74.8,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2026-02-24",
@@ -969,7 +987,10 @@
       9
     ],
     "jackpot": 53.7,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2026-01-20",
@@ -1077,7 +1098,10 @@
       9
     ],
     "jackpot": 74.1,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "FI"
+    ]
   },
   {
     "id": "eurojackpot-2025-12-30",
@@ -1221,7 +1245,10 @@
       10
     ],
     "jackpot": 10.0,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2025-12-02",
@@ -1239,7 +1266,10 @@
       6
     ],
     "jackpot": 23.5,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DK"
+    ]
   },
   {
     "id": "eurojackpot-2025-11-28",
@@ -1293,7 +1323,10 @@
       6
     ],
     "jackpot": 33.69,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2025-11-18",
@@ -1365,7 +1398,10 @@
       8
     ],
     "jackpot": 54.29,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2025-11-04",
@@ -1473,7 +1509,10 @@
       3
     ],
     "jackpot": 69.17,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2025-10-14",
@@ -1599,7 +1638,10 @@
       11
     ],
     "jackpot": 120,
-    "jackpotWon": true
+    "jackpotWon": true,
+    "jackpotCountries": [
+      "DE"
+    ]
   },
   {
     "id": "eurojackpot-2025-09-19",
