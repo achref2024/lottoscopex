@@ -1,5 +1,59 @@
 [
   {
+    "id": "lotto6aus49-2026-08-05",
+    "lotteryId": "lotto6aus49",
+    "date": "2026-08-05",
+    "main": [
+      15,
+      23,
+      24,
+      36,
+      44,
+      49
+    ],
+    "bonus": [
+      0
+    ],
+    "jackpot": 50,
+    "jackpotWon": false
+  },
+  {
+    "id": "lotto6aus49-2026-08-01",
+    "lotteryId": "lotto6aus49",
+    "date": "2026-08-01",
+    "main": [
+      19,
+      20,
+      22,
+      25,
+      31,
+      42
+    ],
+    "bonus": [
+      9
+    ],
+    "jackpot": 50,
+    "jackpotWon": false
+  },
+  {
+    "id": "lotto6aus49-2026-07-29",
+    "lotteryId": "lotto6aus49",
+    "date": "2026-07-29",
+    "main": [
+      3,
+      16,
+      22,
+      43,
+      48,
+      49
+    ],
+    "bonus": [
+      8
+    ],
+    "jackpot": 50,
+    "jackpotWon": false
+  },
+  {
     "id": "lotto6aus49-2026-07-25",
     "lotteryId": "lotto6aus49",
     "date": "2026-07-25",

@@ -1,51 +1,71 @@
 [
   {
+    "id": "loto-france-2026-08-05",
+    "lotteryId": "loto-france",
+    "date": "2026-08-05",
+    "main": [
+      12,
+      22,
+      24,
+      33,
+      38
+    ],
+    "bonus": [
+      9
+    ],
+    "jackpot": 7,
+    "jackpotWon": false
+  },
+  {
     "id": "loto-france-2026-08-03",
     "lotteryId": "loto-france",
     "date": "2026-08-03",
     "main": [
-      3,
       5,
-      8,
       25,
-      37
+      37,
+      41,
+      42
     ],
     "bonus": [
       10
     ],
-    "jackpot": 0
+    "jackpot": 6,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-08-01",
     "lotteryId": "loto-france",
     "date": "2026-08-01",
     "main": [
-      1,
       5,
       6,
       8,
-      30
+      30,
+      37
     ],
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 5,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-07-29",
     "lotteryId": "loto-france",
     "date": "2026-07-29",
     "main": [
-      7,
       15,
       27,
-      29,
-      34
+      34,
+      40,
+      41
     ],
     "bonus": [
       9
     ],
-    "jackpot": 0
+    "jackpot": 4,
+    "jackpotWon": false
   },
   {
     "id": "loto-france-2026-07-27",

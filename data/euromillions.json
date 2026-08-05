@@ -1,5 +1,41 @@
 [
   {
+    "id": "euromillions-2026-08-04",
+    "lotteryId": "euromillions",
+    "date": "2026-08-04",
+    "main": [
+      25,
+      30,
+      34,
+      46,
+      50
+    ],
+    "bonus": [
+      1,
+      12
+    ],
+    "jackpot": 98.388109,
+    "jackpotWon": false
+  },
+  {
+    "id": "euromillions-2026-07-31",
+    "lotteryId": "euromillions",
+    "date": "2026-07-31",
+    "main": [
+      10,
+      24,
+      25,
+      31,
+      45
+    ],
+    "bonus": [
+      4,
+      5
+    ],
+    "jackpot": 89.099379,
+    "jackpotWon": false
+  },
+  {
     "id": "euromillions-2026-07-28",
     "lotteryId": "euromillions",
     "date": "2026-07-28",

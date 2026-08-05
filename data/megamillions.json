@@ -13,7 +13,8 @@
     "bonus": [
       21
     ],
-    "jackpot": 0
+    "jackpot": 60,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-07-31",
@@ -29,7 +30,8 @@
     "bonus": [
       4
     ],
-    "jackpot": 0
+    "jackpot": 50,
+    "jackpotWon": false
   },
   {
     "id": "megamillions-2026-07-28",
