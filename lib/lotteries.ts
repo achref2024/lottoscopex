@@ -4,7 +4,7 @@ import { LotteryConfig } from "./types";
 // each operator's official site (or, where unavailable, the last officially
 // published figure). These are a live-changing number on a static site, so
 // they reflect the date below and should be refreshed periodically.
-export const NEXT_JACKPOT_AS_OF = "2026-08-07";
+export const NEXT_JACKPOT_AS_OF = "2026-08-08";
 
 export const LOTTERIES: LotteryConfig[] = [
   {
@@ -62,7 +62,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 1,
     jackpotMax: 50, // cap raised from €45M to €50M in Nov 2023
-    nextJackpot: 50, // capped jackpot, unwon again on 5 Aug 2026 — stays at cap for the 8 Aug draw (no new draw yet as of 7 Aug)
+    nextJackpot: 50, // capped jackpot, unwon again on 8 Aug 2026 — stays at cap for the 12 Aug draw
   },
   {
     id: "loto-france",
@@ -81,7 +81,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 30,
-    nextJackpot: 8, // rolled over from the winner-less 5 Aug 2026 draw (€7M) to €8M for the 8 Aug draw (per official FDJ page)
+    nextJackpot: 9, // rolled over from the winner-less 8 Aug 2026 draw (€8M) to €9M for the 10 Aug draw (per official FDJ page)
   },
   {
     id: "irish-lotto",
@@ -100,7 +100,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 2,
     jackpotMax: 19,
-    nextJackpot: 3, // rolled over from the winner-less 5 Aug 2026 draw (€2.68M) to an estimated €3M for the 8 Aug draw
+    nextJackpot: 3.3, // rolled over from the winner-less 8 Aug 2026 draw (€3M) to an estimated €3.3M for the 12 Aug draw
   },
   {
     id: "powerball",
@@ -138,7 +138,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 50,
     jackpotMax: 500,
-    nextJackpot: 70, // rolled over from the winner-less 4 Aug 2026 draw ($60M) to an estimated $70M for the 7 Aug draw (not yet drawn as of this check)
+    nextJackpot: 80, // rolled over from the winner-less 7 Aug 2026 draw ($70M) to $80M for the 11 Aug draw
   },
   {
     id: "superenalotto",
@@ -157,7 +157,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "EUR",
     jackpotMin: 1.3,
     jackpotMax: 400, // no hard cap — the record jackpot (Feb 2023) was €371M
-    nextJackpot: 207.6, // rolled over from the winner-less 7 Aug 2026 draw (€206.7M) to an estimated €207.6M for the 8 Aug draw
+    nextJackpot: 207.6, // rolled over from the winner-less 8 Aug 2026 draw (€206.7M) to an estimated €207.6M for the 11 Aug draw
   },
   {
     id: "uk-lotto",
@@ -176,7 +176,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "GBP",
     jackpotMin: 2,
     jackpotMax: 66, // record jackpot (9 Jan 2016) was £66.1M, split between two winners
-    nextJackpot: 7.8, // rolled over from the winner-less 5 Aug 2026 draw (£6.86M) to an estimated £7.8M for the 8 Aug draw
+    nextJackpot: 2, // £8.54M jackpot was won (2 winners) on 8 Aug 2026 — reset to the £2M minimum for the 12 Aug draw
   },
 ];
 

@@ -1,5 +1,23 @@
 [
   {
+    "id": "irish-lotto-2026-08-08",
+    "lotteryId": "irish-lotto",
+    "date": "2026-08-08",
+    "main": [
+      21,
+      22,
+      32,
+      41,
+      46,
+      47
+    ],
+    "bonus": [
+      11
+    ],
+    "jackpot": 3,
+    "jackpotWon": false
+  },
+  {
     "id": "irish-lotto-2026-08-05",
     "lotteryId": "irish-lotto",
     "date": "2026-08-05",
