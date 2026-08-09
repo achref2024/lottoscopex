@@ -4,7 +4,7 @@ import { LotteryConfig } from "./types";
 // each operator's official site (or, where unavailable, the last officially
 // published figure). These are a live-changing number on a static site, so
 // they reflect the date below and should be refreshed periodically.
-export const NEXT_JACKPOT_AS_OF = "2026-08-08";
+export const NEXT_JACKPOT_AS_OF = "2026-08-09";
 
 export const LOTTERIES: LotteryConfig[] = [
   {
@@ -119,7 +119,7 @@ export const LOTTERIES: LotteryConfig[] = [
     currency: "USD",
     jackpotMin: 20,
     jackpotMax: 500,
-    nextJackpot: 856, // rolled over from the winner-less 5 Aug 2026 draw ($794.3M) to $856M for the 8 Aug draw
+    nextJackpot: 905, // rolled over from the winner-less 8 Aug 2026 draw ($856M) to $905M for the 10 Aug draw
   },
   {
     id: "megamillions",
