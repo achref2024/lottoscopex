@@ -1,5 +1,21 @@
 [
   {
+    "id": "loto-france-2026-10-21",
+    "lotteryId": "loto-france",
+    "date": "2026-10-21",
+    "main": [
+      7,
+      10,
+      12,
+      18,
+      21
+    ],
+    "bonus": [
+      7
+    ],
+    "jackpot": 0
+  },
+  {
     "id": "loto-france-2026-10-19",
     "lotteryId": "loto-france",
     "date": "2026-10-19",
