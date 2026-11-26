@@ -1,5 +1,21 @@
 [
   {
+    "id": "powerball-2026-11-25",
+    "lotteryId": "powerball",
+    "date": "2026-11-25",
+    "main": [
+      23,
+      43,
+      57,
+      58,
+      68
+    ],
+    "bonus": [
+      12
+    ],
+    "jackpot": 0
+  },
+  {
     "id": "powerball-2026-11-23",
     "lotteryId": "powerball",
     "date": "2026-11-23",
