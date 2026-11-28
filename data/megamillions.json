@@ -1,5 +1,21 @@
 [
   {
+    "id": "megamillions-2026-11-27",
+    "lotteryId": "megamillions",
+    "date": "2026-11-27",
+    "main": [
+      8,
+      16,
+      18,
+      33,
+      48
+    ],
+    "bonus": [
+      19
+    ],
+    "jackpot": 0
+  },
+  {
     "id": "megamillions-2026-11-24",
     "lotteryId": "megamillions",
     "date": "2026-11-24",
